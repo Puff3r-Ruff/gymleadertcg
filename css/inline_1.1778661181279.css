@@ -1,0 +1,361 @@
+
+/* ---------------- GLOBAL ---------------- */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f8fafc;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------- NAV ---------------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4a90e2;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border-radius: 1.3rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.hero-content button {
+  padding: 15px 40px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  background: #3a78c2;
+}
+
+/* ---------------- ABOUT ---------------- */
+#about {
+  padding: 60px 20px;
+  background: #63AEFF;
+  border-top: 1px solid #d6e8ff;
+  border-bottom: 1px solid #d6e8ff;
+  display: flex;
+  justify-content: center;
+  color: #333;
+}
+
+.about-container {
+  max-width: 750px;
+  text-align: left;
+  background: white;
+  padding: 40px 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  color: #000;
+}
+
+#about-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #000;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#about-btn:hover {
+  background: #3a78c2;
+  transform: translateY(-2px);
+}
+
+/* ---------------- SERVICES ---------------- */
+.services {
+  padding: 50px 8%;
+    text-align: center;
+    background: #fff;
+    color: #000;
+}
+
+.services-grid {
+  margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    color: #000;
+  }
+
+.service-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.service-card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* ---------------- INSTAGRAM STYLE SLIDER ---------------- */
+.gallery {
+  padding: 10px 8%;
+  text-align: center;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: transform .3s ease;
+}
+
+.slider img:hover {
+  transform: scale(1.03);
+}
+
+/* ARROWS */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 5px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  transition: 0.2s;
+}
+
+.slider-btn:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+.slider-btn.left {
+  left: -10px;
+}
+
+.slider-btn.right {
+  right: -10px;
+}
+
+@media (max-width: 600px) {
+  .slider img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* ---------------- CONTACT CTA ---------------- */
+.contact-cta {
+  padding: 20px 8%;
+    text-align: center;
+    background: #22E;
+    color: #fff;
+    border-top: 1px solid #d6e8ff;
+}
+
+.contact-cta button {
+  padding: 15px 40px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-cta button:hover {
+  background: #3a78c2;
+}
+
+/* ---------------- NEWSLETTER ---------------- */
+.newsletter {
+  padding: 70px 8%;
+    text-align: center;
+    background: #63AEFF;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: #fff;
+}
+
+.newsletter h2 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 14px 20px;
+  width: 320px;
+  max-width: 90%;
+  border-radius: 30px;
+  border: 1px solid #c9dfff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.newsletter-form input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
+}
+
+.newsletter-form button {
+  padding: 14px 32px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #3a78c2;
+  transform: translateY(-2px);
+}
+
+.newsletter-success {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #3a78c2;
+  display: none;
+}
+
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #f0f6ff;
+  border-top: 1px solid #d6e8ff;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 900px) {
+  .hero {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 60vh;
+  }
+}
