@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Salon</title>
+<html lang="en"><head><style type="text/css">:root{--toastify-color-light: #fff;--toastify-color-dark: #121212;--toastify-color-info: #3498db;--toastify-color-success: #07bc0c;--toastify-color-warning: #f1c40f;--toastify-color-error: hsl(6, 78%, 57%);--toastify-color-transparent: rgba(255, 255, 255, .7);--toastify-icon-color-info: var(--toastify-color-info);--toastify-icon-color-success: var(--toastify-color-success);--toastify-icon-color-warning: var(--toastify-color-warning);--toastify-icon-color-error: var(--toastify-color-error);--toastify-container-width: fit-content;--toastify-toast-width: 320px;--toastify-toast-offset: 16px;--toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));--toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));--toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));--toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));--toastify-toast-background: #fff;--toastify-toast-padding: 14px;--toastify-toast-min-height: 64px;--toastify-toast-max-height: 800px;--toastify-toast-bd-radius: 6px;--toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, .1);--toastify-font-family: sans-serif;--toastify-z-index: 9999;--toastify-text-color-light: #757575;--toastify-text-color-dark: #fff;--toastify-text-color-info: #fff;--toastify-text-color-success: #fff;--toastify-text-color-warning: #fff;--toastify-text-color-error: #fff;--toastify-spinner-color: #616161;--toastify-spinner-color-empty-area: #e0e0e0;--toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);--toastify-color-progress-dark: #bb86fc;--toastify-color-progress-info: var(--toastify-color-info);--toastify-color-progress-success: var(--toastify-color-success);--toastify-color-progress-warning: var(--toastify-color-warning);--toastify-color-progress-error: var(--toastify-color-error);--toastify-color-progress-bgo: .2}.Toastify__toast-container{z-index:var(--toastify-z-index);-webkit-transform:translate3d(0,0,var(--toastify-z-index));position:fixed;width:var(--toastify-container-width);box-sizing:border-box;color:#fff;display:flex;flex-direction:column}.Toastify__toast-container--top-left{top:var(--toastify-toast-top);left:var(--toastify-toast-left)}.Toastify__toast-container--top-center{top:var(--toastify-toast-top);left:50%;transform:translate(-50%);align-items:center}.Toastify__toast-container--top-right{top:var(--toastify-toast-top);right:var(--toastify-toast-right);align-items:end}.Toastify__toast-container--bottom-left{bottom:var(--toastify-toast-bottom);left:var(--toastify-toast-left)}.Toastify__toast-container--bottom-center{bottom:var(--toastify-toast-bottom);left:50%;transform:translate(-50%);align-items:center}.Toastify__toast-container--bottom-right{bottom:var(--toastify-toast-bottom);right:var(--toastify-toast-right);align-items:end}.Toastify__toast{--y: 0;position:relative;touch-action:none;width:var(--toastify-toast-width);min-height:var(--toastify-toast-min-height);box-sizing:border-box;margin-bottom:1rem;padding:var(--toastify-toast-padding);border-radius:var(--toastify-toast-bd-radius);box-shadow:var(--toastify-toast-shadow);max-height:var(--toastify-toast-max-height);font-family:var(--toastify-font-family);z-index:0;display:flex;flex:1 auto;align-items:center;word-break:break-word}@media only screen and (max-width: 480px){.Toastify__toast-container{width:100vw;left:env(safe-area-inset-left);margin:0}.Toastify__toast-container--top-left,.Toastify__toast-container--top-center,.Toastify__toast-container--top-right{top:env(safe-area-inset-top);transform:translate(0)}.Toastify__toast-container--bottom-left,.Toastify__toast-container--bottom-center,.Toastify__toast-container--bottom-right{bottom:env(safe-area-inset-bottom);transform:translate(0)}.Toastify__toast-container--rtl{right:env(safe-area-inset-right);left:initial}.Toastify__toast{--toastify-toast-width: 100%;margin-bottom:0;border-radius:0}}.Toastify__toast-container[data-stacked=true]{width:var(--toastify-toast-width)}.Toastify__toast--stacked{position:absolute;width:100%;transform:translate3d(0,var(--y),0) scale(var(--s));transition:transform .3s}.Toastify__toast--stacked[data-collapsed] .Toastify__toast-body,.Toastify__toast--stacked[data-collapsed] .Toastify__close-button{transition:opacity .1s}.Toastify__toast--stacked[data-collapsed=false]{overflow:visible}.Toastify__toast--stacked[data-collapsed=true]:not(:last-child)>*{opacity:0}.Toastify__toast--stacked:after{content:"";position:absolute;left:0;right:0;height:calc(var(--g) * 1px);bottom:100%}.Toastify__toast--stacked[data-pos=top]{top:0}.Toastify__toast--stacked[data-pos=bot]{bottom:0}.Toastify__toast--stacked[data-pos=bot].Toastify__toast--stacked:before{transform-origin:top}.Toastify__toast--stacked[data-pos=top].Toastify__toast--stacked:before{transform-origin:bottom}.Toastify__toast--stacked:before{content:"";position:absolute;left:0;right:0;bottom:0;height:100%;transform:scaleY(3);z-index:-1}.Toastify__toast--rtl{direction:rtl}.Toastify__toast--close-on-click{cursor:pointer}.Toastify__toast-icon{margin-inline-end:10px;width:22px;flex-shrink:0;display:flex}.Toastify--animate{animation-fill-mode:both;animation-duration:.5s}.Toastify--animate-icon{animation-fill-mode:both;animation-duration:.3s}.Toastify__toast-theme--dark{background:var(--toastify-color-dark);color:var(--toastify-text-color-dark)}.Toastify__toast-theme--light,.Toastify__toast-theme--colored.Toastify__toast--default{background:var(--toastify-color-light);color:var(--toastify-text-color-light)}.Toastify__toast-theme--colored.Toastify__toast--info{color:var(--toastify-text-color-info);background:var(--toastify-color-info)}.Toastify__toast-theme--colored.Toastify__toast--success{color:var(--toastify-text-color-success);background:var(--toastify-color-success)}.Toastify__toast-theme--colored.Toastify__toast--warning{color:var(--toastify-text-color-warning);background:var(--toastify-color-warning)}.Toastify__toast-theme--colored.Toastify__toast--error{color:var(--toastify-text-color-error);background:var(--toastify-color-error)}.Toastify__progress-bar-theme--light{background:var(--toastify-color-progress-light)}.Toastify__progress-bar-theme--dark{background:var(--toastify-color-progress-dark)}.Toastify__progress-bar--info{background:var(--toastify-color-progress-info)}.Toastify__progress-bar--success{background:var(--toastify-color-progress-success)}.Toastify__progress-bar--warning{background:var(--toastify-color-progress-warning)}.Toastify__progress-bar--error{background:var(--toastify-color-progress-error)}.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error{background:var(--toastify-color-transparent)}.Toastify__close-button{color:#fff;position:absolute;top:6px;right:6px;background:transparent;outline:none;border:none;padding:0;cursor:pointer;opacity:.7;transition:.3s ease;z-index:1}.Toastify__toast--rtl .Toastify__close-button{left:6px;right:unset}.Toastify__close-button--light{color:#000;opacity:.3}.Toastify__close-button>svg{fill:currentColor;height:16px;width:14px}.Toastify__close-button:hover,.Toastify__close-button:focus{opacity:1}@keyframes Toastify__trackProgress{0%{transform:scaleX(1)}to{transform:scaleX(0)}}.Toastify__progress-bar{position:absolute;bottom:0;left:0;width:100%;height:100%;z-index:1;opacity:.7;transform-origin:left}.Toastify__progress-bar--animated{animation:Toastify__trackProgress linear 1 forwards}.Toastify__progress-bar--controlled{transition:transform .2s}.Toastify__progress-bar--rtl{right:0;left:initial;transform-origin:right;border-bottom-left-radius:initial}.Toastify__progress-bar--wrp{position:absolute;overflow:hidden;bottom:0;left:0;width:100%;height:5px;border-bottom-left-radius:var(--toastify-toast-bd-radius);border-bottom-right-radius:var(--toastify-toast-bd-radius)}.Toastify__progress-bar--wrp[data-hidden=true]{opacity:0}.Toastify__progress-bar--bg{opacity:var(--toastify-color-progress-bgo);width:100%;height:100%}.Toastify__spinner{width:20px;height:20px;box-sizing:border-box;border:2px solid;border-radius:100%;border-color:var(--toastify-spinner-color-empty-area);border-right-color:var(--toastify-spinner-color);animation:Toastify__spin .65s linear infinite}@keyframes Toastify__bounceInRight{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(3000px,0,0)}60%{opacity:1;transform:translate3d(-25px,0,0)}75%{transform:translate3d(10px,0,0)}90%{transform:translate3d(-5px,0,0)}to{transform:none}}@keyframes Toastify__bounceOutRight{20%{opacity:1;transform:translate3d(-20px,var(--y),0)}to{opacity:0;transform:translate3d(2000px,var(--y),0)}}@keyframes Toastify__bounceInLeft{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(-3000px,0,0)}60%{opacity:1;transform:translate3d(25px,0,0)}75%{transform:translate3d(-10px,0,0)}90%{transform:translate3d(5px,0,0)}to{transform:none}}@keyframes Toastify__bounceOutLeft{20%{opacity:1;transform:translate3d(20px,var(--y),0)}to{opacity:0;transform:translate3d(-2000px,var(--y),0)}}@keyframes Toastify__bounceInUp{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,3000px,0)}60%{opacity:1;transform:translate3d(0,-20px,0)}75%{transform:translate3d(0,10px,0)}90%{transform:translate3d(0,-5px,0)}to{transform:translateZ(0)}}@keyframes Toastify__bounceOutUp{20%{transform:translate3d(0,calc(var(--y) - 10px),0)}40%,45%{opacity:1;transform:translate3d(0,calc(var(--y) + 20px),0)}to{opacity:0;transform:translate3d(0,-2000px,0)}}@keyframes Toastify__bounceInDown{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,-3000px,0)}60%{opacity:1;transform:translate3d(0,25px,0)}75%{transform:translate3d(0,-10px,0)}90%{transform:translate3d(0,5px,0)}to{transform:none}}@keyframes Toastify__bounceOutDown{20%{transform:translate3d(0,calc(var(--y) - 10px),0)}40%,45%{opacity:1;transform:translate3d(0,calc(var(--y) + 20px),0)}to{opacity:0;transform:translate3d(0,2000px,0)}}.Toastify__bounce-enter--top-left,.Toastify__bounce-enter--bottom-left{animation-name:Toastify__bounceInLeft}.Toastify__bounce-enter--top-right,.Toastify__bounce-enter--bottom-right{animation-name:Toastify__bounceInRight}.Toastify__bounce-enter--top-center{animation-name:Toastify__bounceInDown}.Toastify__bounce-enter--bottom-center{animation-name:Toastify__bounceInUp}.Toastify__bounce-exit--top-left,.Toastify__bounce-exit--bottom-left{animation-name:Toastify__bounceOutLeft}.Toastify__bounce-exit--top-right,.Toastify__bounce-exit--bottom-right{animation-name:Toastify__bounceOutRight}.Toastify__bounce-exit--top-center{animation-name:Toastify__bounceOutUp}.Toastify__bounce-exit--bottom-center{animation-name:Toastify__bounceOutDown}@keyframes Toastify__zoomIn{0%{opacity:0;transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes Toastify__zoomOut{0%{opacity:1}50%{opacity:0;transform:translate3d(0,var(--y),0) scale3d(.3,.3,.3)}to{opacity:0}}.Toastify__zoom-enter{animation-name:Toastify__zoomIn}.Toastify__zoom-exit{animation-name:Toastify__zoomOut}@keyframes Toastify__flipIn{0%{transform:perspective(400px) rotateX(90deg);animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotateX(-20deg);animation-timing-function:ease-in}60%{transform:perspective(400px) rotateX(10deg);opacity:1}80%{transform:perspective(400px) rotateX(-5deg)}to{transform:perspective(400px)}}@keyframes Toastify__flipOut{0%{transform:translate3d(0,var(--y),0) perspective(400px)}30%{transform:translate3d(0,var(--y),0) perspective(400px) rotateX(-20deg);opacity:1}to{transform:translate3d(0,var(--y),0) perspective(400px) rotateX(90deg);opacity:0}}.Toastify__flip-enter{animation-name:Toastify__flipIn}.Toastify__flip-exit{animation-name:Toastify__flipOut}@keyframes Toastify__slideInRight{0%{transform:translate3d(110%,0,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInLeft{0%{transform:translate3d(-110%,0,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInUp{0%{transform:translate3d(0,110%,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInDown{0%{transform:translate3d(0,-110%,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideOutRight{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(110%,var(--y),0)}}@keyframes Toastify__slideOutLeft{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(-110%,var(--y),0)}}@keyframes Toastify__slideOutDown{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(0,500px,0)}}@keyframes Toastify__slideOutUp{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(0,-500px,0)}}.Toastify__slide-enter--top-left,.Toastify__slide-enter--bottom-left{animation-name:Toastify__slideInLeft}.Toastify__slide-enter--top-right,.Toastify__slide-enter--bottom-right{animation-name:Toastify__slideInRight}.Toastify__slide-enter--top-center{animation-name:Toastify__slideInDown}.Toastify__slide-enter--bottom-center{animation-name:Toastify__slideInUp}.Toastify__slide-exit--top-left,.Toastify__slide-exit--bottom-left{animation-name:Toastify__slideOutLeft;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--top-right,.Toastify__slide-exit--bottom-right{animation-name:Toastify__slideOutRight;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--top-center{animation-name:Toastify__slideOutUp;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--bottom-center{animation-name:Toastify__slideOutDown;animation-timing-function:ease-in;animation-duration:.3s}@keyframes Toastify__spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridal Boutique</title>
 
-    <!-- Luxury Salon Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-    
+<!-- PREMIUM FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lora:wght@400;500&amp;display=swap" rel="stylesheet">
+
 <script>
 
 function initTemplateNavSlider() {
@@ -130,202 +131,428 @@ async function loadProducts() {
   loadProducts();
 });
 </script>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-        }
+<style>
+/* GLOBAL */
+html {
+    scroll-behavior: smooth;
+}
 
-        /* NAV */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
+body {
+    margin: 0;
+    font-family: "Lora", serif;
+    background-color: #faf7f5;
+    color: #4a3f3b;
+}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: #111;
-            color: white;
-        }
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+}
 
-        nav h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.5rem, 2vw, 1.8rem);
-            margin: 0;
-            white-space: nowrap;
-        }
+/* -------------------------------------- */
+/* NAVIGATION */
+/* -------------------------------------- */
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 15px;
+    background: #222;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: navFade 1.2s ease forwards;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
-            white-space: nowrap;
-        }
+@keyframes navFade {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        nav a:hover {
-            color: #f2c14e;
-        }
+nav h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: #F7B161;
+    margin: 0;
+    position: relative;
+    padding: 0 25px;
+    animation: titleGlow 2s ease forwards;
+}
 
-        /* HERO */
-        #hero {
-            position: relative;
-            height: 80vh;
-            min-height: 400px;
-            overflow: hidden;
-        }
+@keyframes titleGlow {
+    from { letter-spacing: 1px; opacity: 0.5; }
+    to { letter-spacing: 3px; opacity: 1; }
+}
 
-        .carousel {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+/* Rose‑gold gradient lines */
+nav h1::before,
+nav h1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 2px;
+    background: linear-gradient(to right, #F7B161, #fff);
+}
 
-        .slides {
-            display: flex;
-            height: 100%;
-            transition: transform 1s ease;
-        }
+nav h1::before { left: -5px; }
+nav h1::after { right: -5px; }
 
-        .slides img {
-            min-width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* -------------------------------------- */
+/* HERO SECTION */
+/* -------------------------------------- */
 
-        /* TEXT OVERLAY */
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            text-shadow: 0 0 10px black;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem 1.5rem;
-            border-radius: 0.75rem;
-            max-width: 90%;
-        }
+#hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    pointer-events: none;
+}
 
-        .hero-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            margin: 0;
-        }
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: slowZoom 12s ease-in-out infinite alternate;
+    pointer-events: fill;
+}
 
-        .hero-text p {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            margin-top: 0.5rem;
-        }
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
 
-        /* GALLERY */
-        #gallery {
-            padding: 2rem;
-            background: #111;
-        }
+/* Cinematic gradient overlay */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.55)
+    );
+    z-index: 1;
+}
 
-        #gallery h2 {
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            color: #000;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
+/* Hero text */
+#hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
+    width: 85%;
+    animation: fadeInHero 1.5s ease forwards;
+    pointer-events: fill;
+}
 
-        .gallery-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translate(-50%, -40%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
 
-        .gallery-grid img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+#hero-text h2 {
+    font-size: 60px;
+    margin: 0 0 20px;
+    color: #fff;
+}
 
-        @media (max-width: 480px) {
-            #hero {
-                position: relative;
-                height: 55vh;
-                min-height: 400px;
-                overflow: hidden;
-            }
-        }
-    </style>
+#hero-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/* Optional CTA button */
+#hero-text a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 28px;
+    background: #F7B161;
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+#hero-text a:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* -------------------------------------- */
+/* ABOUT SECTION */
+/* -------------------------------------- */
+
+#about {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+    border-top: solid #F7B161 2px;
+    border-bottom: solid #F7B161 2px;
+}
+
+#about h2 {
+    font-size: 42px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Decorative divider */
+#about h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #F7B161;
+    margin: 12px auto 25px;
+    border-radius: 2px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #000;
+    max-width: 55%;
+    margin: 0 auto;
+}
+
+/* -------------------------------------- */
+/* GALLERY */
+/* -------------------------------------- */
+
+#gallery {
+    padding: 15px 40px;
+    background: #222;
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 42px;
+    color: #F7B161;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* -------------------------------------- */
+/* SIGN-UP SECTION */
+/* -------------------------------------- */
+
+#signup {
+    background: #fff7f0;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid #F7B161;
+    border-bottom: 2px solid #F7B161;
+}
+
+#signup h2 {
+    font-size: 38px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+#signup p {
+    font-size: 18px;
+    color: #4a3f3b;
+    margin-bottom: 25px;
+}
+
+#signup form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#signup input {
+    padding: 12px 15px;
+    width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#signup button {
+    padding: 12px 25px;
+    background: #F7B161;
+    border: none;
+    color: #222;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#signup button:hover {
+    background: #fff;
+    color: #000;
+    border: 1px solid #F7B161;
+}
+
+/* -------------------------------------- */
+/* CONTACT SECTION */
+/* -------------------------------------- */
+
+#contact {
+    background: #222;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin: 0 auto 30px;
+}
+
+#contact h3 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #F7B161;
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #fff;
+    color: #000;
+    border: 1px solid #F7B161;
+}
+
+/* -------------------------------------- */
+/* FOOTER */
+/* -------------------------------------- */
+
+footer {
+    background: #111;
+    color: #eee;
+    text-align: center;
+    padding: 25px 10px;
+    border-top: 2px solid #F7B161;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* -------------------------------------- */
+/* TABLET */
+/* -------------------------------------- */
+
+@media (max-width: 1024px) and (min-width: 481px){
+    #about p { max-width: 70%; }
+}
+
+/* -------------------------------------- */
+/* MOBILE */
+/* -------------------------------------- */
+
+@media (max-width: 480px){
+    #hero { height: 55vh; }
+    #hero-text { padding: 15px; }
+    #hero-text h2 { font-size: 32px; }
+    #hero-text p { font-size: 16px; }
+
+    #about { padding: 25px 0px; }
+    #about h2,
+    #about p { max-width: 100%; }
+
+    #about p {
+        font-size: 20px;
+        text-align: left;
+        padding: 1rem;
+    }
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
 
 <body>
+<div id="contain">
 
-<!-- --navigation section ---->
 <nav>
     <h1 class="" style="cursor: text;">Business Name</h1>
 </nav>
 
-<!-- Hero Section -->
-<section id="hero">
-    <div class="carousel">
-        <div class="slides" style="transform: translateX(0%);">
-            <img src="images/img_0.1778764673983.jpg" alt="" style="cursor: pointer;">
-            <img src="images/img_1.1778764673983.jpg" alt="" style="cursor: pointer;">
-        </div>
+<div id="hero">
+    <img src="images/img_0.1778766090088.jpg" alt="Bridal Gown" style="cursor: pointer;">
+    <div id="hero-text">
+        <h2 class="" style="cursor: text;">Your Dream Dress Awaits</h2>
+        <p class="" style="cursor: text;">Discover timeless elegance, luxurious fabrics, and handcrafted details designed to make your special day unforgettable.</p>
+        <a href="#about">Book Appointment</a>
     </div>
+</div>
 
-    <div class="hero-text">
-        <h2 class="" style="cursor: text;">Add Text</h2>
-        <p class="" style="cursor: text;">Add Paragraph Here</p>
-    </div>
-</section>
-
-<!-- About Us Section -->
-<section id="about" style="padding: 1rem 2rem; background: #111;">
-    <div style="max-width: 1100px;margin: 0 auto;display: flex;flex-wrap: wrap;align-items: center;gap: 1rem;">
-
-        <div style="flex: 1 1 450px;">
-            <h2 style="font-family: &quot;Playfair Display&quot;, serif; font-size: 2.4rem; font-weight: 900; margin-bottom: 1rem; color: rgb(255, 255, 255); letter-spacing: 1px; cursor: text;" class="">
-                About Us
-            </h2>
-
-            <p style="font-size: 1.15rem; line-height: 1.8; color: rgb(255, 255, 255); margin-bottom: 1.5rem; cursor: text;" class="">
-                At <strong>Business Name</strong>, we’re dedicated to creating a space where beauty, comfort, and confidence come together. 
-                Our team of experienced stylists and beauty professionals are passionate about delivering exceptional results while making every visit feel relaxing and personal.
-            </p>
-
-            <p style="font-size: 1.15rem; line-height: 1.8; color: rgb(255, 255, 255); cursor: text;" class="">
-                From modern styling to luxurious treatments, we focus on quality, care, and attention to detail.  
-                Your experience matters — and we’re here to ensure you leave feeling refreshed, confident, and truly cared for.
-            </p>
-        </div>
-    </div>
+<section id="about">
+    <h2 class="" style="cursor: text;">About Us</h2>
+    <p class="" style="cursor: text;">
+        Welcome to our bridal boutique — a place where elegance, romance, and timeless beauty come together.
+        Use this space to tell your story: who you are, what inspires your work, and what makes your boutique
+        special. Share your passion, your experience, and the heart behind your business so brides can feel
+        connected the moment they arrive.
+    </p>
 </section>
 
 <!-- Store Snippet Start -->
 <div class="templateNav-wrapper" style="display: none;">
   <div class="template-list">
 
-    <div class="template-card">
-      <img src="images/img_2.jpg" alt="" style="cursor: pointer;">
+    <div class="template-card active">
+      <img src="images/img_1.1778766090088.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€29</div>
@@ -333,15 +560,15 @@ async function loadProducts() {
     </div>
 
     <div class="template-card">
-      <img src="images/img_3.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_2.1778766090088.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
       <a class="btn" href="#">Buy Now</a>
     </div>
 
-    <div class="template-card active">
-      <img src="images/img_4.jpg" alt="" style="cursor: pointer;">
+    <div class="template-card">
+      <img src="images/img_3.1778766090088.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -349,7 +576,7 @@ async function loadProducts() {
     </div>
 
     <div class="template-card">
-      <img src="images/img_5.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_4.1778766090088.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
@@ -357,7 +584,7 @@ async function loadProducts() {
     </div>
 
     <div class="template-card">
-      <img src="images/img_6.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_5.1778766090088.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -506,203 +733,61 @@ if (templateNavPrev && templateNavNext) {
 </script>
 <!-- Store Snippet End -->
 
-<!-- Gallery -->
-<section id="gallery" style="padding: 2rem; background: #eee;color:#000;">
-    <h2 class="" style="cursor: text;">Gallery</h2>
-
-    <div style="
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-    ">
-        <img src="images/img_7.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-        <img src="images/img_8.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-        <img src="images/img_9.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-        <img src="images/img_10.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-
-        <img src="images/img_11.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-        <img src="images/img_12.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-        <img src="images/img_13.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
-        <img src="images/img_14.1778764673983.jpg" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; cursor: pointer;">
+<section id="gallery">
+    <h2 class="" style="cursor: text;">Our Gallery</h2>
+    <div class="gallery-grid">
+        <img src="images/img_6.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_7.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_8.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_9.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_10.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_11.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_12.1778766090088.jpg" style="cursor: pointer;">
+        <img src="images/img_13.1778766090088.jpg" style="cursor: pointer;">
     </div>
 </section>
 
+<!-- SIGN-UP SECTION -->
+<section id="signup">
+    <h2 class="" style="cursor: text;">Join Our Bridal Community</h2>
+    <p class="" style="cursor: text;">Be the first to know about new collections, exclusive events, and special appointments.</p>
 
-<!-- sign up to newsletter -->
-<!-- Newsletter Signup -->
-<section id="newsletter" style="
-    background: #111;
-    padding: 3rem 2rem;
-    text-align: center;
-    color: #fff;
-">
-    <h2 style="font-family: &quot;Playfair Display&quot;, serif; font-size: 2.3rem; margin-bottom: 0.5rem; cursor: text;" class="">
-        Join Our Newsletter
-    </h2>
-
-    <p style="font-size: 1.1rem; max-width: 600px; margin: 0px auto 1.5rem; line-height: 1.6; opacity: 0.9; cursor: text;" class="">
-        Be the first to know about new styles, exclusive offers, and beauty tips from our stylists.
-    </p>
-
-    <form style="
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-    ">
-        <input type="email" placeholder="Enter your email" required="" style="
-            padding: 0.8rem 1rem;
-            width: 280px;
-            max-width: 90%;
-            border-radius: 6px;
-            border: none;
-            outline: none;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-        ">
-
-        <button type="submit" style="
-            padding: 0.8rem 1.5rem;
-            background: #f2c14e;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            transition: 0.3s;
-        ">
-            Subscribe
-        </button>
+    <form>
+        <input type="email" placeholder="Enter your email" required="">
+        <button type="submit">Sign Up</button>
     </form>
 </section>
 
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2 class="" style="cursor: text;">Contact Us</h2>
 
-<!-- Contact Section -->
-<section id="contact" style="
-    background: #eee;
-    padding: 3rem 2rem;
-    color: #000;
-">
-    <h2 style="font-family: &quot;Playfair Display&quot;, serif; font-size: 2.3rem; text-align: center; margin-bottom: 0.5rem; cursor: text;" class="">
-        Contact Us
-    </h2>
-
-    <p style="text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0px auto 2rem; opacity: 0.9; line-height: 1.6; cursor: text;" class="">
-        Have a question, want to book an appointment, or need advice from our stylists?  
-        We’d love to hear from you.
-    </p>
-
-    <div style="
-        max-width: 900px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-    ">
-
-        <!-- Contact Form -->
-        <form style="
-            flex: 1 1 350px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        ">
-            <input type="text" placeholder="Your Name" required="" style="
-                padding: 0.9rem 1rem;
-                border-radius: 6px;
-                border: none;
-                outline: none;
-                font-size: 1rem;
-                font-family: 'Poppins', sans-serif;
-            ">
-
-            <input type="email" placeholder="Your Email" required="" style="
-                padding: 0.9rem 1rem;
-                border-radius: 6px;
-                border: none;
-                outline: none;
-                font-size: 1rem;
-                font-family: 'Poppins', sans-serif;
-            ">
-
-            <textarea placeholder="Your Message" rows="5" required="" style="
-                padding: 0.9rem 1rem;
-                border-radius: 6px;
-                border: none;
-                outline: none;
-                font-size: 1rem;
-                font-family: 'Poppins', sans-serif;
-                resize: none;
-            "></textarea>
-
-            <button type="submit" style="
-                padding: 0.9rem 1rem;
-                background: #f2c14e;
-                border: none;
-                border-radius: 6px;
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                font-family: 'Poppins', sans-serif;
-                transition: 0.3s;
-            ">
-                Send Message
-            </button>
-        </form>
-
-        <!-- Contact Info -->
-        <div style="
-            flex: 1 1 300px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        ">
-            <h3 style="font-family: &quot;Playfair Display&quot;, serif; font-size: 1.6rem; margin-bottom: 1rem; cursor: text;" class="">Get in Touch</h3>
-
-            <p class="" style="cursor: text;"><strong>Phone:</strong> <a href="tel:000‑000‑0000">000‑000‑0000</a></p>
-            <p class="" style="cursor: text;"><strong>Email:</strong> info@yoursalon.com</p>
-            <p class="" style="cursor: text;"><strong>Address:</strong><br>
-               123 Beauty Street,<br>
-               Cork, Ireland
-            </p>
-
-            <p style="opacity: 0.8; margin-top: 1rem; cursor: text;" class="">
-                Open Monday – Saturday<br>
-                9:00 AM – 6:00 PM
-            </p>
+    <div class="contact-grid">
+        <div>
+            <h3 class="" style="cursor: text;">Visit Us</h3>
+            <p class="" style="cursor: text;">123 Bridal Lane<br>Cork, Co. Cork</p>
         </div>
 
+        <div>
+            <h3 class="" style="cursor: text;">Hours</h3>
+            <p class="" style="cursor: text;">Mon–Fri: 10am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
+        </div>
+
+        <div>
+            <h3 class="" style="cursor: text;">Get In Touch</h3>
+            <p class="" style="cursor: text;">Email: info@bridalboutique.com<br>Phone: (000) 000‑0000</p>
+        </div>
     </div>
+
+    <a href="#hero" class="contact-btn">Book Your Appointment</a>
 </section>
 
+<footer>
+    © 2026 Bridal Boutique — Elegance in Every Detail
+</footer>
+
+</div>
 
 
 
-<!-- Mobile layout -->
-<style>
-@media (max-width: 768px) {
-    #gallery div {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-</style>
-
-<script>
-    let index = 0;
-    const slides = document.querySelector(".slides");
-    const totalSlides = document.querySelectorAll(".slides img").length;
-
-    function nextSlide() {
-        index = (index + 1) % totalSlides;
-        slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    setInterval(nextSlide, 4000);
-</script>
-
-
-
-<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController2951" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-f3f0f6331c1d11e8ebf0b28cca9c4b68.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%22e3937b43-089d-45dc-8ce1-b907058e44a8%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22control%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=e3937b43-089d-45dc-8ce1-b907058e44a8&amp;stripeObjId=sobj-5da7844f-b208-4b8d-b8aa-dc27237cf3bb&amp;firstStripeInstanceCreatedLatency=21&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1778764572440&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;mids[sid]=NA&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fhair%2Fhair.html&amp;controllerId=__privateStripeController2951" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController2950" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fhair%2Fhair.html&amp;title=Salon&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;sid=NA&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
+<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController3481" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-f3f0f6331c1d11e8ebf0b28cca9c4b68.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%2233c5e8d2-f1d8-445e-9683-c6b703f50e0e%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22control%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=33c5e8d2-f1d8-445e-9683-c6b703f50e0e&amp;stripeObjId=sobj-fc3077ce-1e84-4cf7-9fbf-98eb426e417b&amp;firstStripeInstanceCreatedLatency=11&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1778766084895&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=40348d39-2911-48f2-bb70-f1edc0ee5774bb2ef3&amp;mids[sid]=7d1e397c-9e28-4401-8c13-162eb6b82f5393f19b&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;controllerId=__privateStripeController3481" aria-hidden="true" tabindex="-1" style="border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><iframe name="__privateStripeMetricsController3480" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;title=Bridal%20Boutique&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=40348d39-2911-48f2-bb70-f1edc0ee5774bb2ef3&amp;sid=7d1e397c-9e28-4401-8c13-162eb6b82f5393f19b&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
