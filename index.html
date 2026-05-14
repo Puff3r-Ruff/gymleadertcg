@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Luxury Florist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-    
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paws &amp; Shine Grooming</title>
+
+<!-- ⭐ Professional Font Added -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
 <script>
 
 function initTemplateNavSlider() {
@@ -129,593 +131,419 @@ async function loadProducts() {
 });
 </script>
 
-
 <style>
-
-/* -------------------- GLOBAL -------------------- */
-
-body{
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #ffffff;
-    color: #333;
-    overflow-x: hidden;
+/* ---------------- GLOBAL ---------------- */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f8fafc;
+  color: #333;
 }
 
-h1, h2, h3, h4{
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.5px;
+h1, h2, h3 {
+  font-weight: 600;
 }
 
-:root{
-    --gold: #C9A86A;
-    --soft-pink: #F7EFEA;
-    --dark: #2E2E2E;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Fade-in animation */
-.fade-in{
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1.2s ease forwards;
+/* ---------------- NAV ---------------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
 }
 
-@keyframes fadeIn{
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+nav .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4a90e2;
 }
 
-/* -------------------- SECTION TITLES -------------------- */
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
 
-.section-title{
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border-radius: 1.3rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.hero-content button {
+  padding: 15px 40px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  background: #3a78c2;
+}
+
+/* ---------------- ABOUT ---------------- */
+#about {
+  padding: 60px 20px;
+  background: #63AEFF;
+  border-top: 1px solid #d6e8ff;
+  border-bottom: 1px solid #d6e8ff;
+  display: flex;
+  justify-content: center;
+  color: #333;
+}
+
+.about-container {
+  max-width: 750px;
+  text-align: left;
+  background: white;
+  padding: 40px 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  color: #000;
+}
+
+#about-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #000;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#about-btn:hover {
+  background: #3a78c2;
+  transform: translateY(-2px);
+}
+
+/* ---------------- SERVICES ---------------- */
+.services {
+  padding: 50px 8%;
     text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-title h2{
-    font-size: 2.4rem;
-    color: var(--dark);
-    margin-bottom: 10px;
-}
-
-.section-title .line{
-    width: 80px;
-    height: 3px;
-    background: var(--gold);
-    margin: 0 auto;
-    border-radius: 2px;
-}
-
-/* -------------------- NAV -------------------- */
-
-nav{
-    width: 100%;
-    height: 55px;
-    position: relative;
-    background: white;
-    border-bottom: 1px solid #eee;
-    overflow: hidden;
-    z-index: 9999;
-}
-
-nav h4{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    font-size: 1.05rem;
-    margin: 0;
-    color: var(--dark);
-}
-
-nav h4.active{
-    opacity: 1;
-}
-
-.arrow{
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    padding: 5px 10px;
-    cursor: pointer;
-    opacity: 0.5;
-    z-index: 20;
-    color: var(--gold);
-    user-select: none;
-    transition: opacity 0.3s ease;
-}
-
-.arrow:hover{
-    opacity: 1;
-}
-
-.left-arrow{ left: 20px; }
-.right-arrow{ right: 20px; }
-
-/* -------------------- HERO -------------------- */
-
-/* -------------------- HERO -------------------- */
-
-#hero{
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    pointer-events: none;
-}
-
-/* The hero image behaves like background-size: cover */
-#hero .hero-bg{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: heroZoom 18s ease-in-out infinite alternate;
-    z-index: 1;
-    pointer-events: fill;
-}
-
-/* Zoom animation */
-@keyframes heroZoom{
-    from{ transform: scale(1); }
-    to{ transform: scale(1.08); }
-}
-
-/* Gradient overlay */
-#hero::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0.55)
-    );
-    z-index: 2;
-}
-
-/* Text box */
-#hero .hero-text{
-    position: relative;
-    z-index: 3;
-    background: rgba(255,255,255,0.85);
-    padding: 40px 60px;
-    border-radius: 12px;
-    color: var(--dark);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-    max-width: 650px;
-    pointer-events: fill;
-}
-
-#hero h2{
-    margin: 0;
-    font-size: 2.8rem;
-    color: var(--gold);
-}
-
-#hero p{
-    margin-top: 12px;
-    font-size: 1.25rem;
-}
-
-
-/* -------------------- ABOUT SECTION -------------------- */
-
-#about{
-    width: 100%;
-    padding: 30px 0;
-    text-align: center;
-    position: relative;
-    background: var(--soft-pink);
-}
-
-.about-wrapper{
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    position: relative;
-}
-
-.about-tab{
-    width: 30%;
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: box-shadow 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.about-tab:hover{
-    box-shadow: 0 14px 35px rgba(0,0,0,0.18);
-    border: 2px solid var(--gold);
-}
-
-.about-tab img{
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-.about-tab h2{
-    color: var(--gold);
-    margin-bottom: 10px;
-    font-size: 1.6rem;
-}
-
-/* ABOUT ARROWS */
-.about-arrow{
-    display: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    padding: 10px 15px;
-    cursor: pointer;
-    opacity: 0.4;
-    user-select: none;
-    z-index: 50;
-    color:#fff;
-    transition: opacity 0.3s ease;
-}
-
-.about-arrow:hover{
-    opacity: 1;
-}
-
-.about-left{ left: 20px; }
-.about-right{ right: 20px; }
-
-/* -------------------- GALLERY -------------------- */
-
-#gallery{
-    width: 100%;
-    padding: 60px 0;
     background: #fff;
+    color: #000;
+}
+
+.services-grid {
+  margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-#gallery img{
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
-/* MOBILE: 2×2 grid */
-@media (max-width: 600px){
-    #gallery{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 30px 0px;
-    }
-
-    #gallery img{
-        height: 180px;
-    }
-}
-
-/* -------------------- NEWSLETTER -------------------- */
-
-#newsletter{
-    width: 100%;
-    padding: 20px 0;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.newsletter-inner{
-    background:#fff;
-    padding: 50px 60px;
-    border-radius: 16px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-    text-align: center;
-    width: 90%;
-}
-
-#newsletter h2{
-    font-size: 2.2rem;
-    color: var(--gold);
-    margin-bottom: 10px;
-}
-
-#newsletter p{
-    font-size: 1.1rem;
-    color: var(--dark);
-    margin-bottom: 25px;
-}
-
-.newsletter-form{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.newsletter-form input{
-    padding: 14px 5px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 65%;
-    font-size: 1rem;
-}
-
-.newsletter-form button{
-    padding: 14px 22px;
-    background: var(--gold);
-    border: none;
-    color: white;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.newsletter-form button:hover{
-    background: #b89455;
-}
-
-/* Mobile newsletter */
-@media (max-width: 600px){
-    .newsletter-inner{
-        padding: 40px 25px;
-    }
-
-    .newsletter-form{
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .newsletter-form input{
-        width: 100%;
-    }
-}
-
-/* -------------------- CONTACT SECTION -------------------- */
-
-#contact{
-    width: 100%;
-    padding: 40px 0;
-    background: var(--soft-pink);
-    display: flex;
-    justify-content: center;
-}
-
-.contact-inner{
-    background: white;
-    padding: 60px;
-    border-radius: 16px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-    max-width: 900px;
-    width: 90%;
-    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
+    color: #000;
+  }
+
+.service-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
-.contact-info{
-    width: 50%;
+.service-card:hover {
+  transform: translateY(-8px);
 }
 
-.contact-info h2{
-    font-size: 2.2rem;
-    color: var(--gold);
-    margin-bottom: 10px;
+.service-card img {
+  width: 80px;
+  margin-bottom: 20px;
 }
 
-.contact-info p{
-    font-size: 1.1rem;
-    color: var(--dark);
-    margin-bottom: 15px;
+/* ---------------- INSTAGRAM STYLE SLIDER ---------------- */
+.gallery {
+  padding: 10px 8%;
+  text-align: center;
 }
 
-.contact-details p{
-    margin: 8px 0;
-    font-size: 1rem;
+.slider-container {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
 }
 
-.contact-form{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
 }
 
-.contact-form input,
-.contact-form textarea{
-    width: 100%;
-    padding: 14px 5px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    font-family: inherit;
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
-.contact-form textarea{
-    height: 140px;
-    resize: none;
+.slider img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: transform .3s ease;
 }
 
-.contact-form button{
-    padding: 14px 22px;
-    background: var(--gold);
-    border: none;
-    color: white;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+.slider img:hover {
+  transform: scale(1.03);
 }
 
-.contact-form button:hover{
-    background: #b89455;
+/* ARROWS */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 5px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  transition: 0.2s;
 }
 
-/* MOBILE */
-@media (max-width: 600px){
-
-    .contact-inner{
-        flex-direction: column;
-        padding: 40px 25px;
-    }
-
-    .contact-info,
-    .contact-form{
-        width: 100%;
-    }
+.slider-btn:hover {
+  background: #4a90e2;
+  color: white;
 }
 
-
-/* -------------------- ABOUT MOBILE FIX -------------------- */
-
-@media (max-width: 600px){
-    .about-wrapper {
-    display: block;
-    justify-content: center;
-    gap: 40px;
-    position: relative;}
-
-.about-tab {
-    width: 100%;
-    background: white;
-    padding: 0rem;
-    border-radius: 0px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transition: box-shadow 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-    margin-bottom: 0rem;
+.slider-btn.left {
+  left: -10px;
 }
 
-.about-tab img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 0px;
-    margin-bottom: 20px;
+.slider-btn.right {
+  right: -10px;
 }
 
-#hero{
-    position: relative;
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 600px) {
+  .slider img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* ---------------- CONTACT CTA ---------------- */
+.contact-cta {
+  padding: 20px 8%;
     text-align: center;
+    background: #22E;
+    color: #fff;
+    border-top: 1px solid #d6e8ff;
 }
 
-#hero .hero-text {
-    position: relative;
-    z-index: 3;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 20px 0px 20px 0px;
-    border-radius: 0px;
-    color: var(--dark);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-    /* max-width: 650px; */
-    width: 100%;
-}
- #hero h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--gold);   
-}
-#hero p{display: none;}
-
-.section-title h2 {
-    font-size: 1.8rem;
-    color: var(--dark);
-    margin-bottom: 10px;
+.contact-cta button {
+  padding: 15px 40px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.contact-cta button:hover {
+  background: #3a78c2;
+}
+
+/* ---------------- NEWSLETTER ---------------- */
+.newsletter {
+  padding: 70px 8%;
+    text-align: center;
+    background: #63AEFF;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: #fff;
+}
+
+.newsletter h2 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 14px 20px;
+  width: 320px;
+  max-width: 90%;
+  border-radius: 30px;
+  border: 1px solid #c9dfff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.newsletter-form input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
+}
+
+.newsletter-form button {
+  padding: 14px 32px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #3a78c2;
+  transform: translateY(-2px);
+}
+
+.newsletter-success {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #3a78c2;
+  display: none;
+}
+
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #f0f6ff;
+  border-top: 1px solid #d6e8ff;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 900px) {
+  .hero {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 60vh;
+  }
+}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
 
+<script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
 <body>
 
-<!-- nav section -->
+<!-- NAV -->
 <nav>
-    <div class="arrow left-arrow">❮</div>
-    <div class="arrow right-arrow">❯</div>
-
-    <h4 class="slide active" style="cursor: text;">Email: info@florist.com</h4>
-    <h4 class="slide" style="cursor: text;">Phone: <a href="tel:000 000 000">000 000 000</a></h4>
-    <h4 class="slide" style="cursor: text;">Location: Cork</h4>
+  <p class="logo" style="cursor: text;">Paws &amp; Shine</p>
 </nav>
 
-<!-- hero section -->
-<!-- hero section -->
-<div id="hero">
-    <img class="hero-bg" src="images/img_0.1778761024012.jpg" alt="Luxury Florist Hero" style="cursor: pointer;">
+<!-- HERO -->
+<section class="hero">
+  <img src="images/img_0.1778761297044.jpg" alt="Pet Grooming" style="cursor: pointer;">
+  <div class="hero-content">
+    <h1 class="" style="cursor: text;">Premium Pet Grooming</h1>
+    <p class="" style="cursor: text;">Gentle care, happy pets, and professional grooming for dogs &amp; cats.</p>
+    <button>Book Now</button>
+  </div>
+</section>
 
-    <div class="hero-text fade-in">
-        <h2 class="" style="cursor: text;">Luxury Floral Design</h2>
-        <p class="" style="cursor: text;">Hand‑crafted arrangements for weddings, events &amp; special moments</p>
-    </div>
-</div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-container">
+    <h2 class="about-title" style="cursor: text;">About Me</h2>
 
+    <p class="about-text" style="cursor: text;">
+      Welcome to Paws &amp; Shine Grooming, where professional grooming meets luxury pet care.
+      We provide a calm, refined environment designed to give your pet a premium grooming experience.
+    </p>
 
-<!-- about us section -->
-<div id="about">
+    <button id="about-btn">Learn More</button>
 
-    <div class="section-title fade-in">
-        <h2 class="" style="cursor: text;">Our Expertise</h2>
-        <div class="line"></div>
-    </div>
-
-    <div class="about-arrow about-left">❮</div>
-    <div class="about-arrow about-right">❯</div>
-
-    <div class="about-wrapper">
-
-        <div class="about-tab fade-in active">
-            <img src="images/img_1.1778761024012.jpg" style="cursor: pointer;">
-            <h2 class="" style="cursor: text;">Wedding Florals</h2>
-            <p style="padding: 0rem 2rem 2rem; cursor: text;" class="">Elegant bouquets, arches &amp; centerpieces designed to elevate your big day.</p>
-        </div>
-
-        <div class="about-tab fade-in">
-            <img src="images/img_2.1778761024012.jpg" style="cursor: pointer;">
-            <h2 class="" style="cursor: text;">Event Styling</h2>
-            <p style="padding: 0rem 2rem 2rem; cursor: text;" class="">Luxury floral styling for corporate events, launches &amp; celebrations.</p>
-        </div>
-
-        <div class="about-tab fade-in">
-            <img src="images/img_3.1778761024012.jpg" style="cursor: pointer;">
-            <h2 class="" style="cursor: text;">Bespoke Bouquets</h2>
-            <p style="padding: 0rem 2rem 2rem; cursor: text;" class="">Hand‑crafted arrangements tailored to your style, mood &amp; occasion.</p>
-        </div>
-
-    </div>
-
-</div>
+    <p id="extra-text" style="display: none; opacity: 0; transition: opacity 0.5s; cursor: text;" class="">
+      From breed‑specific styling to tailored coat and skin care, every service is crafted with precision and comfort.
+    </p>
+  </div>
+</section>
 
 <!-- Store Snippet Start -->
 <div class="templateNav-wrapper" style="display: none;">
   <div class="template-list">
 
-    <div class="template-card active">
-      <img src="images/img_4.1778761024012.jpg" alt="" style="cursor: pointer;">
+    <div class="template-card">
+      <img src="images/img_1.1778761297044.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€29</div>
       <a class="btn" href="#">Buy Now</a>
     </div>
 
-    <div class="template-card">
-      <img src="images/img_5.1778761024012.jpg" alt="" style="cursor: pointer;">
+    <div class="template-card active">
+      <img src="images/img_2.1778761297044.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
@@ -723,7 +551,7 @@ nav h4.active{
     </div>
 
     <div class="template-card">
-      <img src="images/img_6.1778761024012.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_3.1778761297044.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -731,7 +559,7 @@ nav h4.active{
     </div>
 
     <div class="template-card">
-      <img src="images/img_7.1778761024012.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_4.1778761297044.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
@@ -739,7 +567,7 @@ nav h4.active{
     </div>
 
     <div class="template-card">
-      <img src="images/img_8.1778761024012.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_5.1778761297044.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -888,137 +716,144 @@ if (templateNavPrev && templateNavNext) {
 </script>
 <!-- Store Snippet End -->
 
-<!-- gallery -->
-<div id="gallery">
-    <img src="images/img_9.1778761024012.jpg" style="cursor: pointer;">
-    <img src="images/img_10.1778761024012.jpg" style="cursor: pointer;">
-    <img src="images/img_11.1778761024012.jpg" style="cursor: pointer;">
-    <img src="images/img_12.1778761024012.jpg" style="cursor: pointer;">
-</div>
+<!-- GALLERY (INSTAGRAM STYLE SLIDER) -->
+<section id="gallery" class="gallery">
+  <h2 class="" style="cursor: text;">Gallery</h2>
 
+  <div class="slider-container">
+    <button class="slider-btn left">❮</button>
 
-<!-- newsletter section -->
-<div id="newsletter">
-    <div class="newsletter-inner fade-in">
-        <h2 class="" style="cursor: text;">Join Our Newsletter</h2>
-        <p class="" style="cursor: text;">Be the first to receive exclusive floral offers, seasonal collections &amp; event updates.</p>
-
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email address" required="">
-            <button type="submit">Subscribe</button>
-        </form>
+    <div class="slider">
+      <img src="images/img_6.1778761297044.jpg" style="cursor: pointer;">
+      <img src="images/img_7.1778761297044.jpg" style="cursor: pointer;">
+      <img src="images/img_8.1778761297044.jpg" style="cursor: pointer;">
+      <img src="images/img_9.1778761297044.jpg" style="cursor: pointer;">
+      <img src="images/img_10.1778761297044.jpg" style="cursor: pointer;">
+      <img src="images/img_11.1778761297044.jpg" style="cursor: pointer;">
     </div>
-</div>
 
-<!-- contact section -->
-<div id="contact">
-    <div class="contact-inner fade-in">
+    <button class="slider-btn right">❯</button>
+  </div>
+</section>
 
-        <div class="contact-info">
-            <h2 class="" style="cursor: text;">Contact Us</h2>
-            <p class="" style="cursor: text;">We’d love to hear from you. Whether you're planning a wedding, event, or looking for something bespoke — our team is here to help.</p>
+<!-- NEWSLETTER SIGNUP -->
+<section class="newsletter">
+  <h2 class="" style="cursor: text;">Join Our Newsletter</h2>
+  <p class="" style="cursor: text;">Get grooming tips, special offers, and adorable pet updates straight to your inbox.</p>
 
-            <div class="contact-details">
-                <strong>Email:</strong><p class="" style="cursor: text;"> info@florist.com</p>
-                <strong>Phone:</strong><p class="" style="cursor: text;"> <a href="tel:000 000 000">000 000 000</a></p>
-                <strong>Location:</strong><p class="" style="cursor: text;"> Cork, Ireland</p>
-            </div>
-        </div>
+  <form class="newsletter-form">
+    <input type="email" id="newsletter-email" placeholder="Enter your email" required="">
+    <button type="submit">Subscribe</button>
+  </form>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required="">
-            <input type="email" placeholder="Your Email" required="">
-            <textarea placeholder="Your Message" required=""></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+  <p id="newsletter-success" class="newsletter-success" style="cursor: text;">Thank you for subscribing!</p>
+</section>
 
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <h2 class="" style="cursor: text;">Our Grooming Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="images/img_12.1778761297044.jpg" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Full Groom</h3>
+      <p class="" style="cursor: text;">Bath, haircut, nail trim, ear cleaning &amp; styling.</p>
     </div>
-</div>
+    <div class="service-card">
+      <img src="images/img_13.1778761297044.jpg" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Bath &amp; Brush</h3>
+      <p class="" style="cursor: text;">Deep clean bath, blow dry &amp; full brushing.</p>
+    </div>
+    <div class="service-card">
+      <img src="images/img_14.1778761297044.jpg" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Puppy Intro</h3>
+      <p class="" style="cursor: text;">Gentle grooming for puppies to get them comfortable.</p>
+    </div>
+  </div>
+</section>
 
 
+<!-- CONTACT CTA -->
+<section id="contact" class="contact-cta">
+  <h2 class="" style="cursor: text;">Contact Us</h2>
+  <p class="" style="cursor: text;">We’re here to make your pets look and feel their best.</p>
 
+  <div style="margin-top: 30px; font-size: 1.2rem; line-height: 1.8;">
+    <strong>📞 Phone:</strong> <a href="tel:+353 00 000 0000">+353 00 000 0000</a><br>
+    <strong>📍 Address:</strong> Main Street, Your Address, Co. , Ireland<br>
+    <strong>⏰ Hours:</strong> Mon–Sat: 9am – 6pm
+  </div>
 
+  <button style="margin-top: 35px;">Book Appointment</button>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  © 2026 Paws &amp; Shine Grooming — All Rights Reserved
+</footer>
+
+<!-- JS: ABOUT + SLIDER -->
 <script>
+// ABOUT SECTION TOGGLE
+document.getElementById("about-btn").onclick = function () {
+  const extra = document.getElementById("extra-text");
+  if (extra.style.display === "none") {
+    extra.style.display = "block";
+    setTimeout(() => extra.style.opacity = "1", 10);
+    this.textContent = "Show Less";
+  } else {
+    extra.style.opacity = "0";
+    setTimeout(() => extra.style.display = "none", 500);
+    this.textContent = "Learn More";
+  }
+};
 
-/* -------------------- NAV CAROUSEL -------------------- */
+// INSTAGRAM STYLE SLIDER
+const slider = document.querySelector(".slider");
+const btnLeft = document.querySelector(".slider-btn.left");
+const btnRight = document.querySelector(".slider-btn.right");
 
-const slides = document.querySelectorAll(".slide");
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
+btnLeft.addEventListener("click", () => {
+  slider.scrollBy({ left: -350, behavior: "smooth" });
+});
 
-let index = 0;
-let autoRotate;
+btnRight.addEventListener("click", () => {
+  slider.scrollBy({ left: 350, behavior: "smooth" });
+});
 
-function showSlide(i){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[i].classList.add("active");
+// Drag to scroll
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener("mouseleave", () => (isDown = false));
+slider.addEventListener("mouseup", () => (isDown = false));
+
+slider.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+// NEWSLETTER SUCCESS MESSAGE
+function newsletterSuccess() {
+  const email = document.getElementById("newsletter-email").value;
+  if (email.trim() === "") return;
+
+  document.getElementById("newsletter-success").style.display = "block";
+  document.getElementById("newsletter-email").value = "";
 }
-
-function nextSlide(){
-    index = (index + 1) % slides.length;
-    showSlide(index);
-}
-
-function prevSlide(){
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-}
-
-function startAuto(){
-    autoRotate = setInterval(nextSlide, 3000);
-}
-
-function stopAuto(){
-    clearInterval(autoRotate);
-}
-
-showSlide(index);
-startAuto();
-
-rightArrow.addEventListener("click", () => { stopAuto(); nextSlide(); });
-leftArrow.addEventListener("click", () => { stopAuto(); prevSlide(); });
-
-/* -------------------- ABOUT CAROUSEL -------------------- */
-
-const aboutTabs = document.querySelectorAll(".about-tab");
-const aboutLeft = document.querySelector(".about-left");
-const aboutRight = document.querySelector(".about-right");
-
-let aboutIndex = 0;
-let aboutAuto;
-
-function showAbout(i){
-    aboutTabs.forEach(t => t.classList.remove("active"));
-    aboutTabs[i].classList.add("active");
-}
-
-function nextAbout(){
-    aboutIndex = (aboutIndex + 1) % aboutTabs.length;
-    showAbout(aboutIndex);
-}
-
-function prevAbout(){
-    aboutIndex = (aboutIndex - 1 + aboutTabs.length) % aboutTabs.length;
-    showAbout(aboutIndex);
-}
-
-function startAboutAuto(){
-    aboutAuto = setInterval(nextAbout, 3000);
-}
-
-function stopAboutAuto(){
-    clearInterval(aboutAuto);
-}
-
-showAbout(aboutIndex);
-startAboutAuto();
-
-aboutRight.addEventListener("click", () => { stopAboutAuto(); nextAbout(); });
-aboutLeft.addEventListener("click", () => { stopAboutAuto(); prevAbout(); });
 
 </script>
 
 
 
-<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController0201" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-f3f0f6331c1d11e8ebf0b28cca9c4b68.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%228ee02149-8c00-415d-b251-1e1f0088e04e%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22control%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=8ee02149-8c00-415d-b251-1e1f0088e04e&amp;stripeObjId=sobj-16cc4e80-8e59-4721-9621-3ce3c52a8265&amp;firstStripeInstanceCreatedLatency=9&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1778761020362&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;mids[sid]=047817d7-1af7-4d1b-86cb-86041b05cb0c8b7a17&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fflorist%2Fflorist.html&amp;controllerId=__privateStripeController0201" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController0200" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fflorist%2Fflorist.html&amp;title=Luxury%20Florist&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;sid=047817d7-1af7-4d1b-86cb-86041b05cb0c8b7a17&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
+<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController2071" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-f3f0f6331c1d11e8ebf0b28cca9c4b68.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%22fbf4e575-7e29-4036-b004-4495e95a17b3%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22control%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=fbf4e575-7e29-4036-b004-4495e95a17b3&amp;stripeObjId=sobj-369b486e-1f13-40bd-8efd-b592bcd5b1ca&amp;firstStripeInstanceCreatedLatency=9&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1778761291337&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;mids[sid]=047817d7-1af7-4d1b-86cb-86041b05cb0c8b7a17&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fdog%2Fdog.html&amp;controllerId=__privateStripeController2071" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController2070" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fdog%2Fdog.html&amp;title=Paws%20%26%20Shine%20Grooming&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;sid=047817d7-1af7-4d1b-86cb-86041b05cb0c8b7a17&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
