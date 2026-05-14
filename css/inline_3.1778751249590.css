@@ -1,0 +1,6 @@
+
+@media (max-width: 768px) {
+    #gallery div {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
