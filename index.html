@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bridal Boutique</title>
-
-<!-- PREMIUM FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lora:wght@400;500&amp;display=swap" rel="stylesheet">
-
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luxury Florist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
 <script>
 
 function initTemplateNavSlider() {
@@ -131,439 +129,601 @@ async function loadProducts() {
 });
 </script>
 
+
 <style>
-/* GLOBAL */
-html {
-    scroll-behavior: smooth;
-}
 
-body {
+/* -------------------- GLOBAL -------------------- */
+
+body{
     margin: 0;
-    font-family: "Lora", serif;
-    background-color: #faf7f5;
-    color: #4a3f3b;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #333;
+    overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4{
     font-family: "Playfair Display", serif;
+    letter-spacing: 0.5px;
 }
 
-/* -------------------------------------- */
-/* NAVIGATION */
-/* -------------------------------------- */
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 15px;
-    background: #222;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    animation: navFade 1.2s ease forwards;
+:root{
+    --gold: #C9A86A;
+    --soft-pink: #F7EFEA;
+    --dark: #2E2E2E;
 }
 
-@keyframes navFade {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Fade-in animation */
+.fade-in{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease forwards;
 }
 
-nav h1 {
-    font-size: 2rem;
-    letter-spacing: 3px;
-    color: #F7B161;
-    margin: 0;
-    position: relative;
-    padding: 0 25px;
-    animation: titleGlow 2s ease forwards;
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes titleGlow {
-    from { letter-spacing: 1px; opacity: 0.5; }
-    to { letter-spacing: 3px; opacity: 1; }
+/* -------------------- SECTION TITLES -------------------- */
+
+.section-title{
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Rose‑gold gradient lines */
-nav h1::before,
-nav h1::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 15px;
-    height: 2px;
-    background: linear-gradient(to right, #F7B161, #fff);
+.section-title h2{
+    font-size: 2.4rem;
+    color: var(--dark);
+    margin-bottom: 10px;
 }
 
-nav h1::before { left: -5px; }
-nav h1::after { right: -5px; }
+.section-title .line{
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 0 auto;
+    border-radius: 2px;
+}
 
-/* -------------------------------------- */
-/* HERO SECTION */
-/* -------------------------------------- */
+/* -------------------- NAV -------------------- */
 
-#hero {
-    position: relative;
+nav{
     width: 100%;
-    height: 90vh;
+    height: 55px;
+    position: relative;
+    background: white;
+    border-bottom: 1px solid #eee;
     overflow: hidden;
-    pointer-events: none;
+    z-index: 9999;
 }
 
-#hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    animation: slowZoom 12s ease-in-out infinite alternate;
-    pointer-events: fill;
-}
-
-@keyframes slowZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
-}
-
-/* Cinematic gradient overlay */
-#hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.55)
-    );
-    z-index: 1;
-}
-
-/* Hero text */
-#hero-text {
+nav h4{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--dark);
+}
+
+nav h4.active{
+    opacity: 1;
+}
+
+.arrow{
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    padding: 5px 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 20;
+    color: var(--gold);
+    user-select: none;
+    transition: opacity 0.3s ease;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
+
+.left-arrow{ left: 20px; }
+.right-arrow{ right: 20px; }
+
+/* -------------------- HERO -------------------- */
+
+/* -------------------- HERO -------------------- */
+
+#hero{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    z-index: 2;
-    max-width: 700px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 6px;
-    width: 85%;
-    animation: fadeInHero 1.5s ease forwards;
+    pointer-events: none;
+}
+
+/* The hero image behaves like background-size: cover */
+#hero .hero-bg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: heroZoom 18s ease-in-out infinite alternate;
+    z-index: 1;
     pointer-events: fill;
 }
 
-@keyframes fadeInHero {
-    from { opacity: 0; transform: translate(-50%, -40%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
+/* Zoom animation */
+@keyframes heroZoom{
+    from{ transform: scale(1); }
+    to{ transform: scale(1.08); }
 }
 
-#hero-text h2 {
-    font-size: 60px;
-    margin: 0 0 20px;
-    color: #fff;
-}
-
-#hero-text p {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #fff;
-}
-
-/* Optional CTA button */
-#hero-text a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 28px;
-    background: #F7B161;
-    color: #222;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 4px;
-    transition: 0.3s ease;
-}
-
-#hero-text a:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* -------------------------------------- */
-/* ABOUT SECTION */
-/* -------------------------------------- */
-
-#about {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #fff;
-    width: 100%;
-    border-top: solid #F7B161 2px;
-    border-bottom: solid #F7B161 2px;
-}
-
-#about h2 {
-    font-size: 42px;
-    color: #000;
-    margin-bottom: 10px;
-}
-
-/* Decorative divider */
-#about h2::after {
+/* Gradient overlay */
+#hero::after{
     content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: #F7B161;
-    margin: 12px auto 25px;
-    border-radius: 2px;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.55)
+    );
+    z-index: 2;
 }
 
-#about p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #000;
-    max-width: 55%;
-    margin: 0 auto;
+/* Text box */
+#hero .hero-text{
+    position: relative;
+    z-index: 3;
+    background: rgba(255,255,255,0.85);
+    padding: 40px 60px;
+    border-radius: 12px;
+    color: var(--dark);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    max-width: 650px;
+    pointer-events: fill;
 }
 
-/* -------------------------------------- */
-/* GALLERY */
-/* -------------------------------------- */
-
-#gallery {
-    padding: 15px 40px;
-    background: #222;
+#hero h2{
+    margin: 0;
+    font-size: 2.8rem;
+    color: var(--gold);
 }
 
-#gallery h2 {
-    text-align: center;
-    font-size: 42px;
-    color: #F7B161;
-    margin-bottom: 40px;
+#hero p{
+    margin-top: 12px;
+    font-size: 1.25rem;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
 
-.gallery-grid img {
+/* -------------------- ABOUT SECTION -------------------- */
+
+#about{
     width: 100%;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.03);
-    opacity: 0.9;
-}
-
-/* -------------------------------------- */
-/* SIGN-UP SECTION */
-/* -------------------------------------- */
-
-#signup {
-    background: #fff7f0;
-    padding: 60px 20px;
+    padding: 30px 0;
     text-align: center;
-    border-top: 2px solid #F7B161;
-    border-bottom: 2px solid #F7B161;
+    position: relative;
+    background: var(--soft-pink);
 }
 
-#signup h2 {
-    font-size: 38px;
-    color: #000;
-    margin-bottom: 10px;
-}
-
-#signup p {
-    font-size: 18px;
-    color: #4a3f3b;
-    margin-bottom: 25px;
-}
-
-#signup form {
+.about-wrapper{
     display: flex;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
 }
 
-#signup input {
-    padding: 12px 15px;
-    width: 280px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+.about-tab{
+    width: 30%;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
 }
 
-#signup button {
-    padding: 12px 25px;
-    background: #F7B161;
-    border: none;
-    color: #222;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s ease;
+.about-tab:hover{
+    box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+    border: 2px solid var(--gold);
 }
 
-#signup button:hover {
-    background: #fff;
-    color: #000;
-    border: 1px solid #F7B161;
-}
-
-/* -------------------------------------- */
-/* CONTACT SECTION */
-/* -------------------------------------- */
-
-#contact {
-    background: #222;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 42px;
-    color: #fff;
+.about-tab img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
     margin-bottom: 20px;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin: 0 auto 30px;
+.about-tab h2{
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-size: 1.6rem;
 }
 
-#contact h3 {
-    color: #fff;
-    font-size: 22px;
+/* ABOUT ARROWS */
+.about-arrow{
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    padding: 10px 15px;
+    cursor: pointer;
+    opacity: 0.4;
+    user-select: none;
+    z-index: 50;
+    color:#fff;
+    transition: opacity 0.3s ease;
+}
+
+.about-arrow:hover{
+    opacity: 1;
+}
+
+.about-left{ left: 20px; }
+.about-right{ right: 20px; }
+
+/* -------------------- GALLERY -------------------- */
+
+#gallery{
+    width: 100%;
+    padding: 60px 0;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#gallery img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* MOBILE: 2×2 grid */
+@media (max-width: 600px){
+    #gallery{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 30px 0px;
+    }
+
+    #gallery img{
+        height: 180px;
+    }
+}
+
+/* -------------------- NEWSLETTER -------------------- */
+
+#newsletter{
+    width: 100%;
+    padding: 20px 0;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-inner{
+    background:#fff;
+    padding: 50px 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    text-align: center;
+    width: 90%;
+}
+
+#newsletter h2{
+    font-size: 2.2rem;
+    color: var(--gold);
     margin-bottom: 10px;
 }
 
-#contact p {
-    font-size: 18px;
-    color: #fff;
-    line-height: 1.6;
+#newsletter p{
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 25px;
 }
 
-.contact-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #F7B161;
-    color: #222;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 4px;
-    transition: 0.3s ease;
+.newsletter-form{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
-.contact-btn:hover {
-    background: #fff;
-    color: #000;
-    border: 1px solid #F7B161;
+.newsletter-form input{
+    padding: 14px 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 65%;
+    font-size: 1rem;
 }
 
-/* -------------------------------------- */
-/* FOOTER */
-/* -------------------------------------- */
-
-footer {
-    background: #111;
-    color: #eee;
-    text-align: center;
-    padding: 25px 10px;
-    border-top: 2px solid #F7B161;
-    font-size: 16px;
-    letter-spacing: 1px;
+.newsletter-form button{
+    padding: 14px 22px;
+    background: var(--gold);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-/* -------------------------------------- */
-/* TABLET */
-/* -------------------------------------- */
-
-@media (max-width: 1024px) and (min-width: 481px){
-    #about p { max-width: 70%; }
+.newsletter-form button:hover{
+    background: #b89455;
 }
 
-/* -------------------------------------- */
-/* MOBILE */
-/* -------------------------------------- */
+/* Mobile newsletter */
+@media (max-width: 600px){
+    .newsletter-inner{
+        padding: 40px 25px;
+    }
 
-@media (max-width: 480px){
-    #hero { height: 55vh; }
-    #hero-text { padding: 15px; }
-    #hero-text h2 { font-size: 32px; }
-    #hero-text p { font-size: 16px; }
+    .newsletter-form{
+        flex-direction: column;
+        gap: 15px;
+    }
 
-    #about { padding: 25px 0px; }
-    #about h2,
-    #about p { max-width: 100%; }
-
-    #about p {
-        font-size: 20px;
-        text-align: left;
-        padding: 1rem;
+    .newsletter-form input{
+        width: 100%;
     }
 }
+
+/* -------------------- CONTACT SECTION -------------------- */
+
+#contact{
+    width: 100%;
+    padding: 40px 0;
+    background: var(--soft-pink);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-inner{
+    background: white;
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    max-width: 900px;
+    width: 90%;
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info{
+    width: 50%;
+}
+
+.contact-info h2{
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.contact-info p{
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.contact-details p{
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.contact-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 14px 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.contact-form textarea{
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button{
+    padding: 14px 22px;
+    background: var(--gold);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover{
+    background: #b89455;
+}
+
+/* MOBILE */
+@media (max-width: 600px){
+
+    .contact-inner{
+        flex-direction: column;
+        padding: 40px 25px;
+    }
+
+    .contact-info,
+    .contact-form{
+        width: 100%;
+    }
+}
+
+
+/* -------------------- ABOUT MOBILE FIX -------------------- */
+
+@media (max-width: 600px){
+    .about-wrapper {
+    display: block;
+    justify-content: center;
+    gap: 40px;
+    position: relative;}
+
+.about-tab {
+    width: 100%;
+    background: white;
+    padding: 0rem;
+    border-radius: 0px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    margin-bottom: 0rem;
+}
+
+.about-tab img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+
+#hero{
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero .hero-text {
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px 0px 20px 0px;
+    border-radius: 0px;
+    color: var(--dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    /* max-width: 650px; */
+    width: 100%;
+}
+ #hero h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--gold);   
+}
+#hero p{display: none;}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
+<script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
 
 <body>
-<div id="contain">
 
+<!-- nav section -->
 <nav>
-    <h1 class="" style="cursor: text;">Business Name</h1>
+    <div class="arrow left-arrow">❮</div>
+    <div class="arrow right-arrow">❯</div>
+
+    <h4 class="slide active" style="cursor: text;">Email: info@florist.com</h4>
+    <h4 class="slide" style="cursor: text;">Phone: <a href="tel:000 000 000">000 000 000</a></h4>
+    <h4 class="slide" style="cursor: text;">Location: Cork</h4>
 </nav>
 
+<!-- hero section -->
+<!-- hero section -->
 <div id="hero">
-    <img src="images/img_0.1779019787261.jpg" alt="Bridal Gown" style="cursor: pointer;">
-    <div id="hero-text">
-        <h2 class="" style="cursor: text;">Your Dream Dress Awaits</h2>
-        <p class="" style="cursor: text;">Discover timeless elegance, luxurious fabrics, and handcrafted details designed to make your special day unforgettable.</p>
-        <a href="#about">Book Appointment</a>
+    <img class="hero-bg" src="images/img_0.1779020153382.jpg" alt="Luxury Florist Hero" style="cursor: pointer;">
+
+    <div class="hero-text fade-in">
+        <h2 class="" style="cursor: text;">Luxury Floral Design</h2>
+        <p class="" style="cursor: text;">Hand‑crafted arrangements for weddings, events &amp; special moments</p>
     </div>
 </div>
 
-<section id="about">
-    <h2 class="" style="cursor: text;">About Us</h2>
-    <p class="" style="cursor: text;">
-        We had a lovely day at Mc Donald’s several Mc Flurry’s I had a Smarties.&nbsp;</p>
-</section>
+
+<!-- about us section -->
+<div id="about">
+
+    <div class="section-title fade-in">
+        <h2 class="" style="cursor: text;">Our Expertise</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="about-arrow about-left">❮</div>
+    <div class="about-arrow about-right">❯</div>
+
+    <div class="about-wrapper">
+
+        <div class="about-tab fade-in active">
+            <img src="images/img_1.1779020153382.jpg" style="cursor: pointer;">
+            <h2 class="" style="cursor: text;">Wedding Florals</h2>
+            <p style="padding: 0rem 2rem 2rem; cursor: text;" class="">Elegant bouquets, arches &amp; centerpieces designed to elevate your big day.</p>
+        </div>
+
+        <div class="about-tab fade-in">
+            <img src="images/img_2.1779020153382.jpg" style="cursor: pointer;">
+            <h2 class="" style="cursor: text;">Event Styling</h2>
+            <p style="padding: 0rem 2rem 2rem; cursor: text;" class="">Luxury floral styling for corporate events, launches &amp; celebrations.</p>
+        </div>
+
+        <div class="about-tab fade-in">
+            <img src="images/img_3.1779020153382.jpg" style="cursor: pointer;">
+            <h2 class="" style="cursor: text;">Bespoke Bouquets</h2>
+            <p style="padding: 0rem 2rem 2rem; cursor: text;" class="">Hand‑crafted arrangements tailored to your style, mood &amp; occasion.</p>
+        </div>
+
+    </div>
+
+</div>
 
 <!-- Store Snippet Start -->
 <div class="templateNav-wrapper" style="display: none;">
   <div class="template-list">
 
     <div class="template-card">
-      <img src="images/img_1.1779019787261.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_4.1779020153382.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€29</div>
       <a class="btn" href="#">Buy Now</a>
     </div>
 
-    <div class="template-card">
-      <img src="images/img_2.1779019787261.jpg" alt="" style="cursor: pointer;">
+    <div class="template-card active">
+      <img src="images/img_5.1779020153382.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
       <a class="btn" href="#">Buy Now</a>
     </div>
 
-    <div class="template-card active">
-      <img src="images/img_3.1779019787261.jpg" alt="" style="cursor: pointer;">
+    <div class="template-card">
+      <img src="images/img_6.1779020153382.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -571,7 +731,7 @@ footer {
     </div>
 
     <div class="template-card">
-      <img src="images/img_4.1779019787261.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_7.1779020153382.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
@@ -579,7 +739,7 @@ footer {
     </div>
 
     <div class="template-card">
-      <img src="images/img_5.1779019787261.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_8.1779020153382.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -728,61 +888,137 @@ if (templateNavPrev && templateNavNext) {
 </script>
 <!-- Store Snippet End -->
 
-<section id="gallery">
-    <h2 class="" style="cursor: text;">Our Gallery</h2>
-    <div class="gallery-grid">
-        <img src="images/img_6.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_7.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_8.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_9.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_10.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_11.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_12.1779019787261.jpg" style="cursor: pointer;">
-        <img src="images/img_13.1779019787261.jpg" style="cursor: pointer;">
+<!-- gallery -->
+<div id="gallery">
+    <img src="images/img_9.1779020153382.jpg" style="cursor: pointer;">
+    <img src="images/img_10.1779020153382.jpg" style="cursor: pointer;">
+    <img src="images/img_11.1779020153382.jpg" style="cursor: pointer;">
+    <img src="images/img_12.1779020153382.jpg" style="cursor: pointer;">
+</div>
+
+
+<!-- newsletter section -->
+<div id="newsletter">
+    <div class="newsletter-inner fade-in">
+        <h2 class="" style="cursor: text;">Join Our Newsletter</h2>
+        <p class="" style="cursor: text;">Be the first to receive exclusive floral offers, seasonal collections &amp; event updates.</p>
+
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" required="">
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
-</section>
+</div>
 
-<!-- SIGN-UP SECTION -->
-<section id="signup">
-    <h2 class="" style="cursor: text;">Join Our Bridal Community</h2>
-    <p class="" style="cursor: text;">Be the first to know about new collections, exclusive events, and special appointments.</p>
+<!-- contact section -->
+<div id="contact">
+    <div class="contact-inner fade-in">
 
-    <form>
-        <input type="email" placeholder="Enter your email" required="">
-        <button type="submit">Sign Up</button>
-    </form>
-</section>
+        <div class="contact-info">
+            <h2 class="" style="cursor: text;">Contact Us</h2>
+            <p class="" style="cursor: text;">We’d love to hear from you. Whether you're planning a wedding, event, or looking for something bespoke — our team is here to help.</p>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
-    <h2 class="" style="cursor: text;">Contact Us</h2>
-
-    <div class="contact-grid">
-        <div>
-            <h3 class="" style="cursor: text;">Visit Us</h3>
-            <p class="" style="cursor: text;">123 Bridal Lane<br>Cork, Co. Cork</p>
+            <div class="contact-details">
+                <strong>Email:</strong><p class="" style="cursor: text;"> info@florist.com</p>
+                <strong>Phone:</strong><p class="" style="cursor: text;"> <a href="tel:000 000 000">000 000 000</a></p>
+                <strong>Location:</strong><p class="" style="cursor: text;"> Cork, Ireland</p>
+            </div>
         </div>
 
-        <div>
-            <h3 class="" style="cursor: text;">Hours</h3>
-            <p class="" style="cursor: text;">Mon–Fri: 10am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
-        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required="">
+            <input type="email" placeholder="Your Email" required="">
+            <textarea placeholder="Your Message" required=""></textarea>
+            <button type="submit">Send Message</button>
+        </form>
 
-        <div>
-            <h3 class="" style="cursor: text;">Get In Touch</h3>
-            <p class="" style="cursor: text;">Email: info@bridalboutique.com<br>Phone: <a href="tel:(000) 000‑0000">(000) 000‑0000</a></p>
-        </div>
     </div>
-
-    <a href="#hero" class="contact-btn">Book Your Appointment</a>
-</section>
-
-<footer>
-    © 2026 Bridal Boutique — Elegance in Every Detail
-</footer>
-
 </div>
 
 
 
-<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController7991" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-b358f996dea77a876118d3afd914656a.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%227db9c61c-1170-4b04-974d-ecc223a8f0c3%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22treatment%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=7db9c61c-1170-4b04-974d-ecc223a8f0c3&amp;stripeObjId=sobj-bddf4032-4a1b-4100-84c1-e4774c93f8fd&amp;firstStripeInstanceCreatedLatency=58&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1779019701917&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=a9e882c6-f887-4dcf-8aae-4c9f8d4b54bc9b1230&amp;mids[sid]=NA&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FTemplate%2Fbridal%2Fbridal.html%3Frepo%3Dgymleadertcg%26userId%3Duser_3C7CpUKovcwyVECcngcKcWHPNIX%26template%3Dbridal&amp;controllerId=__privateStripeController7991" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController7990" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2FTemplate%2Fbridal%2Fbridal.html%3Frepo%3Dgymleadertcg%26userId%3Duser_3C7CpUKovcwyVECcngcKcWHPNIX%26template%3Dbridal&amp;title=Bridal%20Boutique&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=a9e882c6-f887-4dcf-8aae-4c9f8d4b54bc9b1230&amp;sid=NA&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
+
+
+<script>
+
+/* -------------------- NAV CAROUSEL -------------------- */
+
+const slides = document.querySelectorAll(".slide");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+
+let index = 0;
+let autoRotate;
+
+function showSlide(i){
+    slides.forEach(s => s.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+function nextSlide(){
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+function prevSlide(){
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+}
+
+function startAuto(){
+    autoRotate = setInterval(nextSlide, 3000);
+}
+
+function stopAuto(){
+    clearInterval(autoRotate);
+}
+
+showSlide(index);
+startAuto();
+
+rightArrow.addEventListener("click", () => { stopAuto(); nextSlide(); });
+leftArrow.addEventListener("click", () => { stopAuto(); prevSlide(); });
+
+/* -------------------- ABOUT CAROUSEL -------------------- */
+
+const aboutTabs = document.querySelectorAll(".about-tab");
+const aboutLeft = document.querySelector(".about-left");
+const aboutRight = document.querySelector(".about-right");
+
+let aboutIndex = 0;
+let aboutAuto;
+
+function showAbout(i){
+    aboutTabs.forEach(t => t.classList.remove("active"));
+    aboutTabs[i].classList.add("active");
+}
+
+function nextAbout(){
+    aboutIndex = (aboutIndex + 1) % aboutTabs.length;
+    showAbout(aboutIndex);
+}
+
+function prevAbout(){
+    aboutIndex = (aboutIndex - 1 + aboutTabs.length) % aboutTabs.length;
+    showAbout(aboutIndex);
+}
+
+function startAboutAuto(){
+    aboutAuto = setInterval(nextAbout, 3000);
+}
+
+function stopAboutAuto(){
+    clearInterval(aboutAuto);
+}
+
+showAbout(aboutIndex);
+startAboutAuto();
+
+aboutRight.addEventListener("click", () => { stopAboutAuto(); nextAbout(); });
+aboutLeft.addEventListener("click", () => { stopAboutAuto(); prevAbout(); });
+
+</script>
+
+
+
+<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController7681" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-b358f996dea77a876118d3afd914656a.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%2294179fff-93d6-4077-a63b-55486ad416ef%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22control%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=94179fff-93d6-4077-a63b-55486ad416ef&amp;stripeObjId=sobj-10260777-f556-4097-a948-0d49158574fc&amp;firstStripeInstanceCreatedLatency=24&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1779020132366&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=a9e882c6-f887-4dcf-8aae-4c9f8d4b54bc9b1230&amp;mids[sid]=a940b9a1-4228-4d8a-933f-a028438f4fcef9f139&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fflorist%2Fflorist.html&amp;controllerId=__privateStripeController7681" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController7680" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fflorist%2Fflorist.html&amp;title=Luxury%20Florist&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=a9e882c6-f887-4dcf-8aae-4c9f8d4b54bc9b1230&amp;sid=a940b9a1-4228-4d8a-933f-a028438f4fcef9f139&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
