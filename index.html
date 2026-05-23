@@ -2,11 +2,12 @@
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paws &amp; Shine Grooming</title>
+<title>Bridal Boutique</title>
 
-<!-- ⭐ Professional Font Added -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- PREMIUM FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lora:wght@400;500&amp;display=swap" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="css/bridal.1779535725191.css">
 <script>
 
 function initTemplateNavSlider() {
@@ -130,404 +131,32 @@ async function loadProducts() {
   loadProducts();
 });
 </script>
-
-<style>
-/* ---------------- GLOBAL ---------------- */
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #f8fafc;
-  color: #333;
-}
-
-h1, h2, h3 {
-  font-weight: 600;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ---------------- NAV ---------------- */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 2px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
-}
-
-nav .logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #4a90e2;
-}
-
-/* ---------------- HERO ---------------- */
-.hero {
-  position: relative;
-  height: 90vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  max-width: 700px;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
-  border-radius: 1.3rem;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 20px 0;
-}
-
-.hero-content button {
-  padding: 15px 40px;
-  background: #4a90e2;
-  border: none;
-  color: white;
-  font-size: 1.1rem;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hero-content button:hover {
-  background: #3a78c2;
-}
-
-/* ---------------- ABOUT ---------------- */
-#about {
-  padding: 60px 20px;
-  background: #63AEFF;
-  border-top: 1px solid #d6e8ff;
-  border-bottom: 1px solid #d6e8ff;
-  display: flex;
-  justify-content: center;
-  color: #333;
-}
-
-.about-container {
-  max-width: 750px;
-  text-align: left;
-  background: white;
-  padding: 40px 30px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.about-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-.about-text {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  opacity: 0.9;
-  color: #000;
-}
-
-#about-btn {
-  padding: 12px 28px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 30px;
-  background: #000;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#about-btn:hover {
-  background: #3a78c2;
-  transform: translateY(-2px);
-}
-
-/* ---------------- SERVICES ---------------- */
-.services {
-  padding: 50px 8%;
-    text-align: center;
-    background: #fff;
-    color: #000;
-}
-
-.services-grid {
-  margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-    color: #000;
-  }
-
-.service-card {
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-}
-
-.service-card img {
-  width: 80px;
-  margin-bottom: 20px;
-}
-
-/* ---------------- INSTAGRAM STYLE SLIDER ---------------- */
-.gallery {
-  padding: 10px 8%;
-  text-align: center;
-}
-
-.slider-container {
-  position: relative;
-  width: 100%;
-  margin-top: 40px;
-}
-
-.slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.slider img {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 15px;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  transition: transform .3s ease;
-}
-
-.slider img:hover {
-  transform: scale(1.03);
-}
-
-/* ARROWS */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border: none;
-  font-size: 2.5rem;
-  padding: 5px 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 10;
-  transition: 0.2s;
-}
-
-.slider-btn:hover {
-  background: #4a90e2;
-  color: white;
-}
-
-.slider-btn.left {
-  left: -10px;
-}
-
-.slider-btn.right {
-  right: -10px;
-}
-
-@media (max-width: 600px) {
-  .slider img {
-    width: 240px;
-    height: 240px;
-  }
-}
-
-/* ---------------- CONTACT CTA ---------------- */
-.contact-cta {
-  padding: 20px 8%;
-    text-align: center;
-    background: #22E;
-    color: #fff;
-    border-top: 1px solid #d6e8ff;
-}
-
-.contact-cta button {
-  padding: 15px 40px;
-  background: #4a90e2;
-  border: none;
-  color: white;
-  font-size: 1.1rem;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-cta button:hover {
-  background: #3a78c2;
-}
-
-/* ---------------- NEWSLETTER ---------------- */
-.newsletter {
-  padding: 70px 8%;
-    text-align: center;
-    background: #63AEFF;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    color: #fff;
-}
-
-.newsletter h2 {
-  font-size: 2.4rem;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.newsletter p {
-  font-size: 1.15rem;
-  opacity: 0.9;
-  margin-bottom: 25px;
-}
-
-.newsletter-form {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.newsletter-form input {
-  padding: 14px 20px;
-  width: 320px;
-  max-width: 90%;
-  border-radius: 30px;
-  border: 1px solid #c9dfff;
-  font-size: 1rem;
-  outline: none;
-  transition: 0.3s;
-}
-
-.newsletter-form input:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
-}
-
-.newsletter-form button {
-  padding: 14px 32px;
-  background: #000;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.newsletter-form button:hover {
-  background: #3a78c2;
-  transform: translateY(-2px);
-}
-
-.newsletter-success {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  color: #3a78c2;
-  display: none;
-}
-
-
-/* ---------------- FOOTER ---------------- */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #f0f6ff;
-  border-top: 1px solid #d6e8ff;
-}
-
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 900px) {
-  .hero {
-    height: 70vh;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    height: 60vh;
-  }
-}
-</style>
-
 <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
-<body>
 
-<!-- NAV -->
+<body>
+<div id="contain">
+
 <nav>
-  <p class="logo" style="cursor: text;">Paws &amp; Shine</p>
+    <h1 class="" style="cursor: text;">Business Name</h1>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="images/img_0.1779535629180.jpg" alt="Pet Grooming" style="cursor: pointer;">
-  <div class="hero-content">
-    <h1 class="" style="cursor: text;">Premium Pet Grooming</h1>
-    <p class="" style="cursor: text;">Gentle care, happy pets, and professional grooming for dogs &amp; cats.</p>
-    <button>Book Now</button>
-  </div>
-</section>
+<div id="hero">
+    <img src="images/img_0.1779535725191.jpg" alt="Bridal Gown" style="cursor: pointer;">
+    <div id="hero-text">
+        <h2 class="" style="cursor: text;">Your Dream Dress Awaits</h2>
+        <p class="" style="cursor: text;">Discover timeless elegance, luxurious fabrics, and handcrafted details designed to make your special day unforgettable.</p>
+        <a href="#" id="open-popup">Book Appointment</a>
+    </div>
+</div>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="about-container">
-    <h2 class="about-title" style="cursor: text;">About Me</h2>
-
-    <p class="about-text" style="cursor: text;">
-      Welcome to Paws &amp; Shine Grooming, where professional grooming meets luxury pet care.
-      We provide a calm, refined environment designed to give your pet a premium grooming experience.
+    <h2 class="" style="cursor: text;">About Us</h2>
+    <p class="" style="cursor: text;">
+        Welcome to our bridal boutique — a place where elegance, romance, and timeless beauty come together.
+        Use this space to tell your story: who you are, what inspires your work, and what makes your boutique
+        special. Share your passion, your experience, and the heart behind your business so brides can feel
+        connected the moment they arrive.
     </p>
-
-    <button id="about-btn">Learn More</button>
-
-    <p id="extra-text" style="display: none; opacity: 0; transition: opacity 0.5s; cursor: text;" class="">
-      From breed‑specific styling to tailored coat and skin care, every service is crafted with precision and comfort.
-    </p>
-  </div>
 </section>
 
 <!-- Store Snippet Start -->
@@ -535,7 +164,7 @@ footer {
   <div class="template-list">
 
     <div class="template-card">
-      <img src="images/img_1.1779535629180.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_1.1779535725191.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€29</div>
@@ -543,7 +172,7 @@ footer {
     </div>
 
     <div class="template-card active">
-      <img src="images/img_2.1779535629180.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_2.1779535725191.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
@@ -551,7 +180,7 @@ footer {
     </div>
 
     <div class="template-card">
-      <img src="images/img_3.1779535629180.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_3.1779535725191.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€39</div>
@@ -559,130 +188,77 @@ footer {
     </div>
 
     <div class="template-card">
-      <img src="images/img_4.1779535629180.jpg" alt="" style="cursor: pointer;">
+      <img src="images/img_4.1779535725191.jpg" alt="" style="cursor: pointer;">
       <h3 class="" style="cursor: text;">Your Product</h3>
       <p class="" style="cursor: text;">Your Product Description</p>
       <div class="price">€19</div>
-      <a class="btn" href="#">Buy Now</a>
-    </div>
-
-    <div class="template-card">
-      <img src="images/img_5.1779535629180.jpg" alt="" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Your Product</h3>
-      <p class="" style="cursor: text;">Your Product Description</p>
-      <div class="price">€39</div>
       <a class="btn" href="#">Buy Now</a>
     </div>
 
   </div>
 
-  <!-- MOBILE ARROWS (renamed to avoid conflicts) -->
   <button class="templateNav-arrow templateNav-left">❮</button>
   <button class="templateNav-arrow templateNav-right">❯</button>
 </div>
 
 <style>
-.templateNav-wrapper {
-  position: relative;
-  background: #eee;
-  padding: 1rem;
-}
-
-/* DESKTOP LAYOUT */
-.template-list {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-}
-
-.template-card {
-  width: 300px;
-  background: #222;
-  border-radius: 14px;
-  padding: 14px;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-  transition: transform .4s ease, box-shadow .4s ease, opacity .4s ease;
-  opacity: 0.6;
-}
-
-.template-card.active {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-  opacity: 1;
-}
-
-.template-card img {
-  width: 100%;
-  height: 272px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.price {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 8px 0;
-  color: #4ade80;
-}
-
-.btn {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: .85rem;
-}
-
-/* MOBILE MODE */
-@media (max-width: 600px) {
-  .template-list {
-    display: block;
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-  }
-
-  .template-card {
-    position: absolute;
+/* POPUP OVERLAY */
+.popup-overlay {
+    position: fixed;
     top: 0;
-    left: 50%;
-    width: 90%;
-    transform: translateX(-50%);
-    opacity: 0;
-  }
-
-  .template-card.active {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.02);
-  }
-
-  /* RENAMED ARROWS */
-  .templateNav-arrow {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.15);
-    border: none;
-    color: #fff;
-    font-size: 26px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 10;
-  }
-
-  .templateNav-left { left: 10px; }
-  .templateNav-right { right: 10px; }
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-/* HIDE ARROWS ON DESKTOP */
-@media (min-width: 601px) {
-  .templateNav-arrow { display: none; }
+/* POPUP BOX */
+.popup-box {
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* CLOSE BUTTON */
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* FORM STYLING */
+.popup-form input,
+.popup-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.popup-form button {
+    width: 100%;
+    padding: 12px;
+    background: #c49b6c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 </style>
 
@@ -716,144 +292,105 @@ if (templateNavPrev && templateNavNext) {
 </script>
 <!-- Store Snippet End -->
 
-<!-- GALLERY (INSTAGRAM STYLE SLIDER) -->
-<section id="gallery" class="gallery">
-  <h2 class="" style="cursor: text;">Gallery</h2>
-
-  <div class="slider-container">
-    <button class="slider-btn left">❮</button>
-
-    <div class="slider">
-      <img src="images/img_6.1779535629180.jpg" style="cursor: pointer;">
-      <img src="images/img_7.1779535629180.jpg" style="cursor: pointer;">
-      <img src="images/img_8.1779535629180.jpg" style="cursor: pointer;">
-      <img src="images/img_9.1779535629180.jpg" style="cursor: pointer;">
-      <img src="images/img_10.1779535629180.jpg" style="cursor: pointer;">
-      <img src="images/img_11.1779535629180.jpg" style="cursor: pointer;">
+<section id="gallery">
+    <h2 class="" style="cursor: text;">Our Gallery</h2>
+    <div class="gallery-grid">
+        <img src="images/img_5.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_6.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_7.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_8.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_9.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_10.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_11.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_12.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_13.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_14.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_15.1779535725191.jpg" style="cursor: pointer;">
+        <img src="images/img_16.1779535725191.jpg" style="cursor: pointer;">
     </div>
-
-    <button class="slider-btn right">❯</button>
-  </div>
 </section>
 
-<!-- NEWSLETTER SIGNUP -->
-<section class="newsletter">
-  <h2 class="" style="cursor: text;">Join Our Newsletter</h2>
-  <p class="" style="cursor: text;">Get grooming tips, special offers, and adorable pet updates straight to your inbox.</p>
+<section id="signup">
+    <h2 class="" style="cursor: text;">Join Our Bridal Community</h2>
+    <p class="" style="cursor: text;">Be the first to know about new collections, exclusive events, and special appointments.</p>
 
-  <form class="newsletter-form">
-    <input type="email" id="newsletter-email" placeholder="Enter your email" required="">
-    <button type="submit">Subscribe</button>
-  </form>
-
-  <p id="newsletter-success" class="newsletter-success" style="cursor: text;">Thank you for subscribing!</p>
+    <form>
+        <input type="email" placeholder="Enter your email" required="">
+        <button type="submit">Sign Up</button>
+    </form>
 </section>
 
+<section id="contact">
+    <h2 class="" style="cursor: text;">Contact Us</h2>
 
-<!-- SERVICES -->
-<section id="services" class="services">
-  <h2 class="" style="cursor: text;">Our Grooming Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <img src="images/img_12.1779535629180.jpg" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Full Groom</h3>
-      <p class="" style="cursor: text;">Bath, haircut, nail trim, ear cleaning &amp; styling.</p>
+    <div class="contact-grid">
+        <div>
+            <h3 class="" style="cursor: text;">Visit Us</h3>
+            <p class="" style="cursor: text;">123 Bridal Lane<br>Cork, Co. Cork</p>
+        </div>
+
+        <div>
+            <h3 class="" style="cursor: text;">Hours</h3>
+            <p class="" style="cursor: text;">Mon–Fri: 10am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
+        </div>
+
+        <div>
+            <h3 class="" style="cursor: text;">Get In Touch</h3>
+            <p class="" style="cursor: text;">Email: info@bridalboutique.com<br>Phone: <a href="tel:(000) 000‑0000">(000) 000‑0000</a></p>
+        </div>
     </div>
-    <div class="service-card">
-      <img src="images/img_13.1779535629180.jpg" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Bath &amp; Brush</h3>
-      <p class="" style="cursor: text;">Deep clean bath, blow dry &amp; full brushing.</p>
-    </div>
-    <div class="service-card">
-      <img src="images/img_14.1779535629180.jpg" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Puppy Intro</h3>
-      <p class="" style="cursor: text;">Gentle grooming for puppies to get them comfortable.</p>
-    </div>
-  </div>
+
+    <a href="#" id="open-popup-2" class="contact-btn">Book Your Appointment</a>
 </section>
 
-
-<!-- CONTACT CTA -->
-<section id="contact" class="contact-cta">
-  <h2 class="" style="cursor: text;">Contact Us</h2>
-  <p class="" style="cursor: text;">We’re here to make your pets look and feel their best.</p>
-
-  <div style="margin-top: 30px; font-size: 1.2rem; line-height: 1.8;">
-    <strong>📞 Phone:</strong> <a href="tel:+353 00 000 0000">+353 00 000 0000</a><br>
-    <strong>📍 Address:</strong> Main Street, Your Address, Co. , Ireland<br>
-    <strong>⏰ Hours:</strong> Mon–Sat: 9am – 6pm
-  </div>
-
-  <button style="margin-top: 35px;">Book Appointment</button>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  © 2026 Paws &amp; Shine Grooming — All Rights Reserved
+    © 2026 Bridal Boutique — Elegance in Every Detail
 </footer>
 
-<!-- JS: ABOUT + SLIDER -->
+</div>
+
+<!-- POPUP HTML -->
+<div id="contact-popup" class="popup-overlay">
+    <div class="popup-box">
+        <span id="close-popup" class="" style="cursor: text;">×</span>
+        <h2 class="" style="cursor: text;">Book Your Appointment</h2>
+
+        <form class="popup-form">
+            <input type="text" placeholder="Your Name" required="">
+            <input type="email" placeholder="Your Email" required="">
+            <input type="tel" placeholder="Phone Number" required="">
+            <textarea placeholder="Your Message" required=""></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
 <script>
-// ABOUT SECTION TOGGLE
-document.getElementById("about-btn").onclick = function () {
-  const extra = document.getElementById("extra-text");
-  if (extra.style.display === "none") {
-    extra.style.display = "block";
-    setTimeout(() => extra.style.opacity = "1", 10);
-    this.textContent = "Show Less";
-  } else {
-    extra.style.opacity = "0";
-    setTimeout(() => extra.style.display = "none", 500);
-    this.textContent = "Learn More";
-  }
-};
-
-// INSTAGRAM STYLE SLIDER
-const slider = document.querySelector(".slider");
-const btnLeft = document.querySelector(".slider-btn.left");
-const btnRight = document.querySelector(".slider-btn.right");
-
-btnLeft.addEventListener("click", () => {
-  slider.scrollBy({ left: -350, behavior: "smooth" });
+// OPEN POPUP
+document.getElementById("open-popup").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("contact-popup").style.display = "flex";
 });
 
-btnRight.addEventListener("click", () => {
-  slider.scrollBy({ left: 350, behavior: "smooth" });
+document.getElementById("open-popup-2").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("contact-popup").style.display = "flex";
 });
 
-// Drag to scroll
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
+// CLOSE POPUP
+document.getElementById("close-popup").addEventListener("click", function() {
+    document.getElementById("contact-popup").style.display = "none";
 });
 
-slider.addEventListener("mouseleave", () => (isDown = false));
-slider.addEventListener("mouseup", () => (isDown = false));
-
-slider.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2;
-  slider.scrollLeft = scrollLeft - walk;
+// CLOSE WHEN CLICKING OUTSIDE
+window.addEventListener("click", function(e) {
+    const popup = document.getElementById("contact-popup");
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
 });
-
-// NEWSLETTER SUCCESS MESSAGE
-function newsletterSuccess() {
-  const email = document.getElementById("newsletter-email").value;
-  if (email.trim() === "") return;
-
-  document.getElementById("newsletter-success").style.display = "block";
-  document.getElementById("newsletter-email").value = "";
-}
-
 </script>
 
 
 
-<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController1901" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-11ca320c749af4c34fba54d67f234b76.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%22986a189e-e7dd-4eea-94ae-c919f5deb836%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22control%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=986a189e-e7dd-4eea-94ae-c919f5deb836&amp;stripeObjId=sobj-e2789e8a-3d4b-4178-9803-604257e0d05d&amp;firstStripeInstanceCreatedLatency=8&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1779535616812&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;mids[sid]=16a1bb30-36f2-42ca-b045-764a07da7800fed280&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fdog%2Fdog.html&amp;controllerId=__privateStripeController1901" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController1900" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fdog%2Fdog.html&amp;title=Paws%20%26%20Shine%20Grooming&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;sid=16a1bb30-36f2-42ca-b045-764a07da7800fed280&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
+<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController4711" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-11ca320c749af4c34fba54d67f234b76.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%22726402f8-2ab0-4bcb-a918-e3a4c3025ce4%22%2C%22assignments%22%3A%7B%22habanero_aa_v1%22%3A%22treatment%22%2C%22habanero_direct_messaging_v1%22%3A%22treatment%22%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=726402f8-2ab0-4bcb-a918-e3a4c3025ce4&amp;stripeObjId=sobj-7199f91a-d411-41cc-8b78-ee993dc25615&amp;firstStripeInstanceCreatedLatency=21&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1779535706771&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;mids[sid]=16a1bb30-36f2-42ca-b045-764a07da7800fed280&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;controllerId=__privateStripeController4711" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe name="__privateStripeMetricsController4710" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;title=Bridal%20Boutique&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=8971c4ba-ef94-4f54-8648-59a0518c9b85da0ac5&amp;sid=16a1bb30-36f2-42ca-b045-764a07da7800fed280&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border: medium !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe></body></html>
