@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-/* --- Hero Base --- */
+/* --- Base Hero --- */
 .hero {
   position: relative;
   width: 100%;
@@ -10,77 +10,73 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--hero-img) center/cover no-repeat;
   color: #fff;
   text-align: center;
   overflow: hidden;
 }
 
-/* --- Overlay --- */
+/* --- Image behaves like background-cover --- */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* --- Overlay for readability --- */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.35)
+  );
   z-index: 1;
+  pointer-events: none;
 }
 
 /* --- Content --- */
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 750px;
+  max-width: 700px;
   padding: 20px;
 }
 
-/* --- NEW TEXT STYLE --- */
 .hero-content h1 {
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  font-weight: 800;
-  letter-spacing: -1px;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  margin-bottom: 18px;
-  line-height: 1.15;
-  text-transform: uppercase;
-  animation: fadeUp 0.8s ease-out forwards;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .hero-content p {
-  font-family: "Inter", sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  opacity: 0.9;
-  margin-bottom: 28px;
-  animation: fadeUp 1.1s ease-out forwards;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  margin-bottom: 25px;
+  opacity: 0.95;
 }
 
 /* --- Button --- */
 .hero-content button {
-  padding: 14px 40px;
+  padding: 14px 36px;
   font-size: 1rem;
   font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 50px;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #000;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
 .hero-content button:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-3px);
+  background: #f1f1f1;
+  transform: translateY(-2px);
 }
 
-/* --- Animation --- */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- Mobile Tweaks --- */
+/* --- Responsive Tweaks --- */
 @media (max-width: 600px) {
   .hero {
     min-height: 60vh;
@@ -181,85 +177,71 @@
   }
 </style>
 <style>
-.image-text-section {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto 0px auto;
-  height: 500px;
-}
-
-.image-text-section.reverse {
-  flex-direction: row-reverse;
-}
-
-.image-wrap img {
-  width: 100%;
-  height: 500px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.text-wrap {
-  flex: 1;
-  width: 50%;
-        padding:1rem;
-}
-
-        .text-wrap p{font-size:1.4rem;}
-
-.text-wrap h3 {
-  font-size: 2.5rem;
-}
-
-/* REMOVE the mobile stacking */
-@media (max-width: 600px) {
-  .image-text-section {
-    height:310px;
+        .emailSection{
+        width:60%;
+      padding:25px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      font-family:Arial, sans-serif;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      text-align:center;
+      background:#fff;
+        }
+  #emailBody {
+    height:250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
   }
 
-        .image-wrap img {
-  width: 100%;
-  height: 310px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-        .text-wrap {
-  flex: 1;
-  width: 50%;
-        padding:0rem;
-}
-        .text-wrap p {
-  padding-bottom:2rem;
-        font-size:1rem;
-}
+  @media (max-width: 600px) {
+    #emailBody {
+      height:320px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
-}
+        .emailSection{
+        width:95%;
+      padding:25px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      font-family:Arial, sans-serif;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      text-align:center;
+      background:#fff;
+        }
+  }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
+  <div id="heroSection">
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-      <section class="hero" style="--hero-img: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&amp;w=1074&amp;auto=format&amp;fit=crop');">
+    <section class="hero">
+  <img class="hero-img" src="images/img_0.1781472408393.jpg" alt="Hero Image" style="cursor: pointer;">
+
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="" style="cursor: text;">Mama pizzaria</h1>
-    <p class="" style="cursor: text;">Fresh ingredients, bold flavours, unforgettable moments</p>
-    <button>View Menu</button>
+    <h1 class="" style="cursor: text;">Premium Pet Grooming</h1>
+    <p class="" style="cursor: text;">Gentle care for happy pets</p>
+    <button>Book Appointment</button>
   </div>
 </section>
+
 
 
 
     
       
     </div>
-
+  </div>
+  <div id="contentSection">
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
@@ -272,54 +254,54 @@
     
     <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_0.1781460830013.jpg" alt="Seasonal Plates" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_1.1781472408393.jpg" alt="Full Grooming" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
 
     <!-- Text -->
     <h3 class="" style="cursor: text;">
-      Seasonal Plates
+      Full Grooming
     </h3>
     <p class="" style="cursor: text;">
-      Fresh, local ingredients transformed into beautifully plated dishes that celebrate the season.
+      Bathing, coat trimming, brushing, and styling for all breeds and coat types.
     </p>
   </div>
 
   <!-- Feature 2 -->
   <div class="feature2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_1.1781460830013.jpg" alt="Chef’s Specials" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_2.1781472408393.jpg" alt="Nail &amp; Paw Care" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
-      Chef’s Specials
+      Nail &amp; Paw Care
     </h3>
     <p class="" style="cursor: text;">
-      Rotating signature creations showcasing bold flavours and innovative culinary ideas.
+      Safe nail trimming, paw pad cleaning, and gentle paw conditioning treatments.
     </p>
   </div>
 
   <!-- Feature 3 -->
   <div class="feature3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_2.1781460830013.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_3.1781472408393.jpg" alt="Bath &amp; Blow‑Dry" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
-      Artisan Desserts
+      Bath &amp; Blow‑Dry
     </h3>
     <p class="" style="cursor: text;">
-      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+      Deep cleansing baths with premium shampoos, followed by a soft blow‑dry.
     </p>
   </div>
 
   <!-- Feature 4 -->
   <div class="feature4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781460830013.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_4.1781472408393.jpg" alt="Bath &amp; Blow‑Dry" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
-      Artisan Desserts
+      Bath &amp; Blow‑Dry
     </h3>
     <p class="" style="cursor: text;">
-      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+      Deep cleansing baths with premium shampoos, followed by a soft blow‑dry.
     </p>
   </div>
 
@@ -331,48 +313,65 @@
 
       
     </div>
-
+  </div>
+  <div id="gallerySection">
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-  <section class="image-text-section">
-  <div class="image-wrap">
-    <img src="images/img_4.1781460830013.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
+<div id="emailBody">
 
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Our Signature Dishes</h3>
-    <p class="" style="cursor: text;">
-      A curated menu inspired by seasonal produce, global flavours, and modern culinary craft.
-    </p>
-  </div>
-</section>
-
-<section class="image-text-section reverse">
-  <div class="image-wrap">
-    <img src="images/img_5.1781460830013.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
-
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Our Signature Dishes</h3>
-    <p class="" style="cursor: text;">
-      A curated menu inspired by seasonal produce, global flavours, and modern culinary craft.
-    </p>
-  </div>
-</section>
-
-
-
+<div style="width:100%; display:flex; justify-content:center;">
+  <div class="emailSection">
     
+    <h2 style="color: rgb(51, 51, 51); margin-bottom: 10px; cursor: text;" class="">Join Our Mailing List</h2>
+    <p style="color: rgb(102, 102, 102); font-size: 14px; margin-bottom: 20px; cursor: text;" class="">
+      Subscribe to receive updates, news, and exclusive offers.
+    </p>
+
+    <form style="width:70%;margin:auto;">
+      <input type="email" placeholder="Enter your email" required="" style="
+          width:100%;
+          padding:12px;
+          border:1px solid #ccc;
+          border-radius:6px;
+          font-size:14px;
+          margin-bottom:15px;
+        ">
+
+      <button type="submit" style="
+          width:100%;
+          padding:12px;
+          background:#0078ff;
+          color:white;
+          border:none;
+          border-radius:6px;
+          font-size:16px;
+          cursor:pointer;
+        ">
+        Subscribe
+      </button>
+    </form>
+
+    <p style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 15px; cursor: text;" class="">
+      We respect your privacy. Unsubscribe anytime.
+    </p>
+  </div>
+</div>
+
+</div>
+
+
     
       
     </div>
-
+  </div>
+  <div id="footerSection">
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
       
     </div>
-  
+  </div>
+
 </body>
 </html>

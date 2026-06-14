@@ -1,0 +1,37 @@
+
+        .emailSection{
+        width:60%;
+      padding:25px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      font-family:Arial, sans-serif;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      text-align:center;
+      background:#fff;
+        }
+  #emailBody {
+    height:250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  @media (max-width: 600px) {
+    #emailBody {
+      height:320px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+        .emailSection{
+        width:95%;
+      padding:25px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      font-family:Arial, sans-serif;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      text-align:center;
+      background:#fff;
+        }
+  }
