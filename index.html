@@ -93,30 +93,44 @@
 <style>
 
   #contentABody {
-    width: 95%;
+    width: 1000px;
     margin: auto;
+    height: 1010px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
   .imageText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-        background:#000;
+    gap: 10px;
   }
-#contentABody{height:1000px;}
-  .feature1,
-  .feature2,
-  .feature3,
-  .feature4 {
-    height: 500px;
+  .imageText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .imageText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+
+  .feature1{
+        height: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature2{
+        height: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature3{
+        height: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature4{
+        height: 500px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-        #contentAbody {
-      height: 1010px !important;
-    }
 
   @media (max-width: 1024px) {
     section[style] {
@@ -126,24 +140,45 @@
   }
 
   @media (max-width: 600px) {
-    #contentABody {
-      width: 95%;
-      margin: auto;
-      height: 620px;
-      overflow: hidden;
+    #contentAbody section[style] img {
+      height: 100% !important;
     }
 
-    .feature1,
-    .feature2,
-    .feature3,
-    .feature4 {
-      height: 310px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
+    #contentABody {
+    width: 90%;
+    margin: auto;
+    height: 620px; /* 2 cards stacked = 500px */
+    overflow: hidden;
   }
 
+  .imageText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .imageText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+
+    .feature1{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature2{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature3{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature4{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  }
 </style>
 <style>
 .image-text-section {
@@ -202,19 +237,20 @@
 
 }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-      <section class="hero" style="--hero-img: url('https://images.unsplash.com/photo-1531058240690-006c446962d8?q=80&amp;w=1170&amp;auto=format&amp;fit=crop');">
+      <section class="hero" style="--hero-img: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&amp;w=1074&amp;auto=format&amp;fit=crop');">
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="" style="cursor: text;">Luxury Floral Design</h1>
-    <p class="" style="cursor: text;">Hand-crafted arrangements for weddings &amp; events</p>
-    <button>Shop Flowers</button>
+    <h1 class="" style="cursor: text;">Mama pizzaria</h1>
+    <p class="" style="cursor: text;">Fresh ingredients, bold flavours, unforgettable moments</p>
+    <button>View Menu</button>
   </div>
 </section>
 
@@ -227,36 +263,64 @@
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-  <div id="contentABody">
+ <div id="contentABody">
 
 <section class="imageText">
 
   <!-- Feature 1 -->
   <div class="feature1">
+    
+    <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_0.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_0.1781460830013.jpg" alt="Seasonal Plates" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+
+    <!-- Text -->
+    <h3 class="" style="cursor: text;">
+      Seasonal Plates
+    </h3>
+    <p class="" style="cursor: text;">
+      Fresh, local ingredients transformed into beautifully plated dishes that celebrate the season.
+    </p>
   </div>
 
   <!-- Feature 2 -->
   <div class="feature2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_1.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_1.1781460830013.jpg" alt="Chef’s Specials" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Chef’s Specials
+    </h3>
+    <p class="" style="cursor: text;">
+      Rotating signature creations showcasing bold flavours and innovative culinary ideas.
+    </p>
   </div>
 
   <!-- Feature 3 -->
   <div class="feature3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_2.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_2.1781460830013.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Artisan Desserts
+    </h3>
+    <p class="" style="cursor: text;">
+      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+    </p>
   </div>
 
   <!-- Feature 4 -->
   <div class="feature4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_3.1781460830013.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Artisan Desserts
+    </h3>
+    <p class="" style="cursor: text;">
+      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+    </p>
   </div>
 
 </section>
@@ -264,7 +328,6 @@
 
 
 </div>
-     
 
       
     </div>
@@ -274,24 +337,27 @@
       
   <section class="image-text-section">
   <div class="image-wrap">
-    <img src="images/img_4.1781460285923.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_4.1781460830013.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Bella</h3>
+    <h3 class="" style="cursor: text;">Our Signature Dishes</h3>
     <p class="" style="cursor: text;">
-      Dog</p>
+      A curated menu inspired by seasonal produce, global flavours, and modern culinary craft.
+    </p>
   </div>
 </section>
 
 <section class="image-text-section reverse">
   <div class="image-wrap">
-    <img src="images/img_5.1781460285923.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_5.1781460830013.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Marco</h3>
-    <p class="" style="cursor: text;">Cat</p>
+    <h3 class="" style="cursor: text;">Our Signature Dishes</h3>
+    <p class="" style="cursor: text;">
+      A curated menu inspired by seasonal produce, global flavours, and modern culinary craft.
+    </p>
   </div>
 </section>
 
