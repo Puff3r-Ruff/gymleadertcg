@@ -1,25 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-    <section class="hero" style="--hero-img: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&amp;w=1169&amp;auto=format&amp;fit=crop');">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1 class="" style="cursor: text;">Transform Your Body</h1>
-    <p class="" style="cursor: text;">Strength, conditioning, and personal coaching</p>
-    <button>Join Today</button>
-  </div>
-</section>
-
 <style>
-/* --- Base Hero --- */
+/* --- Hero Base --- */
 .hero {
   position: relative;
   width: 100%;
@@ -33,14 +16,12 @@
   overflow: hidden;
 }
 
-/* --- Overlay for readability --- */
+/* --- Overlay --- */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.35)
-  );
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
   z-index: 1;
 }
 
@@ -48,42 +29,58 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  max-width: 750px;
   padding: 20px;
 }
 
+/* --- NEW TEXT STYLE --- */
 .hero-content h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: 15px;
-  line-height: 1.2;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 18px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
 .hero-content p {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  margin-bottom: 25px;
-  opacity: 0.95;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  margin-bottom: 28px;
+  animation: fadeUp 1.1s ease-out forwards;
 }
 
 /* --- Button --- */
 .hero-content button {
-  padding: 14px 36px;
+  padding: 14px 40px;
   font-size: 1rem;
   font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #000;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 50px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(4px);
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .hero-content button:hover {
-  background: #f1f1f1;
-  transform: translateY(-2px);
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-3px);
 }
 
-/* --- Responsive Tweaks --- */
+/* --- Animation --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Mobile Tweaks --- */
 @media (max-width: 600px) {
   .hero {
     min-height: 60vh;
@@ -93,117 +90,33 @@
   }
 }
 </style>
-
-    
-      
-    </div>
-
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
- <div id="contentABody">
-
-<section class="imageText">
-
-  <!-- Feature 1 -->
-  <div class="feature1">
-    
-    <!-- Image fills leftover space -->
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_0.1781459377237.jpg" alt="Personal Training" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-
-    <!-- Text -->
-    <h3 class="" style="cursor: text;">
-      Personal Training
-    </h3>
-    <p class="" style="cursor: text;">
-      One‑on‑one coaching tailored to your goals, fitness level, and training style.
-    </p>
-  </div>
-
-  <!-- Feature 2 -->
-  <div class="feature2">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_1.1781459377237.jpg" alt="Group Classes" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-    <h3 class="" style="cursor: text;">
-      Group Classes
-    </h3>
-    <p class="" style="cursor: text;">
-      High‑energy classes including HIIT, strength circuits, mobility, and conditioning.
-    </p>
-  </div>
-
-  <!-- Feature 3 -->
-  <div class="feature3">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_2.1781459377237.jpg" alt="Custom Plans" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-    <h3 class="" style="cursor: text;">
-      Custom Plans
-    </h3>
-    <p class="" style="cursor: text;">
-      Tailored fitness programs designed to help you progress safely and effectively.
-    </p>
-  </div>
-
-  <!-- Feature 4 -->
-  <div class="feature4">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781459377237.jpg" alt="Custom Plans" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-    <h3 class="" style="cursor: text;">
-      Custom Plans
-    </h3>
-    <p class="" style="cursor: text;">
-      Tailored fitness programs designed to help you progress safely and effectively.
-    </p>
-  </div>
-
-</section>
-
 <style>
 
   #contentABody {
-    width: 1000px;
+    width: 95%;
     margin: auto;
-    height: 1010px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
   .imageText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 3px;
+        background:#000;
   }
-  .imageText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
-
-  .feature1{
-        height: 500px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 500px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 500px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 500px;
+#contentABody{height:1000px;}
+  .feature1,
+  .feature2,
+  .feature3,
+  .feature4 {
+    height: 500px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
+        #contentAbody {
+      height: 1010px !important;
+    }
 
   @media (max-width: 1024px) {
     section[style] {
@@ -213,81 +126,25 @@
   }
 
   @media (max-width: 600px) {
-    #contentAbody section[style] img {
-      height: 100% !important;
+    #contentABody {
+      width: 95%;
+      margin: auto;
+      height: 620px;
+      overflow: hidden;
     }
 
-    #contentABody {
-    width: 90%;
-    margin: auto;
-    height: 620px; /* 2 cards stacked = 500px */
-    overflow: hidden;
+    .feature1,
+    .feature2,
+    .feature3,
+    .feature4 {
+      height: 310px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
-  .imageText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
-
-    .feature1{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  }
 </style>
-
-</div>
-
-      
-    </div>
-
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-  <section class="image-text-section">
-  <div class="image-wrap">
-    <img src="images/img_4.1781459377237.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
-
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Training Programs</h3>
-    <p class="" style="cursor: text;">
-      Customized fitness plans, expert coaching, and dynamic classes built for every level.
-    </p>
-  </div>
-</section>
-
-<section class="image-text-section reverse">
-  <div class="image-wrap">
-    <img src="images/img_5.1781459377237.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
-
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Training Programs</h3>
-    <p class="" style="cursor: text;">
-      Customized fitness plans, expert coaching, and dynamic classes built for every level.
-    </p>
-  </div>
-</section>
-
 <style>
 .image-text-section {
   width: 90%;
@@ -345,6 +202,100 @@
 
 }
 </style>
+</head>
+<body>
+
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      
+      
+      <section class="hero" style="--hero-img: url('https://images.unsplash.com/photo-1531058240690-006c446962d8?q=80&amp;w=1170&amp;auto=format&amp;fit=crop');">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="" style="cursor: text;">Luxury Floral Design</h1>
+    <p class="" style="cursor: text;">Hand-crafted arrangements for weddings &amp; events</p>
+    <button>Shop Flowers</button>
+  </div>
+</section>
+
+
+
+    
+      
+    </div>
+
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      
+      
+  <div id="contentABody">
+
+<section class="imageText">
+
+  <!-- Feature 1 -->
+  <div class="feature1">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_0.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    </div>
+  </div>
+
+  <!-- Feature 2 -->
+  <div class="feature2">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_1.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    </div>
+  </div>
+
+  <!-- Feature 3 -->
+  <div class="feature3">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_2.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    </div>
+  </div>
+
+  <!-- Feature 4 -->
+  <div class="feature4">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_3.1781460285923.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    </div>
+  </div>
+
+</section>
+
+
+
+</div>
+     
+
+      
+    </div>
+
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      
+      
+  <section class="image-text-section">
+  <div class="image-wrap">
+    <img src="images/img_4.1781460285923.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
+
+  <div class="text-wrap">
+    <h3 class="" style="cursor: text;">Bella</h3>
+    <p class="" style="cursor: text;">
+      Dog</p>
+  </div>
+</section>
+
+<section class="image-text-section reverse">
+  <div class="image-wrap">
+    <img src="images/img_5.1781460285923.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
+
+  <div class="text-wrap">
+    <h3 class="" style="cursor: text;">Marco</h3>
+    <p class="" style="cursor: text;">Cat</p>
+  </div>
+</section>
+
+
 
     
     
