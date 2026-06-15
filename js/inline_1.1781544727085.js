@@ -2,9 +2,11 @@
 let heroIndex = 0;
 let contentIndex = 0;
 let galleryIndex = 0;
+/* ⭐ NEW INDEX */
+let bodyEndIndex = 0;
 let footerIndex = 0;
 
-/* ⭐ stores user‑edited image sources */
+
 let savedImages = {};
 
 function saveUserImages() {
@@ -32,10 +34,6 @@ function inject(content, data) {
   return content.replace(/{{(.*?)}}/g, (_, key) => data[key.trim()] || "");
 }
 
-// ===============================================
-// SECTION RENDERERS
-// ===============================================
-
 function renderHero() {
   const industry = industries[industrySelect.value];
   const hero = inject(skeletons.heroes[heroIndex].html, industry);
@@ -47,7 +45,6 @@ function renderHero() {
       <div class="arrow-right" onclick="nextHero()" id="Remove">&#10095;</div>
     </div>
   `;
-
   initCarousels();
 }
 
@@ -62,7 +59,6 @@ function renderContent() {
       <div class="arrow-right" onclick="nextContent()" id="Remove">&#10095;</div>
     </div>
   `;
-
   initCarousels();
 }
 
@@ -77,8 +73,21 @@ function renderGallery() {
       <div class="arrow-right" onclick="nextGallery()" id="Remove">&#10095;</div>
     </div>
   `;
-
   initCarousels();
+}
+
+/* ⭐ NEW SECTION RENDERER */
+function renderBodyEnd() {
+  const industry = industries[industrySelect.value];
+  const bodyEnd = inject(skeletons.body_end[bodyEndIndex].html, industry);
+
+  document.getElementById("bodyEndSection").innerHTML = `
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      <div class="arrow-left" onclick="prevBodyEnd()" id="Remove">&#10094;</div>
+      ${bodyEnd}
+      <div class="arrow-right" onclick="nextBodyEnd()" id="Remove">&#10095;</div>
+    </div>
+  `;
 }
 
 function renderFooter() {
@@ -92,100 +101,40 @@ function renderFooter() {
       <div class="arrow-right" onclick="nextFooter()" id="Remove">&#10095;</div>
     </div>
   `;
-
   initCarousels();
 }
-
-// ===============================================
-// INITIAL RENDER
-// ===============================================
 
 function generateAll() {
   renderHero();
   renderContent();
   renderGallery();
+  renderBodyEnd(); /* ⭐ NEW */
   renderFooter();
   restoreUserImages();
 }
 
 generateAll();
 
-// ===============================================
-// NAVIGATION — PARTIAL UPDATES
-// ===============================================
+/* NAVIGATION FUNCTIONS */
+function nextHero() { saveUserImages(); heroIndex = (heroIndex + 1) % skeletons.heroes.length; renderHero(); restoreUserImages(); UpdateEditor();}
+function prevHero() { saveUserImages(); heroIndex = (heroIndex - 1 + skeletons.heroes.length) % skeletons.heroes.length; renderHero(); restoreUserImages(); UpdateEditor();}
 
-function nextHero() {
-  saveUserImages();
-  heroIndex = (heroIndex + 1) % skeletons.heroes.length;
-  renderHero();
-  restoreUserImages();
-  UpdateEditor();
-}
+function nextContent() { saveUserImages(); contentIndex = (contentIndex + 1) % skeletons.content_blocks.length; renderContent(); restoreUserImages(); UpdateEditor();}
+function prevContent() { saveUserImages(); contentIndex = (contentIndex - 1 + skeletons.content_blocks.length) % skeletons.content_blocks.length; renderContent(); restoreUserImages(); UpdateEditor();}
 
-function prevHero() {
-  saveUserImages();
-  heroIndex = (heroIndex - 1 + skeletons.heroes.length) % skeletons.heroes.length;
-  renderHero();
-  restoreUserImages();
-  UpdateEditor();
-}
+function nextGallery() { saveUserImages(); galleryIndex = (galleryIndex + 1) % skeletons.galleries.length; renderGallery(); restoreUserImages(); UpdateEditor();}
+function prevGallery() { saveUserImages(); galleryIndex = (galleryIndex - 1 + skeletons.galleries.length) % skeletons.galleries.length; renderGallery(); restoreUserImages(); UpdateEditor();}
 
-function nextContent() {
-  saveUserImages();
-  contentIndex = (contentIndex + 1) % skeletons.content_blocks.length;
-  renderContent();
-  restoreUserImages();
-  UpdateEditor();
-}
+/* ⭐ NEW BODY END NAVIGATION */
+function nextBodyEnd() { saveUserImages(); bodyEndIndex = (bodyEndIndex + 1) % skeletons.body_end.length; renderBodyEnd(); restoreUserImages(); UpdateEditor();}
+function prevBodyEnd() { saveUserImages(); bodyEndIndex = (bodyEndIndex - 1 + skeletons.body_end.length) % skeletons.body_end.length; renderBodyEnd(); restoreUserImages(); UpdateEditor();}
 
-function prevContent() {
-  saveUserImages();
-  contentIndex = (contentIndex - 1 + skeletons.content_blocks.length) % skeletons.content_blocks.length;
-  renderContent();
-  restoreUserImages();
-  UpdateEditor();
-}
-
-function nextGallery() {
-  saveUserImages();
-  galleryIndex = (galleryIndex + 1) % skeletons.galleries.length;
-  renderGallery();
-  restoreUserImages();
-  UpdateEditor();
-}
-
-function prevGallery() {
-  saveUserImages();
-  galleryIndex = (galleryIndex - 1 + skeletons.galleries.length) % skeletons.galleries.length;
-  renderGallery();
-  restoreUserImages();
-  UpdateEditor();
-}
-
-function nextFooter() {
-  saveUserImages();
-  footerIndex = (footerIndex + 1) % skeletons.footers.length;
-  renderFooter();
-  restoreUserImages();
-  UpdateEditor();
-}
-
-function prevFooter() {
-  saveUserImages();
-  footerIndex = (footerIndex - 1 + skeletons.footers.length) % skeletons.footers.length;
-  renderFooter();
-  restoreUserImages();
-  UpdateEditor();
-}
-
-// ===============================================
-// INDUSTRY CHANGE — UPDATE ALL SECTIONS
-// ===============================================
+function nextFooter() { saveUserImages(); footerIndex = (footerIndex + 1) % skeletons.footers.length; renderFooter(); restoreUserImages(); UpdateEditor();}
+function prevFooter() { saveUserImages(); footerIndex = (footerIndex - 1 + skeletons.footers.length) % skeletons.footers.length; renderFooter(); restoreUserImages(); UpdateEditor();}
 
 industrySelect.onchange = () => {
   saveUserImages();
   generateAll();
-  UpdateEditor();
 };
 
 function initCarousels() {
@@ -213,4 +162,8 @@ function initCarousels() {
       if (endX > startX + 50) move(-1);
     });
   });
+}
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("show");
 }

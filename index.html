@@ -6,7 +6,7 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 70vh;
+  min-height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,90 +87,46 @@
 }
 </style>
 <style>
-.image-text-section {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto 0px auto;
-  height: 500px;
-}
 
-.image-text-section.reverse {
-  flex-direction: row-reverse;
-}
-
-.image-wrap img {
-  width: 100%;
-  height: 500px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.text-wrap {
-  flex: 1;
-  width: 50%;
-        padding:1rem;
-}
-
-        .text-wrap p{font-size:1.4rem;}
-
-.text-wrap h3 {
-  font-size: 2.5rem;
-}
-
-/* REMOVE the mobile stacking */
-@media (max-width: 600px) {
-  .image-text-section {
-    height:310px;
-  }
-
-        .image-wrap img {
-  width: 100%;
-  height: 310px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-        .text-wrap {
-  flex: 1;
-  width: 50%;
-        padding:0rem;
-}
-        .text-wrap p {
-  padding-bottom:2rem;
-        font-size:1rem;
-}
-
-}
-</style>
-<style>
-
-  #contentBBody {
-    width: 95%;
+  #contentABody {
+    width: 1000px;
     margin: auto;
+    height: 1570px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .gallText{
+  .imageText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-        background:#000;
+    gap: 10px;
   }
-#contentBBody{
-height:1000px;}
-  .gall1,
-  .gall2,
-  .gall3,
-  .gall4 {
-    height: 500px;
+  .imageText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .imageText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+
+  .feature1{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature2{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature3{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature4{
+        height: 775px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-        #contentBbody {
-      height: 1010px !important;
-    }
 
   @media (max-width: 1024px) {
     section[style] {
@@ -180,24 +136,287 @@ height:1000px;}
   }
 
   @media (max-width: 600px) {
-    #contentBBody {
-      width: 95%;
-      margin: auto;
-      height: 620px;
-      overflow: hidden;
+    #contentAbody section[style] img {
+      height: 100% !important;
     }
 
-    .gall1,
-  .gall2,
-  .gall3,
-  .gall4 {
-      height: 310px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
+    #contentABody {
+    width: 90%;
+    margin: auto;
+    height: 620px; /* 2 cards stacked = 500px */
+    overflow: hidden;
+  }
+
+  .imageText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .imageText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+
+    .feature1{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature2{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature3{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .feature4{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  }
+</style>
+<style>
+
+  #gallerABody {
+    width: 1000px;
+    margin: auto;
+    height: 1570px; /* 2 cards stacked = 500px */
+    overflow: hidden;
+  }
+
+  .gallerText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gallerText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .gallerText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+
+  .galler1{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler2{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler3{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler4{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    section[style] {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
     }
   }
 
+  @media (max-width: 600px) {
+    #gallerAbody section[style] img {
+      height: 100% !important;
+    }
+
+    #gallerABody {
+    width: 90%;
+    margin: auto;
+    height: 620px; /* 2 cards stacked = 500px */
+    overflow: hidden;
+  }
+
+  .gallerText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .gallerText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+
+    .galler1{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler2{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler3{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler4{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  }
+</style>
+<style>
+.bodyEndC {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 0px auto;
+  height: 775px;
+}
+
+.bodyEndC.reverse {
+  flex-direction: row-reverse;
+}
+
+.bodyEndC-wrap img {
+  width: 100%;
+  height: 775px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.bodyEndC .text-wrap {
+  flex: 1;
+  width: 50%;
+        padding:1rem;
+}
+
+        .bodyEndCtext-wrap p{font-size:1.4rem;}
+
+.bodyEndCtext-wrap h3 {
+  font-size: 2.5rem;
+}
+
+/* REMOVE the mobile stacking */
+@media (max-width: 600px) {
+   .bodyEndC {
+    height:310px;
+  }
+
+   .bodyEndC-wrap img {
+  width: 100%;
+  height: 310px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+       .bodyEndCtext-wrap {
+  flex: 1;
+  width: 50%;
+        padding:0rem;
+}
+        .bodyEndCtext-wrap p {
+  padding-bottom:2rem;
+        font-size:1rem;
+}
+
+}
+</style>
+<style>
+#proFooterWrapper {
+  width: 100%;
+  padding: 40px 0 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.modernFooter {
+  width: 92%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 230px;
+}
+
+.footer-col h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+}
+
+.footer-col p {
+  margin: 5px 0;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+
+  #proFooterWrapper {
+    padding: 30px 0 15px 0;
+  }
+
+  .modernFooter {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-col {
+    min-width: 100%;
+  }
+
+  .footer-col h3 {
+    font-size: 17px;
+  }
+
+  .footer-col p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .social-icon {
+    font-size: 20px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+}
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -208,14 +427,14 @@ height:1000px;}
       
       
     <section class="hero">
-  <img class="hero-img" src="images/img_0.1781515016215.jpg" alt="Hero Image" style="cursor: pointer;">
+  <img class="hero-img" src="images/img_0.1781544727085.jpg" alt="Hero Image" style="cursor: pointer;">
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="" style="cursor: text;">Bordeaux&nbsp;</h1>
-    <p class="" style="cursor: text;">Street such beautiful buildings</p>
-    <button>Book Appointment</button>
+    <h1 class="" style="cursor: text;">Modern Dining Experience</h1>
+    <p class="" style="cursor: text;">Fresh ingredients, bold flavours, unforgettable moments</p>
+    <button>View Menu</button>
   </div>
 </section>
 
@@ -230,72 +449,64 @@ height:1000px;}
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-<section class="image-text-section">
-  <div class="image-wrap">
-    <img src="images/img_1.1781515016215.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
+ <div id="contentABody">
 
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">France</h3>
-    <p class="" style="cursor: text;">
-      Beautiful Stone Building In France.</p>
-  </div>
-</section>
-
-<section class="image-text-section reverse">
-  <div class="image-wrap">
-    <img src="images/img_2.1781515016215.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
-
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">French Bridge</h3>
-    <p class="" style="cursor: text;">
-      French town beautiful old bridge from WW2 era.</p>
-  </div>
-</section>
-
-
-
-
-
-      
-      
-    </div>
-  </div>
-  <div id="gallerySection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-<div id="contentBBody">
-
-<section class="gallText">
+<section class="imageText">
 
   <!-- Feature 1 -->
-  <div class="gall1">
+  <div class="feature1">
+    
+    <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781515016215.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_1.1781544727085.jpg" alt="Seasonal Plates" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+
+    <!-- Text -->
+    <h3 class="" style="cursor: text;">
+      Seasonal Plates
+    </h3>
+    <p class="" style="cursor: text;">
+      Fresh, local ingredients transformed into beautifully plated dishes that celebrate the season.
+    </p>
   </div>
 
   <!-- Feature 2 -->
-  <div class="gall2">
+  <div class="feature2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781515016215.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_2.1781544727085.jpg" alt="Chef’s Specials" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Chef’s Specials
+    </h3>
+    <p class="" style="cursor: text;">
+      Rotating signature creations showcasing bold flavours and innovative culinary ideas.
+    </p>
   </div>
 
   <!-- Feature 3 -->
-  <div class="gall3">
+  <div class="feature3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_5.1781515016215.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_3.1781544727085.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Artisan Desserts
+    </h3>
+    <p class="" style="cursor: text;">
+      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+    </p>
   </div>
 
   <!-- Feature 4 -->
-  <div class="gall4">
+  <div class="feature4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_6.1781515016215.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_4.1781544727085.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Artisan Desserts
+    </h3>
+    <p class="" style="cursor: text;">
+      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+    </p>
   </div>
 
 </section>
@@ -304,7 +515,117 @@ height:1000px;}
 
 </div>
 
+      
+    </div>
+  </div>
+  <div id="gallerySection">
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      
+      
+        <div id="gallerABody">
 
+<section class="gallerText">
+
+  <!-- Feature 1 -->
+  <div class="galler1">
+    
+    <!-- Image fills leftover space -->
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_5.1781544727085.jpg" alt="Seasonal Plates" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+    </div>
+
+    <!-- Text -->
+    <h3 class="" style="cursor: text;">
+      Seasonal Plates
+    </h3>
+    <p class="" style="cursor: text;">
+      Fresh, local ingredients transformed into beautifully plated dishes that celebrate the season.
+    </p>
+  </div>
+
+  <!-- Feature 2 -->
+  <div class="galler2">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_6.1781544727085.jpg" alt="Chef’s Specials" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+    </div>
+    <h3 class="" style="cursor: text;">
+      Chef’s Specials
+    </h3>
+    <p class="" style="cursor: text;">
+      Rotating signature creations showcasing bold flavours and innovative culinary ideas.
+    </p>
+  </div>
+
+  <!-- Feature 3 -->
+  <div class="galler3">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_7.1781544727085.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+    </div>
+    <h3 class="" style="cursor: text;">
+      Artisan Desserts
+    </h3>
+    <p class="" style="cursor: text;">
+      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+    </p>
+  </div>
+
+  <!-- Feature 4 -->
+  <div class="galler4">
+    <div style="flex: 1; min-height: 0;">
+      <img src="images/img_8.1781544727085.jpg" alt="Artisan Desserts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+    </div>
+    <h3 class="" style="cursor: text;">
+      Artisan Desserts
+    </h3>
+    <p class="" style="cursor: text;">
+      Hand-crafted desserts that balance sweetness, texture, and artistry in every bite.
+    </p>
+  </div>
+
+</section>
+
+
+
+</div>
+
+      
+    </div>
+  </div>
+  <!-- ⭐ NEW SECTION -->
+  <div id="bodyEndSection">
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      
+      
+  <section class="bodyEndC">
+  <div class="bodyEndC-wrap">
+    <img src="images/img_9.1781544727085.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
+
+  <div class="bodyEndCtext-wrap">
+    <h3 class="" style="cursor: text;">Our Signature Dishes</h3>
+    <p class="" style="cursor: text;">
+      A curated menu inspired by seasonal produce, global flavours, and modern culinary craft.
+    </p>
+  </div>
+</section>
+
+<section class="bodyEndC reverse">
+  <div class="bodyEndC-wrap">
+    <img src="images/img_10.1781544727085.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
+
+  <div class="bodyEndCtext-wrap">
+    <h3 class="" style="cursor: text;">Our Signature Dishes</h3>
+    <p class="" style="cursor: text;">
+      A curated menu inspired by seasonal produce, global flavours, and modern culinary craft.
+    </p>
+  </div>
+</section>
+
+
+
+    
+    
       
     </div>
   </div>
@@ -312,9 +633,49 @@ height:1000px;}
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
+<div id="proFooterWrapper">
+
+  <footer class="proFooter modernFooter">
+
+    <div class="footer-col center">
+      <h3 class="" style="cursor: text;">About Us</h3>
+      <p class="" style="cursor: text;">
+        We are committed to crafting meaningful digital experiences through creativity and innovation.
+      </p>
+    </div>
+
+    <div class="footer-col center">
+      <h3 class="" style="cursor: text;">Follow Us</h3>
+      <div class="social-row center-icons">
+        <span class="social-icon" style="cursor: text;">📘</span>
+        <span class="social-icon" style="cursor: text;">📸</span>
+        <span class="social-icon" style="cursor: text;">🐦</span>
+        <span class="social-icon" style="cursor: text;">🌐</span>
+      </div>
+    </div>
+
+    <div class="footer-col center">
+      <h3 class="" style="cursor: text;">Contact</h3>
+      <p class="" style="cursor: text;">Email: info@yourbusiness.com</p>
+      <p class="" style="cursor: text;">Phone: +123 456 7890</p>
+      <p class="" style="cursor: text;">Location: Your City, Country</p>
+    </div>
+
+  </footer>
+
+  <div class="footer-bottom">
+    © 2024 Your Business Name — All Rights Reserved
+  </div>
+
+</div>
+
+
+
+    
       
     </div>
   </div>
+
 
 </body>
 </html>
