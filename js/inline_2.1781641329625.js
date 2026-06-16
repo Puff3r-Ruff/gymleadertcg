@@ -18,6 +18,8 @@ fetch("pages/pages.json")
     if (pageKeys.length === 0) {
       navRight.style.display = "none";
       return;
+    }else{
+      navRight.style.display = "flex";
     }
 
     // Build menu items
