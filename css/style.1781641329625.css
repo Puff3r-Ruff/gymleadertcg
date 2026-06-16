@@ -16,15 +16,22 @@
 
 
     .logo {
-        letter-spacing: -.04em;
-        color: #f9fafb;
-        align-items: center;
-        gap: .45rem;
-        font-size: 1rem;
-        font-weight: 800;
-        display: flex;
+    letter-spacing: -.04em;
+    color: #f9fafb;
+    align-items: center;
+    gap: .45rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    display: flex;
     }
-
+.logo:before {
+    content: "";
+    background: radial-gradient(circle at 30% 30%, #bbeef7, #22bdc5);
+    border-radius: 999px;
+    width: 1.9rem;
+    height: 1.9rem;
+    box-shadow: 0 0 18px #22b9c5cc;
+}
 
     /* HEADER NAVIGATION */
 .nav-header {
