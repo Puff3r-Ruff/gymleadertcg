@@ -6,7 +6,7 @@ function toggleMenu() {
 }
 
 // Load pages dynamically
-fetch("pages/pages.json")
+fetch("/pages/pages.json")
   .then(res => res.json())
   .then(pages => {
     const menu = document.getElementById("mobileMenu");
