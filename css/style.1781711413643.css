@@ -20,6 +20,12 @@
     border: 12px solid #ffffff;
     border-radius: 0.5rem;
 }
+#nav-exit {
+    align-self: flex-end;
+    font-size: 2rem;
+    text-align: right;
+    font-weight: 500;
+}
     .logo {
         letter-spacing: -.04em;
         color: #f9fafb;
