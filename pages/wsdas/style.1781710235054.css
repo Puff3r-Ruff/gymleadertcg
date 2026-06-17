@@ -13,8 +13,13 @@
       font-family: Arial, sans-serif;
     }
 
-
-
+      #preview{
+    background: white;
+    width: 73vw;
+    margin-left: 25vw;
+    border: 12px solid #ffffff;
+    border-radius: 0.5rem;
+}
     .logo {
         letter-spacing: -.04em;
         color: #f9fafb;
@@ -302,7 +307,13 @@
 
     /* 📱 MOBILE FIXES */
     @media (max-width: 700px) {
-
+     #preview{
+    background: white;
+    width: 100%;
+    margin-left: 0;
+    border: 0px solid #ffffff;
+    border-radius: 0rem;
+}
       #controls { 
         gap: 10px;
       }
