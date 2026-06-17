@@ -20,6 +20,12 @@
     border: 12px solid #ffffff;
     border-radius: 0.5rem;
 }
+#nav-exit {
+    align-self: flex-end;
+    font-size: 2rem;
+    text-align: right;
+    font-weight: 500;
+}
     .logo {
         letter-spacing: -.04em;
         color: #f9fafb;
@@ -92,6 +98,7 @@
 
 /* [Popup Menu](ca://s?q=refine_popup_menu_style) */
 .mobile-menu {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -102,7 +109,6 @@
   max-width: 340px;
   padding: 50px 24px;
   border-radius: 16px;
-  display: flex;
   flex-direction: column;
   gap: 22px;
   opacity: 0;
@@ -113,6 +119,7 @@
 
 /* [Show State](ca://s?q=animate_popup_show_state) */
 .mobile-menu.show {
+  display: flex;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
