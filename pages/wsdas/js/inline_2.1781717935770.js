@@ -1,7 +1,7 @@
 
 
 document.querySelector(".hamburger").addEventListener("click", toggleMenu);
-document.getElementById("nav-exit").addEventListener("click", toggleMenu);
+document.getElementById(".nav-exit").addEventListener("click", toggleMenu);
 
 
 function toggleMenu() {
