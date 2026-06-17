@@ -1,8 +1,14 @@
+
 document.querySelector(".hamburger").addEventListener("click", toggleMenu);
 
 function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("show");
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+
+  menu.classList.toggle("show");
+  overlay.classList.toggle("show");
 }
+
 
 // Load pages dynamically
 fetch("/pages/pages.json")

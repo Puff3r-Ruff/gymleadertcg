@@ -16,15 +16,16 @@
 
 
     .logo {
-    letter-spacing: -.04em;
-    color: #f9fafb;
-    align-items: center;
-    gap: .45rem;
-    font-size: 1.6rem;
-    font-weight: 800;
-    display: flex;
+        letter-spacing: -.04em;
+        color: #f9fafb;
+        align-items: center;
+        gap: .45rem;
+        font-size: 1.6rem;
+        font-weight: 800;
+        display: flex;
     }
-.logo:before {
+
+    .logo:before {
     content: "";
     background: radial-gradient(circle at 30% 30%, #bbeef7, #22bdc5);
     border-radius: 999px;
@@ -55,52 +56,134 @@
   font-weight: bold;
 }
 
+/* [Hamburger](ca://s?q=improve_hamburger_design) */
 .hamburger {
-  width: 30px;
+  width: 32px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 20px;
+  gap: 6px;
+  z-index: 1003;
 }
 
 .hamburger span {
-  display: block;
   height: 3px;
-  background: #333;
+  background: #222;
   border-radius: 3px;
-  transition: 0.3s;
+  transition: 0.35s ease;
 }
 
-/* MOBILE MENU */
+/* [Overlay](ca://s?q=customize_menu_overlay) */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease;
+  z-index: 1000;
+}
+
+/* [Popup Menu](ca://s?q=refine_popup_menu_style) */
 .mobile-menu {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 15px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  width: 150px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-}
-
-.mobile-menu a:hover {
-  color: #0078ff;
-}
-
-/* SHOW MENU */
-.mobile-menu.show {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  width: 80%;
+  max-width: 340px;
+  padding: 50px 24px;
+  border-radius: 16px;
   display: flex;
+  flex-direction: column;
+  gap: 22px;
+  opacity: 0;
+  transition: 0.35s ease;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  z-index: 1002;
 }
+
+/* [Show State](ca://s?q=animate_popup_show_state) */
+.mobile-menu.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* [Close Button](ca://s?q=improve_close_button_design) */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-weight: 300;
+  color: #444;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+  transform: scale(1.15);
+}
+
+/* [Menu Links](ca://s?q=improve_menu_link_styles) */
+.mobile-menu a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+  padding: 10px 0;
+  text-align:left;
+  border-radius: 8px;
+  transition: 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+/* Hover / tap effect */
+.mobile-menu a:hover {
+  background: rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+/* Fade-in stagger animation */
+.mobile-menu.show a {
+  animation: fadeUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.mobile-menu.show a:nth-child(2) { animation-delay: 0.05s; }
+.mobile-menu.show a:nth-child(3) { animation-delay: 0.1s; }
+.mobile-menu.show a:nth-child(4) { animation-delay: 0.15s; }
+.mobile-menu.show a:nth-child(5) { animation-delay: 0.2s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* [Hamburger Animation](ca://s?q=animate_hamburger_icon) */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+
 
 
     img, video {
@@ -229,7 +312,7 @@
       }
 
       #industrySelect {
-        width: 100%;
+        width: 60%;
         font-size: 1rem;
         min-width: auto;
         padding: 10px 14px;
