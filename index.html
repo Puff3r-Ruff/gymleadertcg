@@ -2,11 +2,8 @@
 <html>
 <head>
 <style>
-  body { background:#fff; }
-</style>
-<style>
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;600&display=swap');
 
 /* --- Base Hero --- */
 .hero {
@@ -52,30 +49,31 @@
 }
 
 .hero-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
   margin-bottom: 18px;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .hero-content p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   font-weight: 300;
   opacity: 0.95;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
+  letter-spacing: 0.3px;
 }
 
 /* --- Button --- */
 .hero-content button {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   padding: 14px 36px;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
   background: #ffffff;
@@ -98,96 +96,6 @@
     width: 100%;
   }
 }
-</style>
-<style>
-
-  #contentABody {
-    width: 1000px;
-    margin: auto;
-    height: 1570px; /* 2 cards stacked = 500px */
-    overflow: hidden;
-  }
-
-  .imageText{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .imageText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
-
-  .feature1{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  @media (max-width: 1024px) {
-    section[style] {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-    }
-  }
-
-  @media (max-width: 600px) {
-    #contentAbody section[style] img {
-      height: 100% !important;
-    }
-
-    #contentABody {
-    width: 90%;
-    margin: auto;
-    height: 620px; /* 2 cards stacked = 500px */
-    overflow: hidden;
-  }
-
-  .imageText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
-
-    .feature1{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  }
 </style>
 <style>
 .image-text-section {
@@ -226,7 +134,7 @@
 @media (max-width: 600px) {
   .image-text-section {
     height:310px;
-      width:95%;
+        width:95%;
   }
 
         .image-wrap img {
@@ -246,6 +154,96 @@
 }
 
 }
+</style>
+<style>
+
+  #gallerABody {
+    width: 1000px;
+    margin: auto;
+    height: 1570px; /* 2 cards stacked = 500px */
+    overflow: hidden;
+  }
+
+  .gallerText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gallerText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .gallerText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+
+  .galler1{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler2{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler3{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler4{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    section[style] {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #gallerAbody section[style] img {
+      height: 100% !important;
+    }
+
+    #gallerABody {
+    width: 90%;
+    margin: auto;
+    height: 620px; /* 2 cards stacked = 500px */
+    overflow: hidden;
+  }
+
+  .gallerText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .gallerText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+
+    .galler1{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler2{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler3{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .galler4{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  }
 </style>
 <style>
 
@@ -323,36 +321,42 @@ height:1570px;}
 }
 
 .footer-col h3 {
-  margin-bottom: 1.2rem;
-  font-size: 18px;
-  
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .footer-col p {
   margin: 6px 0;
   font-size: 1rem;
-  
 }
 
 .social-row {
   gap: 12px;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .social-icon {
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
 
 .social-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
+}
+
+.social-text {
+  font-size: 13px;
+  margin-top: 8px;
+  opacity: 0.8;
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
   font-size: 1rem;
+  opacity: 0.8;
 }
 
 @media (max-width: 600px) {
@@ -361,23 +365,21 @@ height:1570px;}
     text-align: center;
   }
 }
-
-      </style>
-<link rel="stylesheet" href="css/style.1781703187035.css">
-<link rel="stylesheet" href="css/inline_1.1781703187035.css">
-<link rel="stylesheet" href="css/inline_2.1781703187035.css">
-<link rel="stylesheet" href="css/inline_3.1781703187035.css">
-<link rel="stylesheet" href="css/inline_4.1781703187035.css">
-<link rel="stylesheet" href="css/inline_5.1781703187035.css">
-<link rel="stylesheet" href="css/inline_6.1781703187035.css">
-<link rel="stylesheet" href="css/inline_7.1781703187035.css">
+</style>
+<link rel="stylesheet" href="css/style.1781706400217.css">
+<link rel="stylesheet" href="css/inline_1.1781706400217.css">
+<link rel="stylesheet" href="css/inline_2.1781706400217.css">
+<link rel="stylesheet" href="css/inline_3.1781706400217.css">
+<link rel="stylesheet" href="css/inline_4.1781706400217.css">
+<link rel="stylesheet" href="css/inline_5.1781706400217.css">
+<link rel="stylesheet" href="css/inline_6.1781706400217.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
   <header class="nav-header">
   <div class="nav-left">
-    <h1 class="site-title" style="cursor: text;">Business Name</h1>
+    <h1 class="site-title" style="cursor: text;">GymLeaderTCG.COM</h1>
   </div>
 
   <div class="nav-right" id="navRight" style="display: none;">
@@ -397,19 +399,17 @@ height:1570px;}
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-      
     <section class="hero">
-  <img class="hero-img" src="images/img_0.1781703187035.jpg" alt="Hero Image" style="cursor: pointer;">
+  <img class="hero-img" src="images/img_0.1781706400217.jpg" alt="Hero Image" style="cursor: pointer;">
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="" style="cursor: text;">Luxury Floral Design</h1>
-    <p class="" style="cursor: text;">Hand-crafted arrangements for weddings &amp; events</p>
+    <h1 class="" style="cursor: text;">GYMLEADERTCG</h1>
+    <p class="" style="cursor: text;">POKEMON TRADING CARD GAME</p>
     <button>Shop Flowers</button>
   </div>
 </section>
-
 
 
 
@@ -422,16 +422,51 @@ height:1570px;}
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
- <div id="contentABody">
+<section class="image-text-section">
+  <div class="image-wrap">
+    <img src="images/img_1.1781706400217.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
 
-<section class="imageText">
+  <div class="text-wrap">
+    <h3 class="" style="cursor: text;">Pikachu VMAX #188</h3>
+    <p class="" style="cursor: text;">Beautiful Card From Vivid Voltage - $154 Ungraded</p>
+  </div>
+</section>
+
+<section class="image-text-section reverse">
+  <div class="image-wrap">
+    <img src="images/img_2.1781706400217.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
+
+  <div class="text-wrap">
+    <h3 class="" style="cursor: text;"><font color="#0076df" face="Arial, Verdana, Geneva, Helvetica, sans-serif"><span style="font-size: 18px; font-weight: 400; text-transform: capitalize;">Mega Greninja ex #116</span></font></h3>
+    <p class="" style="cursor: text;">
+      Pokemon Chaos Greninja $379 Ungraded.</p>
+  </div>
+</section>
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+  <div id="gallerySection">
+    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
+      
+      
+        <div id="gallerABody">
+
+<section class="gallerText">
 
   <!-- Feature 1 -->
-  <div class="feature1">
+  <div class="galler1">
     
     <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_1.1781703187035.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_3.1781706400217.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
 
     <!-- Text -->
@@ -444,9 +479,9 @@ height:1570px;}
   </div>
 
   <!-- Feature 2 -->
-  <div class="feature2">
+  <div class="galler2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_2.1781703187035.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_4.1781706400217.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Event Styling
@@ -457,9 +492,9 @@ height:1570px;}
   </div>
 
   <!-- Feature 3 -->
-  <div class="feature3">
+  <div class="galler3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781703187035.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_5.1781706400217.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Seasonal Bouquets
@@ -470,9 +505,9 @@ height:1570px;}
   </div>
 
   <!-- Feature 4 -->
-  <div class="feature4">
+  <div class="galler4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781703187035.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_6.1781706400217.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Seasonal Bouquets
@@ -491,43 +526,6 @@ height:1570px;}
       
     </div>
   </div>
-  <div id="gallerySection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-  <section class="image-text-section">
-  <div class="image-wrap">
-    <img src="images/img_5.1781703187035.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
-
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Our Floral Services</h3>
-    <p class="" style="cursor: text;">
-      Elegant, bespoke floral creations designed to elevate every moment.
-    </p>
-  </div>
-</section>
-
-<section class="image-text-section reverse">
-  <div class="image-wrap">
-    <img src="images/img_6.1781703187035.jpg" alt="Description of image" style="cursor: pointer;">
-  </div>
-
-  <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Our Floral Services</h3>
-    <p class="" style="cursor: text;">
-      Elegant, bespoke floral creations designed to elevate every moment.
-    </p>
-  </div>
-</section>
-
-
-
-    
-    
-      
-    </div>
-  </div>
   <!-- ⭐ NEW SECTION -->
   <div id="bodyEndSection">
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
@@ -540,28 +538,28 @@ height:1570px;}
   <!-- Feature 1 -->
   <div class="bodyA1">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_7.1781703187035.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_7.1781706400217.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
     </div>
   </div>
 
   <!-- Feature 2 -->
   <div class="bodyA2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_8.1781703187035.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_8.1781706400217.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
     </div>
   </div>
 
   <!-- Feature 3 -->
   <div class="bodyA3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_9.1781703187035.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_9.1781706400217.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
     </div>
   </div>
 
   <!-- Feature 4 -->
   <div class="bodyA4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_10.1781703187035.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_10.1781706400217.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
     </div>
   </div>
 
@@ -582,20 +580,6 @@ height:1570px;}
 <div id="proFooterWrapper">
 
   <footer class="proFooter">
-
-    <div class="footer-col">
-      <h3 class="" style="cursor: text;">About Us</h3>
-      <p class="" style="cursor: text;">
-        We create beautiful experiences for our customers through quality, service, and passion.
-      </p>
-    </div>
-
-    <div class="footer-col">
-      <h3 class="" style="cursor: text;">Contact</h3>
-      <p class="" style="cursor: text;">Email: info@yourbusiness.com</p>
-      <p class="" style="cursor: text;">Phone: <a href="tel:+123 456 7890">+123 456 7890</a></p>
-      <p class="" style="cursor: text;">Location: Your City, Country</p>
-    </div>
 
     <div class="footer-col">
       <h3 class="" style="cursor: text;">Follow Us</h3>
@@ -628,6 +612,21 @@ height:1570px;}
           </svg>
         </span>
       </div>
+      <p class="social-text" style="cursor: text;">Stay connected with our latest updates.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="" style="cursor: text;">About Us</h3>
+      <p class="" style="cursor: text;">
+        Dedicated to delivering exceptional quality and unforgettable customer experiences.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="" style="cursor: text;">Contact</h3>
+      <p class="" style="cursor: text;">Email: info@yourbusiness.com</p>
+      <p class="" style="cursor: text;">Phone: +123 456 7890</p>
+      <p class="" style="cursor: text;">Location: Your City, Country</p>
     </div>
 
   </footer>
@@ -638,7 +637,8 @@ height:1570px;}
 
 </div>
 
-      
+
+
     
       
     </div>
@@ -646,7 +646,7 @@ height:1570px;}
 
 <script src="js/clerk.browser.js"></script>
 <script src="js/stripe.js"></script>
-<script src="js/inline_2.1781703187035.js"></script>
+<script src="js/inline_2.1781706400217.js"></script>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
 {
   "industryKey": "florist",
-  "heroIndex": 0,
-  "contentIndex": 0,
-  "galleryIndex": 0,
+  "heroIndex": 2,
+  "contentIndex": 2,
+  "galleryIndex": 1,
   "bodyEndIndex": 0,
-  "footerIndex": 0
+  "footerIndex": 1
 }

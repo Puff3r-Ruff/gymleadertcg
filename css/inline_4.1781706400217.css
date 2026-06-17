@@ -1,39 +1,39 @@
 
 
-  #contentABody {
+  #gallerABody {
     width: 1000px;
     margin: auto;
     height: 1570px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .imageText{
+  .gallerText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  .imageText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+  .gallerText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .gallerText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
 
-  .feature1{
+  .galler1{
         height: 775px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .feature2{
+  .galler2{
         height: 775px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .feature3{
+  .galler3{
         height: 775px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .feature4{
+  .galler4{
         height: 775px;
     display: flex;
     flex-direction: column;
@@ -48,39 +48,39 @@
   }
 
   @media (max-width: 600px) {
-    #contentAbody section[style] img {
+    #gallerAbody section[style] img {
       height: 100% !important;
     }
 
-    #contentABody {
+    #gallerABody {
     width: 90%;
     margin: auto;
     height: 620px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .imageText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+  .gallerText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .gallerText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
 
-    .feature1{
+    .galler1{
         height: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .feature2{
+  .galler2{
         height: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .feature3{
+  .galler3{
         height: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .feature4{
+  .galler4{
         height: 300px;
     display: flex;
     flex-direction: column;
