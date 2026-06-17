@@ -92,6 +92,7 @@
 
 /* [Popup Menu](ca://s?q=refine_popup_menu_style) */
 .mobile-menu {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -113,6 +114,7 @@
 
 /* [Show State](ca://s?q=animate_popup_show_state) */
 .mobile-menu.show {
+  display: flex;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
