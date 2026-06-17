@@ -1,10 +1,12 @@
 
+
 document.querySelector(".hamburger").addEventListener("click", toggleMenu);
+document.querySelector(".nav-exit").addEventListener("click", toggleMenu);
 
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("menuOverlay");
-
+  
   menu.classList.toggle("show");
   overlay.classList.toggle("show");
 }
@@ -51,3 +53,4 @@ fetch("/pages/pages.json")
     console.error("Could not load pages:", err);
     document.getElementById("navRight").style.display = "none";
   });
+
