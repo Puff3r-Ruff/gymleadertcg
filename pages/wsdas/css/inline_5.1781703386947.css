@@ -1,23 +1,23 @@
 
 
-  #bodyEndA {
+  #contentBBody {
     width: 95%;
     margin: auto;
     overflow: hidden;
   }
 
-  .bodyAText{
+  .gallText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3px;
         background:#000;
   }
-#bodyEndA{
+#contentBBody{
 height:1570px;}
-  .bodyA1,
-  .bodyA2,
-  .bodyA3,
-  .bodyA4 {
+  .gall1,
+  .gall2,
+  .gall3,
+  .gall4 {
     height: 775px;
     display: flex;
     flex-direction: column;
@@ -25,24 +25,24 @@ height:1570px;}
   }
 
   @media (max-width: 1024px) {
-    #bodyEndA section[style] {
+    section[style] {
       grid-template-columns: repeat(2, 1fr) !important;
       gap: 12px !important;
     }
   }
 
   @media (max-width: 600px) {
-    #bodyEndA {
+    #contentBBody {
       width: 95%;
       margin: auto;
       height: 620px;
       overflow: hidden;
     }
 
-    .bodyA1,
-  .bodyA2,
-  .bodyA3,
-  .bodyA4 {
+    .gall1,
+  .gall2,
+  .gall3,
+  .gall4 {
       height: 310px;
       display: flex;
       flex-direction: column;
