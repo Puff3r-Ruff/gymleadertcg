@@ -247,56 +247,93 @@
 </style>
 <style>
 
-  #bodyEndA {
-    width: 95%;
+  #bodyEndB {
+    width: 1000px;
     margin: auto;
+    height: 1570px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .bodyAText{
+  .bodyBText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-        background:#000;
+    gap: 10px;
   }
-#bodyEndA{
-height:1570px;}
-  .bodyA1,
-  .bodyA2,
-  .bodyA3,
-  .bodyA4 {
-    height: 775px;
+  .bodyBText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .BodyBText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+
+  .bodyB1{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .bodyB2{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .bodyB3{
+        height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .bodyB4{
+        height: 775px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
 
   @media (max-width: 1024px) {
-    #bodyEndA section[style] {
+    #bodyEndB section[style] {
       grid-template-columns: repeat(2, 1fr) !important;
       gap: 12px !important;
     }
   }
 
   @media (max-width: 600px) {
-    #bodyEndA {
-      width: 95%;
-      margin: auto;
-      height: 620px;
-      overflow: hidden;
+    #bodyEndB section[style] img {
+      height: 100% !important;
     }
 
-    .bodyA1,
-  .bodyA2,
-  .bodyA3,
-  .bodyA4 {
-      height: 310px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
+    #bodyEndB {
+    width: 90%;
+    margin: auto;
+    height: 620px; /* 2 cards stacked = 500px */
+    overflow: hidden;
   }
 
+  .bodyBText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .bodyBText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+
+    .bodyB1{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .bodyB2{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .bodyB3{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }     
+  .bodyB4{
+        height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  }
 </style>
 <style>
 #proFooterWrapper {
@@ -366,13 +403,13 @@ height:1570px;}
   }
 }
 </style>
-<link rel="stylesheet" href="css/style.1781707089609.css">
-<link rel="stylesheet" href="css/inline_1.1781707089609.css">
-<link rel="stylesheet" href="css/inline_2.1781707089609.css">
-<link rel="stylesheet" href="css/inline_3.1781707089609.css">
-<link rel="stylesheet" href="css/inline_4.1781707089609.css">
-<link rel="stylesheet" href="css/inline_5.1781707089609.css">
-<link rel="stylesheet" href="css/inline_6.1781707089609.css">
+<link rel="stylesheet" href="css/style.1781707779131.css">
+<link rel="stylesheet" href="css/inline_1.1781707779131.css">
+<link rel="stylesheet" href="css/inline_2.1781707779131.css">
+<link rel="stylesheet" href="css/inline_3.1781707779131.css">
+<link rel="stylesheet" href="css/inline_4.1781707779131.css">
+<link rel="stylesheet" href="css/inline_5.1781707779131.css">
+<link rel="stylesheet" href="css/inline_6.1781707779131.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -400,7 +437,7 @@ height:1570px;}
       
       
     <section class="hero">
-  <img class="hero-img" src="images/img_0.1781707089609.jpg" alt="Hero Image" style="cursor: pointer;">
+  <img class="hero-img" src="images/img_0.1781707779131.jpg" alt="Hero Image" style="cursor: pointer;">
 
   <div class="hero-overlay"></div>
 
@@ -424,7 +461,7 @@ height:1570px;}
       
 <section class="image-text-section">
   <div class="image-wrap">
-    <img src="images/img_1.1781707089609.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_1.1781707779131.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
@@ -435,11 +472,11 @@ height:1570px;}
 
 <section class="image-text-section reverse">
   <div class="image-wrap">
-    <img src="images/img_2.1781707089609.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_2.1781707779131.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
-    <h3 class="" style="cursor: text;"><font color="#0076df" face="Arial, Verdana, Geneva, Helvetica, sans-serif"><span style="font-size: 18px; font-weight: 400; text-transform: capitalize;">Mega Greninja ex #116</span></font></h3>
+    <h3 class="" style="cursor: text;"><font color="#0076df" face="Arial, Verdana, Geneva, Helvetica, sans-serif"><span style="font-size: 18px; font-weight: 400; text-transform: capitalize; cursor: text;" class="">Mega Greninja ex #116</span></font></h3>
     <p class="" style="cursor: text;">
       Pokemon Chaos Greninja $379 Ungraded.</p>
   </div>
@@ -466,7 +503,7 @@ height:1570px;}
     
     <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781707089609.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_3.1781707779131.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
 
     <!-- Text -->
@@ -479,7 +516,7 @@ height:1570px;}
   <!-- Feature 2 -->
   <div class="galler2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781707089609.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_4.1781707779131.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Pikachu Grey Hat</h3>
@@ -490,7 +527,7 @@ height:1570px;}
   <!-- Feature 3 -->
   <div class="galler3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_5.1781707089609.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_5.1781707779131.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Pikachu EX #238</h3>
@@ -501,7 +538,7 @@ height:1570px;}
   <!-- Feature 4 -->
   <div class="galler4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_6.1781707089609.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_6.1781707779131.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Captain Pikachu #709</h3>
@@ -523,36 +560,55 @@ height:1570px;}
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-<div id="bodyEndA">
+ <div id="bodyEndB">
 
-<section class="bodyAText">
+<section class="bodyBText">
 
   <!-- Feature 1 -->
-  <div class="bodyA1">
+  <div class="bodyB1">
+    
+    <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_7.1781707089609.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_7.1781707779131.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+
+    <!-- Text -->
+    <h3 class="" style="cursor: text;">
+      Mega Charizard X&nbsp;</h3>
+    <p class="" style="cursor: text;">Ungraded $776</p>
   </div>
 
   <!-- Feature 2 -->
-  <div class="bodyA2">
+  <div class="bodyB2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_8.1781707089609.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_8.1781707779131.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Charizard #4</h3>
+    <p class="" style="cursor: text;">
+      Ungraded $7845</p>
   </div>
 
   <!-- Feature 3 -->
-  <div class="bodyA3">
+  <div class="bodyB3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_9.1781707089609.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_9.1781707779131.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Blasts &amp; Piplup GX</h3>
+    <p class="" style="cursor: text;">
+      Ungraded $305</p>
   </div>
 
   <!-- Feature 4 -->
-  <div class="bodyA4">
+  <div class="bodyB4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_10.1781707089609.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+      <img src="images/img_10.1781707779131.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
+    <h3 class="" style="cursor: text;">
+      Blastoise #2</h3>
+    <p class="" style="cursor: text;">
+      Ungraded $1168</p>
   </div>
 
 </section>
@@ -560,7 +616,6 @@ height:1570px;}
 
 
 </div>
-
 
       
     </div>
@@ -638,7 +693,7 @@ height:1570px;}
 
 <script src="js/stripe.js"></script>
 <script src="js/clerk.browser.js"></script>
-<script src="js/inline_2.1781707089609.js"></script>
+<script src="js/inline_2.1781707779131.js"></script>
 
 </body>
 </html>
