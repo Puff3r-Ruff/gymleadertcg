@@ -1,0 +1,52 @@
+
+
+  #bodyEndA {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .bodyAText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+        background:#000;
+  }
+#bodyEndA{
+height:1570px;}
+  .bodyA1,
+  .bodyA2,
+  .bodyA3,
+  .bodyA4 {
+    height: 775px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    #bodyEndA section[style] {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #bodyEndA {
+      width: 95%;
+      margin: auto;
+      height: 620px;
+      overflow: hidden;
+    }
+
+    .bodyA1,
+  .bodyA2,
+  .bodyA3,
+  .bodyA4 {
+      height: 310px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
