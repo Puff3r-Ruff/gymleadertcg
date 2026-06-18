@@ -99,94 +99,62 @@
 }
 </style>
 <style>
+.image-text-section {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 0px auto;
+  height: 775px;
+}
 
-  #contentABody {
-    width: 1000px;
-    margin: auto;
-    height: 1570px; /* 2 cards stacked = 500px */
-    overflow: hidden;
+.image-text-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 775px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.text-wrap {
+  flex: 1;
+  width: 50%;
+        padding:1rem;
+}
+
+        .text-wrap p{font-size:1.4rem;}
+
+.text-wrap h3 {
+  font-size: 2.5rem;
+}
+
+/* REMOVE the mobile stacking */
+@media (max-width: 600px) {
+  .image-text-section {
+    height:310px;
+        width:95%;
   }
 
-  .imageText{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .imageText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+        .image-wrap img {
+  width: 100%;
+  height: 310px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+        .text-wrap {
+  flex: 1;
+  width: 50%;
+        padding:0rem;
+}
+        .text-wrap p {
+  padding-bottom:2rem;
+        font-size:1rem;
+}
 
-  .feature1{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  @media (max-width: 1024px) {
-    section[style] {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-    }
-  }
-
-  @media (max-width: 600px) {
-    #contentAbody section[style] img {
-      height: 100% !important;
-    }
-
-    #contentABody {
-    width: 90%;
-    margin: auto;
-    height: 620px; /* 2 cards stacked = 500px */
-    overflow: hidden;
-  }
-
-  .imageText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .imageText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
-
-    .feature1{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  }
+}
 </style>
 <style>
 
@@ -436,13 +404,13 @@
   }
 }
 </style>
-<link rel="stylesheet" href="css/style.1781778289796.css">
-<link rel="stylesheet" href="css/inline_1.1781778289796.css">
-<link rel="stylesheet" href="css/inline_2.1781778289796.css">
-<link rel="stylesheet" href="css/inline_3.1781778289796.css">
-<link rel="stylesheet" href="css/inline_4.1781778289796.css">
-<link rel="stylesheet" href="css/inline_5.1781778289796.css">
-<link rel="stylesheet" href="css/inline_6.1781778289796.css">
+<link rel="stylesheet" href="css/style.1781803311056.css">
+<link rel="stylesheet" href="css/inline_1.1781803311056.css">
+<link rel="stylesheet" href="css/inline_2.1781803311056.css">
+<link rel="stylesheet" href="css/inline_3.1781803311056.css">
+<link rel="stylesheet" href="css/inline_4.1781803311056.css">
+<link rel="stylesheet" href="css/inline_5.1781803311056.css">
+<link rel="stylesheet" href="css/inline_6.1781803311056.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -470,13 +438,13 @@
       
       
    <section class="hero">
-  <img class="hero-img" src="images/img_0.1781778289796.jpg" alt="Hero Image" style="cursor: pointer;">
+  <img class="hero-img" src="images/img_0.1781803311056.jpg" alt="Hero Image" style="cursor: pointer;">
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
     <h1 class="" style="cursor: text;">Pokemon TCG</h1>
-    <p class="" style="cursor: text;">Cards To Collect</p>
+    <p class="" style="cursor: text;">Pikachu</p>
     <button>Shop Flowers</button>
   </div>
 </section>
@@ -493,63 +461,35 @@
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
- <div id="contentABody">
+<section class="image-text-section">
+  <div class="image-wrap">
+    <img src="images/img_1.1781803311056.jpg" alt="Description of image" style="cursor: pointer;">
+  </div>
 
-<section class="imageText">
-
-  <!-- Feature 1 -->
-  <div class="feature1">
-    
-    <!-- Image fills leftover space -->
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_1.1781778289796.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-
-    <!-- Text -->
-    <h3 class="" style="cursor: text;">
-      Pikachu EX</h3>
+  <div class="text-wrap">
+    <h3 class="" style="cursor: text;">Blastoise<div>Piplup</div></h3>
     <p class="" style="cursor: text;">
-      $379 UNGRADED</p>
+      Tag Team Card</p>
+  </div>
+</section>
+
+<section class="image-text-section reverse">
+  <div class="image-wrap">
+    <img src="images/img_2.1781803311056.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
-  <!-- Feature 2 -->
-  <div class="feature2">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_2.1781778289796.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-    <h3 class="" style="cursor: text;">
-      Pikachu EX #238</h3>
+  <div class="text-wrap">
+    <h3 class="" style="cursor: text;">Captain<div>Pikachu</div></h3>
     <p class="" style="cursor: text;">
-      $438 Ungraded</p>
+      Japanese version Pikachu captain card.</p>
   </div>
-
-  <!-- Feature 3 -->
-  <div class="feature3">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781778289796.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-    <h3 class="" style="cursor: text;">
-      Grey Hat Pikachu</h3>
-    <p class="" style="cursor: text;">
-      $786 Ungraded&nbsp;</p>
-  </div>
-
-  <!-- Feature 4 -->
-  <div class="feature4">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781778289796.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
-    </div>
-    <h3 class="" style="cursor: text;">
-      Charizard First Edition</h3>
-    <p class="" style="cursor: text;"><br></p>
-  </div>
-
 </section>
 
 
 
-</div>
 
+
+      
       
     </div>
   </div>
@@ -566,7 +506,7 @@
     
     <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_5.1781778289796.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_3.1781803311056.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
 
     <!-- Text -->
@@ -581,7 +521,7 @@
   <!-- Feature 2 -->
   <div class="galler2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_6.1781778289796.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_4.1781803311056.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Event Styling
@@ -594,7 +534,7 @@
   <!-- Feature 3 -->
   <div class="galler3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_7.1781778289796.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_5.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Seasonal Bouquets
@@ -607,7 +547,7 @@
   <!-- Feature 4 -->
   <div class="galler4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_8.1781778289796.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_6.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Captain Pikachu</h3>
@@ -638,7 +578,7 @@
     
     <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_9.1781778289796.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_7.1781803311056.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
 
     <!-- Text -->
@@ -650,7 +590,7 @@
   <!-- Feature 2 -->
   <div class="bodyB2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_10.1781778289796.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_8.1781803311056.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Charizard #4</h3>
@@ -661,7 +601,7 @@
   <!-- Feature 3 -->
   <div class="bodyB3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_11.1781778289796.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_9.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Blasts &amp; Piplup GX</h3>
@@ -672,7 +612,7 @@
   <!-- Feature 4 -->
   <div class="bodyB4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_12.1781778289796.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_10.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
       Blastoise #2</h3>
@@ -762,7 +702,7 @@
 
 <script src="js/clerk.browser.js"></script>
 <script src="js/stripe.js"></script>
-<script src="js/inline_2.1781778289796.js"></script>
+<script src="js/inline_2.1781803311056.js"></script>
 
 </body>
 </html>
