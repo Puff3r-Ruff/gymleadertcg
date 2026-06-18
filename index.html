@@ -105,8 +105,9 @@
   align-items: center;
   gap: 10px;
   margin: 0 auto 0px auto;
-  height: 775px;
 }
+
+.image-wrap{width:40%;}
 
 .image-text-section.reverse {
   flex-direction: row-reverse;
@@ -114,9 +115,6 @@
 
 .image-wrap img {
   width: 100%;
-  height: 775px;
-  border-radius: 8px;
-  object-fit: cover;
 }
 
 .text-wrap {
@@ -125,7 +123,7 @@
         padding:1rem;
 }
 
-        .text-wrap p{font-size:1.4rem;}
+.text-wrap p{font-size:1.4rem;}
 
 .text-wrap h3 {
   font-size: 2.5rem;
@@ -134,15 +132,12 @@
 /* REMOVE the mobile stacking */
 @media (max-width: 600px) {
   .image-text-section {
-    height:310px;
-        width:95%;
+      width:95%;
   }
-
+.image-wrap{width:60%;}
         .image-wrap img {
   width: 100%;
-  height: 310px;
   border-radius: 8px;
-  object-fit: cover;
 }
         .text-wrap {
   flex: 1;
@@ -158,46 +153,28 @@
 </style>
 <style>
 
-  #gallerABody {
-    width: 1000px;
+  #contentGBody {
+    width: 65%;
     margin: auto;
-    height: 1570px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .gallerText{
+  .imageGText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 3px;
+        background:#000;
   }
-  .gallerText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .gallerText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+#contentGBody{}
 
-  .galler1{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .galler2{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .galler3{
-        height: 775px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .galler4{
-        height: 775px;
+  .featureG1,
+  .featureG2,
+  .featureG3,
+  .featureG4 {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-
   @media (max-width: 1024px) {
     section[style] {
       grid-template-columns: repeat(2, 1fr) !important;
@@ -206,129 +183,100 @@
   }
 
   @media (max-width: 600px) {
-    #gallerAbody section[style] img {
-      height: 100% !important;
+    #contentGBody {
+      width: 95%;
+      margin: auto;
+      overflow: hidden;
     }
 
-    #gallerABody {
-    width: 90%;
-    margin: auto;
-    height: 620px; /* 2 cards stacked = 500px */
-    overflow: hidden;
+    .featureG1,
+    .featureG2,
+    .featureG3,
+    .featureG4 {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
-  .gallerText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .gallerText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
-
-    .galler1{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .galler2{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .galler3{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .galler4{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  }
 </style>
 <style>
 
-  #bodyEndB {
-    width: 1000px;
+  #contentGTBody {
+    width: 55%;
     margin: auto;
-    height: 1570px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .bodyBText{
+  .imageGTText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  .bodyBText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .BodyBText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+  .imageGTText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
+  .imageGTText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
 
-  .bodyB1{
-        height: 775px;
+  .feature1{
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .bodyB2{
-        height: 775px;
+  .feature2{
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .bodyB3{
-        height: 775px;
+  .feature3{
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .bodyB4{
-        height: 775px;
+  .feature4{
     display: flex;
     flex-direction: column;
     text-align: center;
   }
 
-  @media (max-width: 1024px) {
-    #bodyEndB section[style] {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-    }
-  }
 
   @media (max-width: 600px) {
-    #bodyEndB section[style] img {
+    #contentGTbody section[style] img {
       height: 100% !important;
     }
 
-    #bodyEndB {
+    #contentGTBody {
     width: 90%;
     margin: auto;
     height: 620px; /* 2 cards stacked = 500px */
     overflow: hidden;
   }
 
-  .bodyBText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .bodyBText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
+.imageGTText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .imageGTText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
+  .imageGTText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
 
-    .bodyB1{
+    .feature1{
         height: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .bodyB2{
+  .feature2{
         height: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .bodyB3{
+  .feature3{
         height: 300px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }     
-  .bodyB4{
+  .feature4{
         height: 300px;
     display: flex;
     flex-direction: column;
@@ -404,13 +352,13 @@
   }
 }
 </style>
-<link rel="stylesheet" href="css/style.1781803311056.css">
-<link rel="stylesheet" href="css/inline_1.1781803311056.css">
-<link rel="stylesheet" href="css/inline_2.1781803311056.css">
-<link rel="stylesheet" href="css/inline_3.1781803311056.css">
-<link rel="stylesheet" href="css/inline_4.1781803311056.css">
-<link rel="stylesheet" href="css/inline_5.1781803311056.css">
-<link rel="stylesheet" href="css/inline_6.1781803311056.css">
+<link rel="stylesheet" href="css/style.1781819036089.css">
+<link rel="stylesheet" href="css/inline_1.1781819036089.css">
+<link rel="stylesheet" href="css/inline_2.1781819036089.css">
+<link rel="stylesheet" href="css/inline_3.1781819036089.css">
+<link rel="stylesheet" href="css/inline_4.1781819036089.css">
+<link rel="stylesheet" href="css/inline_5.1781819036089.css">
+<link rel="stylesheet" href="css/inline_6.1781819036089.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -438,13 +386,13 @@
       
       
    <section class="hero">
-  <img class="hero-img" src="images/img_0.1781803311056.jpg" alt="Hero Image" style="cursor: pointer;">
+  <img class="hero-img" src="images/img_0.1781819036089.jpg" alt="Hero Image" style="cursor: pointer;">
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="" style="cursor: text;">Pokemon TCG</h1>
-    <p class="" style="cursor: text;">Pikachu</p>
+    <h1 class="" style="cursor: text;">Luxury Floral Design</h1>
+    <p class="" style="cursor: text;">Hand-crafted arrangements for weddings &amp; events</p>
     <button>Shop Flowers</button>
   </div>
 </section>
@@ -461,32 +409,31 @@
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-<section class="image-text-section">
+  <section class="image-text-section">
   <div class="image-wrap">
-    <img src="images/img_1.1781803311056.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_1.1781819036089.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Blastoise<div>Piplup</div></h3>
+    <h3 class="" style="cursor: text;">Our Floral Services</h3>
     <p class="" style="cursor: text;">
-      Tag Team Card</p>
+      Elegant, bespoke floral creations designed to elevate every moment.
+    </p>
   </div>
 </section>
 
 <section class="image-text-section reverse">
   <div class="image-wrap">
-    <img src="images/img_2.1781803311056.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_2.1781819036089.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
-    <h3 class="" style="cursor: text;">Captain<div>Pikachu</div></h3>
+    <h3 class="" style="cursor: text;">Our Floral Services</h3>
     <p class="" style="cursor: text;">
-      Japanese version Pikachu captain card.</p>
+      Elegant, bespoke floral creations designed to elevate every moment.
+    </p>
   </div>
 </section>
-
-
-
 
 
       
@@ -497,62 +444,36 @@
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
-        <div id="gallerABody">
+       <div id="contentGBody">
 
-<section class="gallerText">
+<section class="imageGText">
 
   <!-- Feature 1 -->
-  <div class="galler1">
-    
-    <!-- Image fills leftover space -->
+  <div class="featureG1">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781803311056.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_3.1781819036089.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-
-    <!-- Text -->
-    <h3 class="" style="cursor: text;">
-      Wedding Florals
-    </h3>
-    <p class="" style="cursor: text;">
-      Bridal bouquets, ceremony arches, centerpieces.
-    </p>
   </div>
 
   <!-- Feature 2 -->
-  <div class="galler2">
+  <div class="featureG2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781803311056.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_4.1781819036089.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-    <h3 class="" style="cursor: text;">
-      Event Styling
-    </h3>
-    <p class="" style="cursor: text;">
-      Corporate events, private parties, and luxury gatherings.
-    </p>
   </div>
 
   <!-- Feature 3 -->
-  <div class="galler3">
+  <div class="featureG3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_5.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_5.1781819036089.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-    <h3 class="" style="cursor: text;">
-      Seasonal Bouquets
-    </h3>
-    <p class="" style="cursor: text;">
-      Hand-picked seasonal blooms for any occasion.
-    </p>
   </div>
 
   <!-- Feature 4 -->
-  <div class="galler4">
+  <div class="featureG4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_6.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_6.1781819036089.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-    <h3 class="" style="cursor: text;">
-      Captain Pikachu</h3>
-    <p class="" style="cursor: text;">
-      $379 Ungraded&nbsp;</p>
   </div>
 
 </section>
@@ -569,55 +490,64 @@
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
- <div id="bodyEndB">
+ <div id="contentGTBody">
 
-<section class="bodyBText">
+<section class="imageGTText">
 
   <!-- Feature 1 -->
-  <div class="bodyB1">
+  <div class="feature1">
     
     <!-- Image fills leftover space -->
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_7.1781803311056.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_7.1781819036089.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
 
     <!-- Text -->
     <h3 class="" style="cursor: text;">
-      Mega Charizard X&nbsp;</h3>
-    <p class="" style="cursor: text;">Ungraded $776</p>
+      Wedding Florals
+    </h3>
+    <p class="" style="cursor: text;">
+      Bridal bouquets, ceremony arches, centerpieces.
+    </p>
   </div>
 
   <!-- Feature 2 -->
-  <div class="bodyB2">
+  <div class="feature2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_8.1781803311056.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_8.1781819036089.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
-      Charizard #4</h3>
+      Event Styling
+    </h3>
     <p class="" style="cursor: text;">
-      Ungraded $7845</p>
+      Corporate events, private parties, and luxury gatherings.
+    </p>
   </div>
 
   <!-- Feature 3 -->
-  <div class="bodyB3">
+  <div class="feature3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_9.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_9.1781819036089.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
-      Blasts &amp; Piplup GX</h3>
+      Seasonal Bouquets
+    </h3>
     <p class="" style="cursor: text;">
-      Ungraded $305</p>
+      Hand-picked seasonal blooms for any occasion.
+    </p>
   </div>
 
   <!-- Feature 4 -->
-  <div class="bodyB4">
+  <div class="feature4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_10.1781803311056.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_10.1781819036089.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; border-radius: 6px; cursor: pointer;">
     </div>
     <h3 class="" style="cursor: text;">
-      Blastoise #2</h3>
+      Seasonal Bouquets
+    </h3>
     <p class="" style="cursor: text;">
-      Ungraded $1168</p>
+      Hand-picked seasonal blooms for any occasion.
+    </p>
   </div>
 
 </section>
@@ -681,7 +611,7 @@
     <div class="footer-col">
       <h3 class="" style="cursor: text;">Contact</h3>
       <p class="" style="cursor: text;">Email: info@yourbusiness.com</p>
-      <p class="" style="cursor: text;">Phone: <a href="tel:+123 456 7890">+123 456 7890</a></p>
+      <p class="" style="cursor: text;">Phone: +123 456 7890</p>
       <p class="" style="cursor: text;">Location: Your City, Country</p>
     </div>
 
@@ -702,7 +632,7 @@
 
 <script src="js/clerk.browser.js"></script>
 <script src="js/stripe.js"></script>
-<script src="js/inline_2.1781803311056.js"></script>
+<script src="js/inline_2.1781819036089.js"></script>
 
 </body>
 </html>
