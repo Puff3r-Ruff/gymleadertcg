@@ -1,5 +1,4 @@
 
-
 document.querySelector(".hamburger").addEventListener("click", toggleMenu);
 document.getElementById("nav-exit").addEventListener("click", toggleMenu);
 
@@ -54,4 +53,3 @@ fetch("/pages/pages.json")
     console.error("Could not load pages:", err);
     document.getElementById("navRight").style.display = "none";
   });
-
