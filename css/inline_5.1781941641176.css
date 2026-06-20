@@ -1,0 +1,48 @@
+
+
+  #contentEBody {
+    width: 65%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .imageEText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+        background:#000;
+  }
+#contentEBody{}
+
+  .featureE1,
+  .featureE2,
+  .featureE3,
+  .featureE4 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    section[style] {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #contentEBody {
+      width: 95%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .featureE1,
+    .featureE2,
+    .featureE3,
+    .featureE4 {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+

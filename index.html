@@ -201,87 +201,52 @@
 </style>
 <style>
 
-  #contentGTBody {
-    width: 55%;
+  #contentEBody {
+    width: 65%;
     margin: auto;
     overflow: hidden;
   }
 
-  .imageGTText{
+  .imageEText{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 3px;
+        background:#000;
   }
-  .imageGTText h3{font-size:2rem;margin:0px;margin-top:0.5rem;}
-  .imageGTText p{font-size:1.2rem;margin:0px;margin-top:0.2rem;}
+#contentEBody{}
 
-  .feature1{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
+  .featureE1,
+  .featureE2,
+  .featureE3,
+  .featureE4 {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-
+  @media (max-width: 1024px) {
+    section[style] {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+    }
+  }
 
   @media (max-width: 600px) {
-    #contentGTbody section[style] img {
-      height: 100% !important;
+    #contentEBody {
+      width: 95%;
+      margin: auto;
+      overflow: hidden;
     }
 
-    #contentGTBody {
-    width: 90%;
-    margin: auto;
-    height: 620px; /* 2 cards stacked = 500px */
-    overflow: hidden;
+    .featureE1,
+    .featureE2,
+    .featureE3,
+    .featureE4 {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
-.imageGTText{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .imageGTText h3{font-size:1rem;margin:0px;margin-top:0.5rem;}
-  .imageGTText p{font-size:0.77rem;margin:0px;margin-top:0.2rem;}
-
-    .feature1{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature2{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature3{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }     
-  .feature4{
-        height: 300px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  }
 </style>
 <style>
 #proFooterWrapper {
@@ -351,13 +316,13 @@
   }
 }
 </style>
-<link rel="stylesheet" href="css/style.1781941023976.css">
-<link rel="stylesheet" href="css/inline_1.1781941023976.css">
-<link rel="stylesheet" href="css/inline_2.1781941023976.css">
-<link rel="stylesheet" href="css/inline_3.1781941023976.css">
-<link rel="stylesheet" href="css/inline_4.1781941023976.css">
-<link rel="stylesheet" href="css/inline_5.1781941023976.css">
-<link rel="stylesheet" href="css/inline_6.1781941023976.css">
+<link rel="stylesheet" href="css/style.1781941641176.css">
+<link rel="stylesheet" href="css/inline_1.1781941641176.css">
+<link rel="stylesheet" href="css/inline_2.1781941641176.css">
+<link rel="stylesheet" href="css/inline_3.1781941641176.css">
+<link rel="stylesheet" href="css/inline_4.1781941641176.css">
+<link rel="stylesheet" href="css/inline_5.1781941641176.css">
+<link rel="stylesheet" href="css/inline_6.1781941641176.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -385,7 +350,7 @@
       
       
  <section class="hero">
-  <img class="hero-img" src="images/img_0.1781941023976.jpg" alt="Hero Image" style="cursor: pointer;">
+  <img class="hero-img" src="images/img_0.1781941641176.jpg" alt="Hero Image" style="cursor: pointer;">
 
   <div class="hero-overlay"></div>
 
@@ -409,7 +374,7 @@
       
   <section class="image-text-section">
   <div class="image-wrap">
-    <img src="images/img_1.1781941023976.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_1.1781941641176.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
@@ -421,7 +386,7 @@
 
 <section class="image-text-section reverse">
   <div class="image-wrap">
-    <img src="images/img_2.1781941023976.jpg" alt="Description of image" style="cursor: pointer;">
+    <img src="images/img_2.1781941641176.jpg" alt="Description of image" style="cursor: pointer;">
   </div>
 
   <div class="text-wrap">
@@ -447,28 +412,28 @@
   <!-- Feature 1 -->
   <div class="featureG1">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781941023976.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
+      <img src="images/img_3.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
   </div>
 
   <!-- Feature 2 -->
   <div class="featureG2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781941023976.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
+      <img src="images/img_4.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
   </div>
 
   <!-- Feature 3 -->
   <div class="featureG3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_5.1781941023976.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
+      <img src="images/img_5.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
   </div>
 
   <!-- Feature 4 -->
   <div class="featureG4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_6.1781941023976.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
+      <img src="images/img_6.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
   </div>
 
@@ -486,64 +451,36 @@
     <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
       
       
- <div id="contentGTBody">
+      <div id="contentEBody">
 
-<section class="imageGTText">
+<section class="imageEText">
 
   <!-- Feature 1 -->
-  <div class="feature1">
-    
-    <!-- Image fills leftover space -->
+  <div class="featureE1">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_7.1781941023976.jpg" alt="Wedding Florals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_7.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-
-    <!-- Text -->
-    <h3 class="" style="cursor: text;">
-      Wedding Florals
-    </h3>
-    <p class="" style="cursor: text;">
-      Bridal bouquets, ceremony arches, centerpieces.
-    </p>
   </div>
 
   <!-- Feature 2 -->
-  <div class="feature2">
+  <div class="featureE2">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_8.1781941023976.jpg" alt="Event Styling" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_8.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-    <h3 class="" style="cursor: text;">
-      Event Styling
-    </h3>
-    <p class="" style="cursor: text;">
-      Corporate events, private parties, and luxury gatherings.
-    </p>
   </div>
 
   <!-- Feature 3 -->
-  <div class="feature3">
+  <div class="featureE3">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_9.1781941023976.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_9.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-    <h3 class="" style="cursor: text;">
-      Seasonal Bouquets
-    </h3>
-    <p class="" style="cursor: text;">
-      Hand-picked seasonal blooms for any occasion.
-    </p>
   </div>
 
   <!-- Feature 4 -->
-  <div class="feature4">
+  <div class="featureE4">
     <div style="flex: 1; min-height: 0;">
-      <img src="images/img_10.1781941023976.jpg" alt="Seasonal Bouquets" style="width: 100%; height: 100%; border-radius: 6px; cursor: pointer;">
+      <img src="images/img_10.1781941641176.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
     </div>
-    <h3 class="" style="cursor: text;">
-      Seasonal Bouquets
-    </h3>
-    <p class="" style="cursor: text;">
-      Hand-picked seasonal blooms for any occasion.
-    </p>
   </div>
 
 </section>
@@ -551,6 +488,7 @@
 
 
 </div>
+
 
       
     </div>
@@ -600,8 +538,7 @@
     <div class="footer-col">
       <h3 class="" style="cursor: text;">About Us</h3>
       <p class="" style="cursor: text;">
-        Dedicated to delivering exceptional quality and unforgettable customer experiences.
-      </p>
+        Pokémon TCG Game News Best Cards To Buy and How to Find Rare Cards in 2026</p>
     </div>
 
     <div class="footer-col">
@@ -626,9 +563,9 @@
     </div>
   </div>
 
-<script src="js/clerk.browser.js"></script>
 <script src="js/stripe.js"></script>
-<script src="js/inline_2.1781941023976.js"></script>
+<script src="js/clerk.browser.js"></script>
+<script src="js/inline_2.1781941641176.js"></script>
 
 </body>
 </html>
