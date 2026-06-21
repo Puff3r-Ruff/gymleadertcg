@@ -1,571 +1,396 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
-
-/* --- Base Hero --- */
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 95vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* --- Image behaves like background-cover --- */
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* --- Overlay for readability --- */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.35)
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* --- Content --- */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  padding: 20px;
-}
-
-.hero-content h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(2.3rem, 4.8vw, 4.2rem);
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-.hero-content p {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1.05rem, 2.1vw, 1.45rem);
-  font-weight: 300;
-  opacity: 0.92;
-  margin-bottom: 30px;
-}
-
-/* --- Button --- */
-.hero-content button {
-  font-family: 'Orbitron', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 14px 36px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #000;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.hero-content button:hover {
-  background: #f1f1f1;
-  transform: translateY(-2px);
-}
-
-/* --- Responsive Tweaks --- */
-@media (max-width: 600px) {
-  .hero {
-    min-height: 60vh;
-  }
-  .hero-content button {
-    width: 100%;
-  }
-}
-</style>
-<style>
-.image-text-section {
-  width: 75%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto 0px auto;
-}
-
-.image-wrap{width:40%;}
-
-.image-text-section.reverse {
-  flex-direction: row-reverse;
-}
-
-.image-wrap img {
-  width: 100%;
-}
-
-.text-wrap {
-  flex: 1;
-  width: 50%;
-        padding:1rem;
-}
-
-.text-wrap p{font-size:1.4rem;}
-
-.text-wrap h3 {
-  font-size: 2.5rem;
-}
-
-/* REMOVE the mobile stacking */
-@media (max-width: 600px) {
-  .image-text-section {
-      width:95%;
-  }
-.image-wrap{width:60%;}
-        .image-wrap img {
-  width: 100%;
-  border-radius: 8px;
-}
-        .text-wrap {
-  flex: 1;
-  width: 50%;
-        padding:0rem;
-}
-        .text-wrap p {
-  padding-bottom:2rem;
-        font-size:1rem;
-}
-
-}
-</style>
-<style>
-
-  #contentGBody {
-    width: 65%;
-    margin: auto;
-    overflow: hidden;
-  }
-
-  .imageGText{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-        background:#000;
-  }
-#contentGBody{}
-
-  .featureG1,
-  .featureG2,
-  .featureG3,
-  .featureG4 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  @media (max-width: 1024px) {
-    section[style] {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-    }
-  }
-
-  @media (max-width: 600px) {
-    #contentGBody {
-      width: 95%;
-      margin: auto;
-      overflow: hidden;
-    }
-
-    .featureG1,
-    .featureG2,
-    .featureG3,
-    .featureG4 {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
-</style>
-<style>
-
-  #contentEBody {
-    width: 65%;
-    margin: auto;
-    overflow: hidden;
-  }
-
-  .imageEText{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-        background:#000;
-  }
-#contentEBody{}
-
-  .featureE1,
-  .featureE2,
-  .featureE3,
-  .featureE4 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  @media (max-width: 1024px) {
-    section[style] {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
-    }
-  }
-
-  @media (max-width: 600px) {
-    #contentEBody {
-      width: 95%;
-      margin: auto;
-      overflow: hidden;
-    }
-
-    .featureE1,
-    .featureE2,
-    .featureE3,
-    .featureE4 {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
-</style>
-<style>
-#proFooterWrapper {
-  width: 100%;
-  padding: 40px 0 20px 0;
-  font-family: Arial, sans-serif;
-}
-
-.proFooter {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.footer-col {
-  flex: 1;
-  min-width: 220px;
-}
-
-.footer-col h3 {
-  margin-bottom: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.footer-col p {
-  margin: 6px 0;
-  font-size: 1rem;
-}
-
-.social-row {
-  gap: 12px;
-  margin: 10px 0;
-}
-
-.social-icon {
-  font-size: 22px;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.25);
-}
-
-.social-text {
-  font-size: 13px;
-  margin-top: 8px;
-  opacity: 0.8;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-@media (max-width: 600px) {
-  .proFooter {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-</style>
-<link rel="stylesheet" href="css/style.1781976923568.css">
-<link rel="stylesheet" href="css/inline_1.1781976923568.css">
-<link rel="stylesheet" href="css/inline_2.1781976923568.css">
-<link rel="stylesheet" href="css/inline_3.1781976923568.css">
-<link rel="stylesheet" href="css/inline_4.1781976923568.css">
-<link rel="stylesheet" href="css/inline_5.1781976923568.css">
-<link rel="stylesheet" href="css/inline_6.1781976923568.css">
+<html lang="en"><head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<title>Bridal Boutique</title>
+
+<!-- PREMIUM FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lora:wght@400;500&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/bridal.1782044078351.css">
+<script>
+
+function initTemplateNavSlider() {
+  let templateNavIndex = 0;
+  const templateNavCards = document.querySelectorAll(".template-card");
+  const templateNavPrev = document.querySelector(".templateNav-left");
+  const templateNavNext = document.querySelector(".templateNav-right");
+
+  if (!templateNavCards.length) return;
+
+  function templateNavShowCard(i) {
+    templateNavCards.forEach(c => c.classList.remove("active"));
+    templateNavCards[i].classList.add("active");
+  }
+
+  if (templateNavPrev && templateNavNext) {
+    templateNavNext.onclick = () => {
+      templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
+      templateNavShowCard(templateNavIndex);
+    };
+
+    templateNavPrev.onclick = () => {
+      templateNavIndex = (templateNavIndex - 1 + templateNavCards.length) % templateNavCards.length;
+      templateNavShowCard(templateNavIndex);
+    };
+
+    setInterval(() => {
+      templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
+      templateNavShowCard(templateNavIndex);
+    }, 3000);
+  }
+}
+
+// Mobile hamburger toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("nav-toggle");
+  const links = document.getElementById("nav-links");
+
+  if (toggle && links) {
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("show");
+    });
+  }
+});
+
+async function loadProducts() {
+  const wrapper = document.querySelector(".templateNav-wrapper");
+  const list = document.querySelector(".template-list");
+
+  if (!wrapper || !list) {
+    console.error("Wrapper or list not found in DOM.");
+    return;
+  }
+
+  /* ---------------------------------------------------
+     1) PREVIEW MODE → ALWAYS SHOW DEFAULT PRODUCTS + NAV
+  --------------------------------------------------- */
+  if (window.previewMode) {
+    console.log("Preview mode enabled — using default products.");
+    wrapper.style.display = "block";
+    return;
+  }
+
+  /* ---------------------------------------------------
+     2) NORMAL MODE → TRY LOADING products.json
+  --------------------------------------------------- */
+  try {
+    const res = await fetch("Products/products.json");
+
+    // JSON missing → hide wrapper + hide nav
+    if (!res.ok) {
+      console.warn("products.json not found — hiding store.");
+      wrapper.style.display = "none";
+      return;
+    }
+
+    // JSON exists → show wrapper + show nav
+    wrapper.style.display = "block";
+    showStoreNav();
+
+    const data = await res.json();
+    const products = data.products ?? [];
+
+    list.innerHTML = "";
+
+    products.forEach((p) => {
+      const lowestVariant = p.variants?.length
+        ? p.variants.reduce((min, v) => (v.price < min.price ? v : min))
+        : null;
+
+      const price = lowestVariant ? lowestVariant.price : p.basePrice ?? "N/A";
+
+      const card = document.createElement("div");
+      card.className = "template-card";
+
+      card.innerHTML = `
+        <img src="${p.image}" alt="">
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <div class="price">€${price}</div>
+        <a class="btn" href="#">Add To Cart</a>
+      `;
+
+      list.appendChild(card);
+    });
+
+    initTemplateNavSlider();
+
+  } catch (err) {
+    console.error("Error loading products:", err);
+    wrapper.style.display = "none";
+    hideStoreNav();
+  }
+}
+
+    document.addEventListener("DOMContentLoaded", () => {
+  // Make preview mode globally accessible
+  const urlParams = new URLSearchParams(window.location.search);
+  window.previewMode = urlParams.get("preview") === "true";
+
+  loadProducts();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
+
 <body>
+<div id="contain">
 
-  <header class="nav-header">
-  <div class="nav-left">
-    <h1 class="site-title" data-text-edit-listener="true" style="cursor: pointer;">GymLeaderTCG</h1>
-  </div>
+<nav>
+    <h1 class="" style="cursor: text;">Business Name</h1>
+</nav>
 
-  <div class="nav-right" id="navRight" style="display: none;">
-  <div class="hamburger">
-    <span data-text-edit-listener="true" class="" style="cursor: pointer;"></span>
-    <span data-text-edit-listener="true" class="" style="cursor: pointer;"></span>
-    <span data-text-edit-listener="true" class="" style="cursor: pointer;"></span>
-  </div>
+<div id="hero">
+    <img src="images/img_0.1782044078351.jpg" alt="Bridal Gown" style="cursor: pointer;">
+    <div id="hero-text">
+        <h2 class="" style="cursor: text;">Your Dream Dress Awaits</h2>
+        <p class="" style="cursor: text;">Discover timeless elegance, luxurious fabrics, and handcrafted details designed to make your special day unforgettable.</p>
+        <a href="#" id="open-popup">Book Appointment</a>
+    </div>
+</div>
 
-  <div id="menuOverlay" class="menu-overlay"></div>
-
-  <nav id="mobileMenu" class="mobile-menu">
-    <a id="nav-exit"></a>
-  </nav>
-</div></header>
-  <div id="heroSection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
- <section class="hero">
-  <img class="hero-img" src="images/img_0.1781976923568.jpg" alt="Hero Image" style="cursor: pointer;">
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1 data-text-edit-listener="true" class="" style="cursor: pointer;">Pokemon TCg</h1>
-    <p data-text-edit-listener="true" class="" style="cursor: pointer;">Trading Cards Game</p>
-    <button data-button-edit-listener="true" style="cursor: pointer;">Pikachu</button>
-  </div>
+<section id="about">
+    <h2 class="" style="cursor: text;">About Us</h2>
+    <p class="" style="cursor: text;">
+        Welcome to our bridal boutique — a place where elegance, romance, and timeless beauty come together.
+        Use this space to tell your story: who you are, what inspires your work, and what makes your boutique
+        special. Share your passion, your experience, and the heart behind your business so brides can feel
+        connected the moment they arrive.
+    </p>
 </section>
 
+<!-- Store Snippet Start -->
+<div class="templateNav-wrapper" style="display: none;">
+  <div class="template-list">
 
-
-
-    
-      
+    <div class="template-card active">
+      <img src="images/img_1.1782044078351.jpg" alt="" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Your Product</h3>
+      <p class="" style="cursor: text;">Your Product Description</p>
+      <div class="price">€29</div>
+      <a class="btn" href="#">Buy Now</a>
     </div>
-  </div>
-  <div id="contentSection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-  <section class="image-text-section">
-  <div class="image-wrap">
-    <a href="/pages/wsdas/wsdas.html"><img src="images/img_1.1781976923568.jpg" alt="Description of image" style="cursor: pointer;"></a>
+
+    <div class="template-card">
+      <img src="images/img_2.1782044078351.jpg" alt="" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Your Product</h3>
+      <p class="" style="cursor: text;">Your Product Description</p>
+      <div class="price">€19</div>
+      <a class="btn" href="#">Buy Now</a>
+    </div>
+
+    <div class="template-card">
+      <img src="images/img_3.1782044078351.jpg" alt="" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Your Product</h3>
+      <p class="" style="cursor: text;">Your Product Description</p>
+      <div class="price">€39</div>
+      <a class="btn" href="#">Buy Now</a>
+    </div>
+
+    <div class="template-card">
+      <img src="images/img_4.1782044078351.jpg" alt="" style="cursor: pointer;">
+      <h3 class="" style="cursor: text;">Your Product</h3>
+      <p class="" style="cursor: text;">Your Product Description</p>
+      <div class="price">€19</div>
+      <a class="btn" href="#">Buy Now</a>
+    </div>
+
   </div>
 
-  <div class="text-wrap">
-    <h3 data-text-edit-listener="true" class="" style="cursor: pointer;">Top Cards</h3>
-    <p data-text-edit-listener="true" class="" style="cursor: pointer;">
-      Our Top Picks of TCG Pokémon Cards 2026 To Collect.</p>
-  </div>
+  <button class="templateNav-arrow templateNav-left">❮</button>
+  <button class="templateNav-arrow templateNav-right">❯</button>
+</div>
+
+<style>
+/* POPUP OVERLAY */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* POPUP BOX */
+.popup-box {
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* CLOSE BUTTON */
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* FORM STYLING */
+.popup-form input,
+.popup-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.popup-form button {
+    width: 100%;
+    padding: 12px;
+    background: #c49b6c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+let templateNavIndex = 0;
+const templateNavCards = document.querySelectorAll(".template-card");
+const templateNavPrev = document.querySelector(".templateNav-left");
+const templateNavNext = document.querySelector(".templateNav-right");
+
+function templateNavShowCard(i) {
+  templateNavCards.forEach(c => c.classList.remove("active"));
+  templateNavCards[i].classList.add("active");
+}
+
+if (templateNavPrev && templateNavNext) {
+  templateNavNext.addEventListener("click", () => {
+    templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
+    templateNavShowCard(templateNavIndex);
+  });
+
+  templateNavPrev.addEventListener("click", () => {
+    templateNavIndex = (templateNavIndex - 1 + templateNavCards.length) % templateNavCards.length;
+    templateNavShowCard(templateNavIndex);
+  });
+
+  setInterval(() => {
+    templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
+    templateNavShowCard(templateNavIndex);
+  }, 3000);
+}
+</script>
+<!-- Store Snippet End -->
+
+<section id="gallery">
+    <h2 class="" style="cursor: text;">Our Gallery</h2>
+    <div class="gallery-grid">
+        <img src="images/img_5.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_6.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_7.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_8.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_9.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_10.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_11.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_12.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_13.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_14.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_15.1782044078351.jpg" style="cursor: pointer;">
+        <img src="images/img_16.1782044078351.jpg" style="cursor: pointer;">
+    </div>
 </section>
 
-<section class="image-text-section reverse">
-  <div class="image-wrap">
-    <a href="/pages/wsdas/wsdas.html"><img src="images/img_2.1781976923568.jpg" alt="Description of image" style="cursor: pointer;"></a>
-  </div>
+<section id="signup">
+    <h2 class="" style="cursor: text;">Join Our Bridal Community</h2>
+    <p class="" style="cursor: text;">Be the first to know about new collections, exclusive events, and special appointments.</p>
 
-  <div class="text-wrap">
-    <h3 data-text-edit-listener="true" class="" style="cursor: pointer;">Grey Hat Pikachu</h3>
-    <p data-text-edit-listener="true" class="" style="cursor: pointer;">
-      Grey Hat Pikachu Mystery this Card scan still be found.</p>
-  </div>
+    <form>
+        <input type="email" placeholder="Enter your email" required="">
+        <button type="submit">Sign Up</button>
+    </form>
 </section>
 
+<section id="contact">
+    <h2 class="" style="cursor: text;">Contact Us</h2>
 
-      
-      
+    <div class="contact-grid">
+        <div>
+            <h3 class="" style="cursor: text;">Visit Us</h3>
+            <p class="" style="cursor: text;">123 Bridal Lane<br>Cork, Co. Cork</p>
+        </div>
+
+        <div>
+            <h3 class="" style="cursor: text;">Hours</h3>
+            <p class="" style="cursor: text;">Mon–Fri: 10am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
+        </div>
+
+        <div>
+            <h3 class="" style="cursor: text;">Get In Touch</h3>
+            <p class="" style="cursor: text;">Email: info@bridalboutique.com<br>Phone: (000) 000‑0000</p>
+        </div>
     </div>
-  </div>
-  <div id="gallerySection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-       <div id="contentGBody">
 
-<section class="imageGText">
-
-  <!-- Feature 1 -->
-  <div class="featureG1">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_3.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-  <!-- Feature 2 -->
-  <div class="featureG2">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_4.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-  <!-- Feature 3 -->
-  <div class="featureG3">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_5.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-  <!-- Feature 4 -->
-  <div class="featureG4">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_6.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
+    <a href="#" id="open-popup-2" class="contact-btn">Book Your Appointment</a>
 </section>
 
-
+<footer>
+    © 2026 Bridal Boutique — Elegance in Every Detail
+</footer>
 
 </div>
 
-      
+<!-- POPUP HTML -->
+<div id="contact-popup" class="popup-overlay">
+    <div class="popup-box">
+        <span id="close-popup" class="" style="cursor: text;">×</span>
+        <h2 class="" style="cursor: text;">Book Your Appointment</h2>
+
+        <form class="popup-form">
+            <input type="text" placeholder="Your Name" required="">
+            <input type="email" placeholder="Your Email" required="">
+            <input type="tel" placeholder="Phone Number" required="">
+            <textarea placeholder="Your Message" required=""></textarea>
+            <button type="submit">Send</button>
+        </form>
     </div>
-  </div>
-  <!-- ⭐ NEW SECTION -->
-  <div id="bodyEndSection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-      <div id="contentEBody">
-
-<section class="imageEText">
-
-  <!-- Feature 1 -->
-  <div class="featureE1">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_7.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-  <!-- Feature 2 -->
-  <div class="featureE2">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_8.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-  <!-- Feature 3 -->
-  <div class="featureE3">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_9.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-  <!-- Feature 4 -->
-  <div class="featureE4">
-    <div style="flex: 1; min-height: 0;">
-      <img src="images/img_10.1781976923568.jpg" alt="" style="width: 100%; height: 100%; cursor: pointer;">
-    </div>
-  </div>
-
-</section>
-
-
-
 </div>
 
+<script>
+// OPEN POPUP
+document.getElementById("open-popup").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("contact-popup").style.display = "flex";
+});
 
-      
-    </div>
-  </div>
-  <div id="footerSection">
-    <div class="section-wrapper" style="position: relative;margin-bottom: 40px;overflow: visible;">
-      
-      
-<div id="proFooterWrapper">
+document.getElementById("open-popup-2").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("contact-popup").style.display = "flex";
+});
 
-  <footer class="proFooter">
+// CLOSE POPUP
+document.getElementById("close-popup").addEventListener("click", function() {
+    document.getElementById("contact-popup").style.display = "none";
+});
 
-    <div class="footer-col">
-      <h3 data-text-edit-listener="true" class="" style="cursor: pointer;">Follow Us</h3>
-      <div class="social-row">
-         <!-- Facebook -->
-        <span class="social-icon" data-text-edit-listener="true" style="cursor: pointer;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12"></path>
-          </svg>
-        </span>
-
-        <!-- Instagram -->
-        <span class="social-icon" data-text-edit-listener="true" style="cursor: pointer;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"></path>
-          </svg>
-        </span>
-
-        <!-- Twitter / X -->
-        <span class="social-icon" data-text-edit-listener="true" style="cursor: pointer;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18 2h3l-7.5 8.5L22 22h-6l-4.5-6L7 22H2l8-9.5L2.5 2H9l4 5.5L18 2z"></path>
-          </svg>
-        </span>
-
-        <!-- TikTok -->
-        <span class="social-icon" data-text-edit-listener="true" style="cursor: pointer;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 8.5a6.5 6.5 0 0 1-4-1.4v7.1a6.8 6.8 0 1 1-6.8-6.8 6.9 6.9 0 0 1 1.2.1v3.3a3.5 3.5 0 1 0 2.5 3.4V2h3.1a4.9 4.9 0 0 0 4 4.8v1.7z"></path>
-          </svg>
-        </span>
-      </div>
-      <p class="social-text" data-text-edit-listener="true" style="cursor: pointer;">Stay connected with our latest updates.</p>
-    </div>
-
-    <div class="footer-col">
-      <h3 data-text-edit-listener="true" class="" style="cursor: pointer;">About Us</h3>
-      <p data-text-edit-listener="true" class="" style="cursor: pointer;">
-        Pokémon TCG Game News Best Cards To Buy and How to Find Rare Cards in 2026</p>
-    </div>
-
-    <div class="footer-col">
-      <h3 data-text-edit-listener="true" class="" style="cursor: pointer;">Contact</h3>
-      <p data-text-edit-listener="true" class="" style="cursor: pointer;">Email: info@yourbusiness.com</p>
-      <p data-text-edit-listener="true" class="" style="cursor: pointer;">Phone: <a href="tel:+123 456 7890">+123 456 7890</a></p>
-      <p data-text-edit-listener="true" class="" style="cursor: pointer;">Location: Your City, Country</p>
-    </div>
-
-  </footer>
-
-  <div class="footer-bottom">
-    <p data-text-edit-listener="true" class="" style="cursor: pointer;">© 2024 GYMLEADERTCG</p>
-  </div>
-
-</div>
+// CLOSE WHEN CLICKING OUTSIDE
+window.addEventListener("click", function(e) {
+    const popup = document.getElementById("contact-popup");
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
+</script>
 
 
 
-    
-      
-    </div>
-  </div>
-
-<script src="js/clerk.browser.js"></script>
-<script src="js/stripe.js"></script>
-<script src="js/inline_2.1781976923568.js"></script>
-
-</body>
-</html>
+<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController2981" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-14dc085d082b2474bed54c2accb3d5ed.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%22ac3042f9-20e5-402f-a406-4ee5127cbe5b%22%2C%22assignments%22%3A%7B%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=ac3042f9-20e5-402f-a406-4ee5127cbe5b&amp;stripeObjId=sobj-ccdaadb3-efcd-45a1-85b5-46c71e48a541&amp;firstStripeInstanceCreatedLatency=7&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1782044072213&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=40348d39-2911-48f2-bb70-f1edc0ee5774bb2ef3&amp;mids[sid]=ccab9314-559c-4a46-af25-b207da641819e4b9d6&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;controllerId=__privateStripeController2981" aria-hidden="true" tabindex="-1" style="border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><iframe name="__privateStripeMetricsController2980" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;title=Bridal%20Boutique&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=40348d39-2911-48f2-bb70-f1edc0ee5774bb2ef3&amp;sid=ccab9314-559c-4a46-af25-b207da641819e4b9d6&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
