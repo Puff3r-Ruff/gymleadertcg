@@ -1,396 +1,580 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8">
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+<link href="/prefabs/Florist Template1/css/bootstrap.css" rel="stylesheet">
+<link href="/prefabs/Florist Template1/css/font-awesome.min.css" rel="stylesheet">
+<link href="/prefabs/Florist Template1/style.css" rel="stylesheet">
+<link href="/prefabs/Florist Template1/css/responsive.css" rel="stylesheet">
+<link href="/prefabs/Florist Template1/css/colors.css" rel="stylesheet">
+<link href="/prefabs/Florist Template1/css/version/garden.css" rel="stylesheet">
+<link rel="stylesheet" href="css/css">
+<link rel="stylesheet" href="css/css">
+<link rel="stylesheet" href="css/font-awesome.min.1782315524427.css">
+<link rel="stylesheet" href="css/css">
+<link rel="stylesheet" href="css/colors.1782315524427.css">
+<link rel="stylesheet" href="css/font-awesome.min.1782315524427.css">
+<link rel="stylesheet" href="css/style.1782315524427.css">
+<link rel="stylesheet" href="css/style.1782315524427.css">
+<link rel="stylesheet" href="css/responsive.1782315524427.css">
+<link rel="stylesheet" href="css/bootstrap.min.1782315524427.css">
+<link rel="stylesheet" href="css/responsive.1782315524427.css">
+<link rel="stylesheet" href="css/garden.1782315524427.css">
+<link rel="stylesheet" href="css/bootstrap.1782315524427.css">
+<link rel="stylesheet" href="css/style.1782315524427.css">
+<link rel="stylesheet" href="css/colors.1782315524427.css">
+<link rel="stylesheet" href="css/font-awesome.min.1782315524427.css">
+<link rel="stylesheet" href="css/responsive.1782315524427.css">
+<link rel="stylesheet" href="css/garden.1782315524427.css">
+<link rel="stylesheet" href="css/bootstrap.1782315524427.css">
+<link rel="stylesheet" href="css/colors.1782315524427.css">
+<link rel="stylesheet" href="css/style.1782315524427.css">
+<link rel="stylesheet" href="css/garden.1782315524427.css">
+<link rel="stylesheet" href="css/responsive.1782315524427.css">
+<link rel="stylesheet" href="css/font-awesome.min.1782315524427.css">
+<link rel="stylesheet" href="css/bootstrap.1782315524427.css">
+<link rel="stylesheet" href="css/inline_1.1782315524427.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bridal Boutique</title>
-
-<!-- PREMIUM FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lora:wght@400;500&amp;display=swap" rel="stylesheet">
-
-<link rel="stylesheet" type="text/css" href="css/bridal.1782044078351.css">
-<script>
-
-function initTemplateNavSlider() {
-  let templateNavIndex = 0;
-  const templateNavCards = document.querySelectorAll(".template-card");
-  const templateNavPrev = document.querySelector(".templateNav-left");
-  const templateNavNext = document.querySelector(".templateNav-right");
-
-  if (!templateNavCards.length) return;
-
-  function templateNavShowCard(i) {
-    templateNavCards.forEach(c => c.classList.remove("active"));
-    templateNavCards[i].classList.add("active");
-  }
-
-  if (templateNavPrev && templateNavNext) {
-    templateNavNext.onclick = () => {
-      templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
-      templateNavShowCard(templateNavIndex);
-    };
-
-    templateNavPrev.onclick = () => {
-      templateNavIndex = (templateNavIndex - 1 + templateNavCards.length) % templateNavCards.length;
-      templateNavShowCard(templateNavIndex);
-    };
-
-    setInterval(() => {
-      templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
-      templateNavShowCard(templateNavIndex);
-    }, 3000);
-  }
-}
-
-// Mobile hamburger toggle
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("nav-toggle");
-  const links = document.getElementById("nav-links");
-
-  if (toggle && links) {
-    toggle.addEventListener("click", () => {
-      links.classList.toggle("show");
-    });
-  }
-});
-
-async function loadProducts() {
-  const wrapper = document.querySelector(".templateNav-wrapper");
-  const list = document.querySelector(".template-list");
-
-  if (!wrapper || !list) {
-    console.error("Wrapper or list not found in DOM.");
-    return;
-  }
-
-  /* ---------------------------------------------------
-     1) PREVIEW MODE → ALWAYS SHOW DEFAULT PRODUCTS + NAV
-  --------------------------------------------------- */
-  if (window.previewMode) {
-    console.log("Preview mode enabled — using default products.");
-    wrapper.style.display = "block";
-    return;
-  }
-
-  /* ---------------------------------------------------
-     2) NORMAL MODE → TRY LOADING products.json
-  --------------------------------------------------- */
-  try {
-    const res = await fetch("Products/products.json");
-
-    // JSON missing → hide wrapper + hide nav
-    if (!res.ok) {
-      console.warn("products.json not found — hiding store.");
-      wrapper.style.display = "none";
-      return;
-    }
-
-    // JSON exists → show wrapper + show nav
-    wrapper.style.display = "block";
-    showStoreNav();
-
-    const data = await res.json();
-    const products = data.products ?? [];
-
-    list.innerHTML = "";
-
-    products.forEach((p) => {
-      const lowestVariant = p.variants?.length
-        ? p.variants.reduce((min, v) => (v.price < min.price ? v : min))
-        : null;
-
-      const price = lowestVariant ? lowestVariant.price : p.basePrice ?? "N/A";
-
-      const card = document.createElement("div");
-      card.className = "template-card";
-
-      card.innerHTML = `
-        <img src="${p.image}" alt="">
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <div class="price">€${price}</div>
-        <a class="btn" href="#">Add To Cart</a>
-      `;
-
-      list.appendChild(card);
-    });
-
-    initTemplateNavSlider();
-
-  } catch (err) {
-    console.error("Error loading products:", err);
-    wrapper.style.display = "none";
-    hideStoreNav();
-  }
-}
-
-    document.addEventListener("DOMContentLoaded", () => {
-  // Make preview mode globally accessible
-  const urlParams = new URLSearchParams(window.location.search);
-  window.previewMode = urlParams.get("preview") === "true";
-
-  loadProducts();
-});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" async="" crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsuaWRlYWdvLmllJA"></script><script src="https://js.stripe.com/dahlia/stripe.js"></script><link rel="stylesheet" href="style.css"></head>
-
+</head>
 <body>
-<div id="contain">
-
-<nav>
-    <h1 class="" style="cursor: text;">Business Name</h1>
-</nav>
-
-<div id="hero">
-    <img src="images/img_0.1782044078351.jpg" alt="Bridal Gown" style="cursor: pointer;">
-    <div id="hero-text">
-        <h2 class="" style="cursor: text;">Your Dream Dress Awaits</h2>
-        <p class="" style="cursor: text;">Discover timeless elegance, luxurious fabrics, and handcrafted details designed to make your special day unforgettable.</p>
-        <a href="#" id="open-popup">Book Appointment</a>
-    </div>
-</div>
-
-<section id="about">
-    <h2 class="" style="cursor: text;">About Us</h2>
-    <p class="" style="cursor: text;">
-        Welcome to our bridal boutique — a place where elegance, romance, and timeless beauty come together.
-        Use this space to tell your story: who you are, what inspires your work, and what makes your boutique
-        special. Share your passion, your experience, and the heart behind your business so brides can feel
-        connected the moment they arrive.
-    </p>
-</section>
-
-<!-- Store Snippet Start -->
-<div class="templateNav-wrapper" style="display: none;">
-  <div class="template-list">
-
-    <div class="template-card active">
-      <img src="images/img_1.1782044078351.jpg" alt="" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Your Product</h3>
-      <p class="" style="cursor: text;">Your Product Description</p>
-      <div class="price">€29</div>
-      <a class="btn" href="#">Buy Now</a>
-    </div>
-
-    <div class="template-card">
-      <img src="images/img_2.1782044078351.jpg" alt="" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Your Product</h3>
-      <p class="" style="cursor: text;">Your Product Description</p>
-      <div class="price">€19</div>
-      <a class="btn" href="#">Buy Now</a>
-    </div>
-
-    <div class="template-card">
-      <img src="images/img_3.1782044078351.jpg" alt="" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Your Product</h3>
-      <p class="" style="cursor: text;">Your Product Description</p>
-      <div class="price">€39</div>
-      <a class="btn" href="#">Buy Now</a>
-    </div>
-
-    <div class="template-card">
-      <img src="images/img_4.1782044078351.jpg" alt="" style="cursor: pointer;">
-      <h3 class="" style="cursor: text;">Your Product</h3>
-      <p class="" style="cursor: text;">Your Product Description</p>
-      <div class="price">€19</div>
-      <a class="btn" href="#">Buy Now</a>
-    </div>
-
-  </div>
-
-  <button class="templateNav-arrow templateNav-left">❮</button>
-  <button class="templateNav-arrow templateNav-right">❯</button>
-</div>
-
-<style>
-/* POPUP OVERLAY */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-/* POPUP BOX */
-.popup-box {
-    background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 450px;
-    border-radius: 10px;
-    position: relative;
-    animation: fadeIn 0.3s ease;
-}
-
-/* CLOSE BUTTON */
-#close-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-/* FORM STYLING */
-.popup-form input,
-.popup-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.popup-form button {
-    width: 100%;
-    padding: 12px;
-    background: #c49b6c;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-</style>
-
-<script>
-let templateNavIndex = 0;
-const templateNavCards = document.querySelectorAll(".template-card");
-const templateNavPrev = document.querySelector(".templateNav-left");
-const templateNavNext = document.querySelector(".templateNav-right");
-
-function templateNavShowCard(i) {
-  templateNavCards.forEach(c => c.classList.remove("active"));
-  templateNavCards[i].classList.add("active");
-}
-
-if (templateNavPrev && templateNavNext) {
-  templateNavNext.addEventListener("click", () => {
-    templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
-    templateNavShowCard(templateNavIndex);
-  });
-
-  templateNavPrev.addEventListener("click", () => {
-    templateNavIndex = (templateNavIndex - 1 + templateNavCards.length) % templateNavCards.length;
-    templateNavShowCard(templateNavIndex);
-  });
-
-  setInterval(() => {
-    templateNavIndex = (templateNavIndex + 1) % templateNavCards.length;
-    templateNavShowCard(templateNavIndex);
-  }, 3000);
-}
-</script>
-<!-- Store Snippet End -->
-
-<section id="gallery">
-    <h2 class="" style="cursor: text;">Our Gallery</h2>
-    <div class="gallery-grid">
-        <img src="images/img_5.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_6.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_7.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_8.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_9.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_10.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_11.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_12.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_13.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_14.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_15.1782044078351.jpg" style="cursor: pointer;">
-        <img src="images/img_16.1782044078351.jpg" style="cursor: pointer;">
-    </div>
-</section>
-
-<section id="signup">
-    <h2 class="" style="cursor: text;">Join Our Bridal Community</h2>
-    <p class="" style="cursor: text;">Be the first to know about new collections, exclusive events, and special appointments.</p>
-
-    <form>
-        <input type="email" placeholder="Enter your email" required="">
-        <button type="submit">Sign Up</button>
-    </form>
-</section>
-
-<section id="contact">
-    <h2 class="" style="cursor: text;">Contact Us</h2>
-
-    <div class="contact-grid">
-        <div>
-            <h3 class="" style="cursor: text;">Visit Us</h3>
-            <p class="" style="cursor: text;">123 Bridal Lane<br>Cork, Co. Cork</p>
-        </div>
-
-        <div>
-            <h3 class="" style="cursor: text;">Hours</h3>
-            <p class="" style="cursor: text;">Mon–Fri: 10am – 6pm<br>Sat: 10am – 4pm<br>Sun: Closed</p>
-        </div>
-
-        <div>
-            <h3 class="" style="cursor: text;">Get In Touch</h3>
-            <p class="" style="cursor: text;">Email: info@bridalboutique.com<br>Phone: (000) 000‑0000</p>
-        </div>
-    </div>
-
-    <a href="#" id="open-popup-2" class="contact-btn">Book Your Appointment</a>
-</section>
-
-<footer>
-    © 2026 Bridal Boutique — Elegance in Every Detail
-</footer>
-
-</div>
-
-<!-- POPUP HTML -->
-<div id="contact-popup" class="popup-overlay">
-    <div class="popup-box">
-        <span id="close-popup" class="" style="cursor: text;">×</span>
-        <h2 class="" style="cursor: text;">Book Your Appointment</h2>
-
-        <form class="popup-form">
-            <input type="text" placeholder="Your Name" required="">
-            <input type="email" placeholder="Your Email" required="">
-            <input type="tel" placeholder="Phone Number" required="">
-            <textarea placeholder="Your Message" required=""></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </div>
-</div>
-
-<script>
-// OPEN POPUP
-document.getElementById("open-popup").addEventListener("click", function(e) {
-    e.preventDefault();
-    document.getElementById("contact-popup").style.display = "flex";
-});
-
-document.getElementById("open-popup-2").addEventListener("click", function(e) {
-    e.preventDefault();
-    document.getElementById("contact-popup").style.display = "flex";
-});
-
-// CLOSE POPUP
-document.getElementById("close-popup").addEventListener("click", function() {
-    document.getElementById("contact-popup").style.display = "none";
-});
-
-// CLOSE WHEN CLICKING OUTSIDE
-window.addEventListener("click", function(e) {
-    const popup = document.getElementById("contact-popup");
-    if (e.target === popup) {
-        popup.style.display = "none";
-    }
-});
-</script>
 
 
 
-<div id="editor-shadow-host" style="all: initial;"></div><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><input type="file" accept="image/*" style="display: none;"><iframe name="__privateStripeController2981" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/controller-with-preconnect-14dc085d082b2474bed54c2accb3d5ed.html#__shared_params__[version]=dahlia&amp;__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%22ac3042f9-20e5-402f-a406-4ee5127cbe5b%22%2C%22assignments%22%3A%7B%7D%7D&amp;apiKey=pk_test_51SmbYSRqySo1SbUl9zUatOFdeP2eN1jYSDT4gNWFjzDaPLMF4QaeXONAJ9Ii2QVz7Bugnhp11UFCCFyg625JGGGu00uMAvRXJq&amp;apiVersion=2026-03-25.dahlia&amp;stripeJsId=ac3042f9-20e5-402f-a406-4ee5127cbe5b&amp;stripeObjId=sobj-ccdaadb3-efcd-45a1-85b5-46c71e48a541&amp;firstStripeInstanceCreatedLatency=7&amp;controllerCount=1&amp;isCheckout=false&amp;stripeJsLoadTime=1782044072213&amp;manualBrowserDeprecationRollout=false&amp;mids[guid]=NA&amp;mids[muid]=40348d39-2911-48f2-bb70-f1edc0ee5774bb2ef3&amp;mids[sid]=ccab9314-559c-4a46-af25-b207da641819e4b9d6&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;controllerId=__privateStripeController2981" aria-hidden="true" tabindex="-1" style="border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><iframe name="__privateStripeMetricsController2980" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.ideago.ie%2Fbridal%2Fbridal.html&amp;title=Bridal%20Boutique&amp;referrer=https%3A%2F%2Fwww.ideago.ie%2FBusinessHud&amp;muid=40348d39-2911-48f2-bb70-f1edc0ee5774bb2ef3&amp;sid=ccab9314-559c-4a46-af25-b207da641819e4b9d6&amp;version=6&amp;preview=false&amp;__shared_params__[version]=dahlia" aria-hidden="true" tabindex="-1" style="border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Site Metas -->
+    <title>Forest Time - Stylish Magazine Blog Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="/prefabs/Florist Template1/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/prefabs/Florist Template1/images/apple-touch-icon.png">
+    
+    <!-- Design fonts -->
+     
+
+    <!-- Bootstrap core CSS -->
+    
+
+    <!-- FontAwesome Icons core CSS -->
+    
+
+    <!-- Custom styles for this template -->
+    
+    
+    <!-- Responsive styles for this template -->
+    
+
+    <!-- Colors for this template -->
+    
+
+    <!-- Version Garden CSS for this template -->
+    
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+    <div id="wrapper">
+        <div class="collapse top-search" id="collapseExample">
+            <div class="card card-block">
+                <div class="newsletter-widget text-center">
+                    <form class="form-inline">
+                        <input type="text" class="form-control" placeholder="What you are looking for?">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                    </form>
+                </div><!-- end newsletter -->
+            </div>
+        </div><!-- end top-search -->
+
+        <div class="topbar-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
+                        <div class="topsocial">
+                            <a data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-flickr"></i></a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
+                        </div><!-- end social -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 hidden-md-down">
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="topsearch text-right">
+                            <a data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-search"></i> Search</a>
+                        </div><!-- end search -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end header-logo -->
+        </div><!-- end topbar -->
+
+        <div class="header-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="logo">
+                            <a><img src="images/img_0.1782315524427.jpg" alt=""></a>
+                        </div><!-- end logo -->
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end header-logo -->
+        </div><!-- end header -->
+
+        <header class="header">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-toggleable-md">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Forest Timemenu" aria-controls="Forest Timemenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-md-center" id="Forest Timemenu">
+                        <ul class="navbar-nav">
+                           
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- end container -->
+        </header><!-- end header -->
+
+        <section class="section first-section">
+            <div class="container-fluid">
+                <div class="masonry-blog clearfix">
+                    <div class="left-side">
+                        <div class="masonry-box post-media">
+                             <img src="images/img_1.1782315524427.jpg" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-aqua"><a title="">Gardening</a></span>
+                                        <h4><a title="">How to choose high quality soil for your gardens</a></h4>
+                                        <small><a title="">21 July, 2017</a></small>
+                                        <small><a title="">by Amanda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end left-side -->
+
+                    <div class="center-side">
+                        <div class="masonry-box post-media">
+                             <img src="images/img_2.1782315524427.jpg" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-aqua"><a title="">Outdoor</a></span>
+                                        <h4><a title="">You can create a garden with furniture in your home</a></h4>
+                                        <small><a title="">19 July, 2017</a></small>
+                                        <small><a title="">by Amanda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end left-side -->
+
+                    <div class="right-side hidden-md-down">
+                        <div class="masonry-box post-media">
+                             <img src="images/img_3.1782315524427.jpg" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">The success of the 10 companies in the vegetable sector</a></h4>
+                                        <small><a title="">03 July, 2017</a></small>
+                                        <small><a title="">by Jessica</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end right-side -->
+                </div><!-- end masonry -->
+            </div>
+        </section>
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-list clearfix">
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_4.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">The best twenty plant species you can look at at home</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 1887</a></small>
+                                        <small><a title="">11 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_5.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">How do you like the idea of creating a garden from the Amazon forests?</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 4441</a></small>
+                                        <small><a title="">10 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_6.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">Top 20 cafeterias decorated with quality plants</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 1234</a></small>
+                                        <small><a title="">09 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="row">
+                                    <div class="col-lg-10 offset-lg-1">
+                                        <div class="banner-spot clearfix">
+                                            <div class="banner-img">
+                                                <img src="images/img_7.1782315524427.jpg" alt="" class="img-fluid">
+                                            </div><!-- end banner-img -->
+                                        </div><!-- end banner -->
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_8.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">30 beautiful flowers you can look at in offices and workplaces</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 4441</a></small>
+                                        <small><a title="">08 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_9.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">Enjoy your living room with small garden biblings</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 2235</a></small>
+                                        <small><a title="">07 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_10.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">Why do you prefer small flowers at your workplace?</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 1567</a></small>
+                                        <small><a title="">06 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_11.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">10 special plant species available to live in the window</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 1451</a></small>
+                                        <small><a title="">05 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+
+                                <hr class="invis">
+
+                                <div class="blog-box row">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img src="images/img_12.1782315524427.jpg" alt="" class="img-fluid">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <span class="bg-aqua"><a title="">Indoor</a></span>
+                                        <h4><a title="">Selection of high quality soil for vegetable gardening</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <small><a title=""><i class="fa fa-eye"></i> 4442</a></small>
+                                        <small><a title="">01 July, 2017</a></small>
+                                        <small><a title="">by Matilda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end blog-list -->
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-start">
+                                        <li class="page-item"><a class="page-link">1</a></li>
+                                        <li class="page-item"><a class="page-link">2</a></li>
+                                        <li class="page-item"><a class="page-link">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget">
+                                <h2 class="widget-title">Search</h2>
+                                <form class="form-inline search-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search on the site">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Recent Posts</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="images/img_13.1782315524427.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
+                                                <small>12 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="images/img_14.1782315524427.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Let's make an introduction for creative life</h5>
+                                                <small>11 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 last-item justify-content-between">
+                                                <img src="images/img_15.1782315524427.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
+                                                <small>07 Jan, 2016</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Advertising</h2>
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        <img src="images/img_16.1782315524427.jpg" alt="" class="img-fluid">
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Instagram Feed</h2>
+                                <div class="instagram-wrapper clearfix">
+                                    <a><img src="images/img_17.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_18.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_19.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_20.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_21.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_22.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_23.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_24.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                    <a><img src="images/img_25.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                </div><!-- end Instagram wrapper -->
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Popular Categories</h2>
+                                <div class="link-widget">
+                                    <ul>
+                                        <li><a>Gardening <span>(21)</span></a></li>
+                                        <li><a>Outdoor Living <span>(15)</span></a></li>
+                                        <li><a>Indoor Living <span>(31)</span></a></li>
+                                        <li><a>Shopping Guides <span>(22)</span></a></li>
+                                        <li><a>Pool Design <span>(66)</span></a></li>
+                                    </ul>
+                                </div><!-- end link-widget -->
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="widget">
+                            <div class="footer-text text-center">
+                                <a><img src="images/img_26.1782315524427.jpg" alt="" class="img-fluid"></a>
+                                <p>Forest Time is a personal blog for handcrafted, cameramade photography content, fashion styles from independent creatives around the world.</p>
+                                <div class="social">
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                    <a data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                </div>
+
+                                <hr class="invis">
+
+                                <div class="newsletter-widget text-center">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <button type="submit" class="btn btn-primary">Subscribe <i class="fa fa-envelope-open-o"></i></button>
+                                    </form>
+                                </div><!-- end newsletter -->
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <br>
+                        <div class="copyright">© Forest Time. D.</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="/prefabs/Florist Template1/js/jquery.min.js"></script>
+    <script src="/prefabs/Florist Template1/js/tether.min.js"></script>
+    <script src="/prefabs/Florist Template1/js/bootstrap.min.js"></script>
+    <script src="/prefabs/Florist Template1/js/custom.js"></script>
+
+
+
+<script src="js/clerk.browser.js"></script>
+<script src="js/stripe.js"></script>
+<script src="js/tether.min.1782315524427.js"></script>
+<script src="js/domain-widget.js"></script>
+<script src="js/bootstrap.min.1782315524427.js"></script>
+<script src="js/jquery.min.1782315524427.js"></script>
+<script src="js/custom.1782315524427.js"></script>
+<script src="js/jquery-3.0.0.min.1782315524427.js"></script>
+<script src="js/custom.1782315524427.js"></script>
+<script src="js/bootstrap.bundle.min.1782315524427.js"></script>
+<script src="js/jquery.min.1782315524427.js"></script>
+<script src="js/bootstrap.min.1782315524427.js"></script>
+<script src="js/tether.min.1782315524427.js"></script>
+<script src="js/custom.1782315524427.js"></script>
+<script src="js/custom.1782315524427.js"></script>
+<script src="js/tether.min.1782315524427.js"></script>
+<script src="js/bootstrap.min.1782315524427.js"></script>
+<script src="js/jquery.min.1782315524427.js"></script>
+<script src="js/jquery.min.1782315524427.js"></script>
+<script src="js/inline_1.1782315524427.js"></script>
+
+</body>
+</html>
